@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.geosearch {
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.leaflet-marker-icon {
+  border: none;
+}
+
+img {
+  border: none;
+}
