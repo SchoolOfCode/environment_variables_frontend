@@ -52,11 +52,12 @@ const menu = (
 export default function Navbar() {
   return (
     <div>
-      <div className="md:hidden flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
+      <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
+        
         <Link href="#home">
-          <a className="text-[white]">Home</a>
+          <a className="text-[white] hidden md:flex items-center space-x-1">Home</a>
         </Link>
-        <Dropdown overlay={menu} className="text-[white]">
+        <Dropdown overlay={menu} className="text-[white] hidden md:flex items-center space-x-1">
           <a onClick={(e) => e.preventDefault()}>
             <Space>
               Do Your Part
@@ -65,12 +66,12 @@ export default function Navbar() {
           </a>
         </Dropdown>
         <Link href="#weather">
-          <a className="text-[white]">Weather</a>
+          <a className="text-[white] hidden md:flex items-center space-x-1">Weather</a>
         </Link>
         <Link href="#contact">
-          <a className="text-[white]">Contact</a>
+          <a className="text-[white] hidden md:flex items-center space-x-1">Contact</a>
         </Link>
-      </div>
+        </div>
     </div>
   );
 }
