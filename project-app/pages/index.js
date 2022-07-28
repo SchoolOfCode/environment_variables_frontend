@@ -12,8 +12,9 @@ import dynamic from "next/dynamic";
 export default function Home() {
   return (
     <div className={styles.container}>
+      <Navbar />
       <h1 className="text-blue-600/100 hover:underline">Project Clean-Up</h1>
-      <Navbar/>
+
       {/* <MapWithNoSSR /> */}
     </div>
   );
