@@ -19,7 +19,7 @@ export default function Map() {
     const [position, setPosition] = useState([
       52.817356506889425, 0.8199988022288017,
     ]);
-    console.log(position);
+
     const markerRef = useRef(null);
     const eventHandlers = useMemo(
       () => ({
