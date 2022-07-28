@@ -1,4 +1,4 @@
-export default function WeatherCurrent() {
+export default function WeatherCurrent({weatherObject}) {
   return (
     <div className="flex justify-center">
       <div className="card  min-w-sm max-w-sm border border-gray-100 bg-gray-50   transition-shadow test  shadow-lg hover:shadow-shadow-xl w-full bg-green-600 text-purple-50 rounded-md">
@@ -6,7 +6,7 @@ export default function WeatherCurrent() {
           <div className="flex justify-between">
             <div className="badge relative top-0">
               <span className="mt-2 py-1 h-12px text-md font-semibold w-12px  rounded right-1 bottom-1 px-4">
-                Laghouat
+                {weatherObject?.city.name}
               </span>
             </div>
             <span className="text-lg font-bold ">6:13</span>
