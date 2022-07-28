@@ -2,6 +2,8 @@
 import { DownOutlined, SmileOutlined } from "@ant-design/icons";
 import { Dropdown, Menu, Space } from "antd";
 import "antd/dist/antd.css";
+import Link from "next/link";
+import { AiOutlineMenu } from "react-icons/ai";
 import React from "react";
 
 const menu = (
@@ -15,7 +17,7 @@ const menu = (
             rel="noopener noreferrer"
             href="https://www.antgroup.com"
           >
-            1st menu item
+            About Us
           </a>
         ),
       },
@@ -27,11 +29,9 @@ const menu = (
             rel="noopener noreferrer"
             href="https://www.aliyun.com"
           >
-            2nd menu item (disabled)
+            Start A Cleanup
           </a>
         ),
-        icon: <SmileOutlined />,
-        disabled: true,
       },
       {
         key: "3",
@@ -41,15 +41,9 @@ const menu = (
             rel="noopener noreferrer"
             href="https://www.luohanacademy.com"
           >
-            3rd menu item (disabled)
+            Join A Cleanup
           </a>
         ),
-        disabled: true,
-      },
-      {
-        key: "4",
-        danger: true,
-        label: "a danger item",
       },
     ]}
   />
@@ -58,19 +52,25 @@ const menu = (
 export default function Navbar() {
   return (
     <div>
-    <div className="flex justify-between w-[100vw] bg-[#004F54] ml-[0px] px-[2em]">
-      <a href="#home">Home</a>
-      <Dropdown overlay={menu} className="text-[pink]">
-        <a onClick={(e) => e.preventDefault()}>
-          <Space>
-            Hover me
-            <DownOutlined />
-          </Space>
-        </a>
-      </Dropdown>
-      <a href="#weather">Weather</a>
-      <a href="#contact">Contact Us</a>
-    </div>
+      <div className="md:hidden flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
+        <Link href="#home">
+          <a className="text-[white]">Home</a>
+        </Link>
+        <Dropdown overlay={menu} className="text-[white]">
+          <a onClick={(e) => e.preventDefault()}>
+            <Space>
+              Do Your Part
+              <DownOutlined />
+            </Space>
+          </a>
+        </Dropdown>
+        <Link href="#weather">
+          <a className="text-[white]">Weather</a>
+        </Link>
+        <Link href="#contact">
+          <a className="text-[white]">Contact</a>
+        </Link>
+      </div>
     </div>
   );
 }
