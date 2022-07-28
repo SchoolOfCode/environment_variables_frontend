@@ -22,7 +22,7 @@ const Weather = () => {
     // if (!/^[a-zA-Z]+$/.test(city)) {
     //   alert("Please enter letters only");
     // }
-    
+
       const response = await fetch(url);
       const data = await response.json();
       console.log(data);
@@ -40,8 +40,10 @@ const Weather = () => {
     <div>
       <div className="weather">
         <SearchBar handleChange={handleChange} fetchWeather={fetchWeather} city={city}/>
-        <WeatherCurrent weatherObject={weatherObject}/>
-        <WeatherForecast />
+          <div className="flex flex-row justify-evenly">
+            <WeatherCurrent weatherObject={weatherObject}/>
+            <WeatherForecast weatherObject={weatherObject}/>
+          </div>
       </div>
     </div>
   );
