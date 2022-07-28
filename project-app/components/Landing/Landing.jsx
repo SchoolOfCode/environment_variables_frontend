@@ -1,20 +1,19 @@
-import Image from 'next/image';
-import heroBackground from '../../public/img/hero-background.png'
+import NavButton from './NavButton/NavButton.jsx'
 
 const LandingBanner = () => {
-    return ( 
-      <div className='.h-1 .max-w-xs'>
-       <Image
-        src={heroBackground}
-        alt='hero-background'
-        layout='fill'
-        objectFit='cover'
-        objectPosition='center'
-        width={500}
-        height={500}
-        />
-        </div>
-     );
+  return ( 
+    <div className='bg-hero-background bg-contain bg-no-repeat'>
+
+      <div className='grid h-screen place-items-center'>
+      <h1 className = 'text-3xl'>Project Clean-Up</h1>
+      </div>
+
+      <div className=''>
+        <NavButton buttonText="Button One"/>
+        <NavButton buttonText="Button Two"/>
+      </div>
+    </div> 
+    );
 }
  
-export default LandingBanner
+export default LandingBanner;
