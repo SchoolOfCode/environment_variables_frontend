@@ -51,13 +51,16 @@ const menu = (
 
 export default function Navbar() {
   return (
-    <div>
+    <div className="fixed">
       <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
-        
+        <div>Logo</div>
         <Link href="#home">
-          <a className="text-[white] hidden md:flex items-center space-x-1">Home</a>
+          <a className="text-[white] hidden md:flex items-center ">Home</a>
         </Link>
-        <Dropdown overlay={menu} className="text-[white] hidden md:flex items-center space-x-1">
+        <Dropdown
+          overlay={menu}
+          className="text-[white] hidden md:flex items-center"
+        >
           <a onClick={(e) => e.preventDefault()}>
             <Space>
               Do Your Part
@@ -66,16 +69,27 @@ export default function Navbar() {
           </a>
         </Dropdown>
         <Link href="#weather">
-          <a className="text-[white] hidden md:flex items-center space-x-1">Weather</a>
+          <a className="text-[white] hidden md:flex items-center ">Weather</a>
         </Link>
         <Link href="#contact">
-          <a className="text-[white] hidden md:flex items-center space-x-1">Contact</a>
+          <a className="text-[white] hidden md:flex items-center ">Contact</a>
         </Link>
-        </div>
+        <AiOutlineMenu
+          className="md:hidden absolute inset-y-[2em] right-[2em]"
+          size={25}
+        />
+      </div>
     </div>
   );
 }
 
-// padding 2em
-// 100vw container
-// padding top and bottom 2em
+//SideBar Menu Plan
+
+// Make seperate div that shows up when screen size is half(md)
+// In that div we need:
+// Close icon
+// Links
+
+// needs to have green bg
+// needs to be as tall as the screen
+// needs to open and close when hamburger icon/ x icon is clicked
