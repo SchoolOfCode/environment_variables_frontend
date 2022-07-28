@@ -1,14 +1,75 @@
 // import SocialMedia from "../SocialMedia/SocialMedia"
+import { DownOutlined, SmileOutlined } from "@ant-design/icons";
+import { Dropdown, Menu, Space } from "antd";
+import React from "react";
 
-export default function Navbar () {
-    
-    return (
-        <div>
-            <a href="#home">Home</a>
-            <a href="#dropdown">Do Your Part</a>
-            <a href="#weather">Weather</a>
-            <a href="#contact">Contact Us</a>
+const menu = (
+  <Menu
+    items={[
+      {
+        key: "1",
+        label: (
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.antgroup.com"
+          >
+            1st menu item
+          </a>
+        ),
+      },
+      {
+        key: "2",
+        label: (
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.aliyun.com"
+          >
+            2nd menu item (disabled)
+          </a>
+        ),
+        icon: <SmileOutlined />,
+        disabled: true,
+      },
+      {
+        key: "3",
+        label: (
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.luohanacademy.com"
+          >
+            3rd menu item (disabled)
+          </a>
+        ),
+        disabled: true,
+      },
+      {
+        key: "4",
+        danger: true,
+        label: "a danger item",
+      },
+    ]}
+  />
+);
 
-        </div>
-    )
+export default function Navbar() {
+  return (
+    <div className="flex justify-between my-8">
+      <a href="#home">Home</a>
+      <div>
+        <Dropdown overlay={menu} className="flex flex-column">
+          <a onClick={(e) => e.preventDefault()}>
+            <Space>
+              Hover me
+              <DownOutlined />
+            </Space>
+          </a>
+        </Dropdown>
+      </div>
+      <a href="#weather">Weather</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  );
 }
