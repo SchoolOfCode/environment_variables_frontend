@@ -3,16 +3,12 @@ import heroBackground from '../../public/img/hero-background.png'
 
 const LandingBanner = () => {
     return ( 
-      <div className='.h-1 .max-w-xs'>
-       <Image
-        src={heroBackground}
-        alt='hero-background'
-        layout='fill'
-        objectFit='cover'
-        objectPosition='center'
-        width={500}
-        height={500}
-        />
+      <div className='.min-h-screen .bg-gradient-to-t'>
+
+        <h1>Project clean-Up</h1>
+       <button type='button' className='.md:border-solid'>join</button>
+       <br></br>
+       <button type='button'>join</button>
         </div>
      );
 }
