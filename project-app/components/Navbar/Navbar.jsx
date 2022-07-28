@@ -57,7 +57,8 @@ const menu = (
 
 export default function Navbar() {
   return (
-    <div className="flex justify-between w-[100vw] bg-[#004F54]">
+    <div>
+    <div className="flex justify-between w-[100vw] bg-[#004F54] ml-[0px] px-[2em]">
       <a href="#home">Home</a>
       <Dropdown overlay={menu} className="text-[pink]">
         <a onClick={(e) => e.preventDefault()}>
@@ -69,6 +70,7 @@ export default function Navbar() {
       </Dropdown>
       <a href="#weather">Weather</a>
       <a href="#contact">Contact Us</a>
+    </div>
     </div>
   );
 }
