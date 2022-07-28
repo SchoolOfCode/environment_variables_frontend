@@ -4,7 +4,7 @@ import WeatherCurrent from "./WeatherCurrent";
 import SearchBar from "./SearchBar";
 import WeatherForecast from "./WeatherForecast";
 
-const WeatherContainer = () => {
+const Weather = () => {
   const [weatherObject, setWeatherObject] = useState();
 
   useEffect(() => {
@@ -30,4 +30,4 @@ const WeatherContainer = () => {
   );
 };
 
-export default WeatherContainer;
+export default Weather;
