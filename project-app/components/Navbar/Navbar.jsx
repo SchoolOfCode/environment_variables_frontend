@@ -6,6 +6,23 @@ import Link from "next/link";
 import { AiOutlineMenu } from "react-icons/ai";
 import React from "react";
 
+ 
+import { Button, Drawer } from 'antd';
+import React, { useState } from 'react';
+
+const App = () => {
+  const [visible, setVisible] = useState(false);
+
+  const showDrawer = () => {
+    setVisible(true);
+  };
+
+  const onClose = () => {
+    setVisible(false);
+  };
+
+
+
 const menu = (
   <Menu
     items={[
@@ -79,6 +96,16 @@ export default function Navbar() {
           size={25}
         />
       </div>
+      <>
+      <Button type="primary" onClick={showDrawer}>
+        Open
+      </Button>
+      <Drawer title="Basic Drawer" placement="right" onClose={onClose} visible={visible}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
+    </>
     </div>
   );
 }
