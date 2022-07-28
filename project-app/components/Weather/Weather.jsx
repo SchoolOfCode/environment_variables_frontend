@@ -14,16 +14,21 @@ const Weather = () => {
     
     setCity(e.target.value);
   }
-
-  const url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&mode=json&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&units=metric`;
+  // `api.openweathermap.org/data/2.5/forecast?q=london&appid=bb7583604ecbfdd9c60127fbda2d5209`
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&units=metric`;
 
   async function fetchWeather() {
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
-    setWeatherObject(data);
-    setCity('')
-  }
+    // This was an attempt to force the users to put in letters only, needs refactoring, DO NOT DELETE
+    // if (!/^[a-zA-Z]+$/.test(city)) {
+    //   alert("Please enter letters only");
+    // }
+    
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data);
+      setWeatherObject(data);
+      setCity('');
+    }
 
   useEffect(() => {
     fetchWeather();

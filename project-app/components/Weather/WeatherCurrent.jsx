@@ -40,7 +40,7 @@ export default function WeatherCurrent({weatherObject}) {
                   <path d="M13,30a5.0057,5.0057,0,0,1-5-5h2a3,3,0,1,0,3-3H4V20h9a5,5,0,0,1,0,10Z"></path>
                   <path d="M25 25a5.0057 5.0057 0 01-5-5h2a3 3 0 103-3H2V15H25a5 5 0 010 10zM21 12H6V10H21a3 3 0 10-3-3H16a5 5 0 115 5z"></path>
                 </svg>{" "}
-                <span>27km/h</span>
+                <span>{weatherObject?.list[0].wind.speed}m/s</span>
               </span>
               <span className="flex space-x-2 items-center">
                 <svg
@@ -52,11 +52,11 @@ export default function WeatherCurrent({weatherObject}) {
                   <path d="M16,24V22a3.2965,3.2965,0,0,0,3-3h2A5.2668,5.2668,0,0,1,16,24Z"></path>
                   <path d="M16,28a9.0114,9.0114,0,0,1-9-9,9.9843,9.9843,0,0,1,1.4941-4.9554L15.1528,3.4367a1.04,1.04,0,0,1,1.6944,0l6.6289,10.5564A10.0633,10.0633,0,0,1,25,19,9.0114,9.0114,0,0,1,16,28ZM16,5.8483l-5.7817,9.2079A7.9771,7.9771,0,0,0,9,19a7,7,0,0,0,14,0,8.0615,8.0615,0,0,0-1.248-3.9953Z"></path>
                 </svg>{" "}
-                <span>32%</span>
+                <span>{weatherObject?.list[0].main.humidity}%</span>
               </span>
             </div>
             <div>
-              <h1 className="text-6xl"> 12° </h1>
+              <h1 className="text-6xl"> {Math.floor(weatherObject?.list[0].main.temp)}°C </h1>
             </div>
           </div>
         </div>
