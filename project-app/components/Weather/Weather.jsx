@@ -26,7 +26,7 @@ const Weather = () => {
     console.log(data);
     setWeatherObject(data);
     //uncomment the below city State after development stage - means each time you make a change, props cant be found
-    // setCity("");
+    setCity("");
   }
 
   useEffect(() => {
@@ -34,8 +34,8 @@ const Weather = () => {
   }, []);
 
   return (
-    <div className="mt-4">
-      <h1 className="text-6xl font-bold ml-4">Weather Forecast</h1>
+    <div id="weather" className="mt-4">
+      <h2 className="text-6xl font-bold ml-4">Weather Forecast</h2>
       <div className="weather">
         <div>
           <SearchBar
@@ -51,7 +51,7 @@ const Weather = () => {
           />
         </div>
       </div>
-      <WeatherReqs/>
+      <WeatherReqs />
     </div>
   );
 };
