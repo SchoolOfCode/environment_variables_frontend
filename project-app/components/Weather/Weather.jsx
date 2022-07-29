@@ -36,18 +36,19 @@ const Weather = () => {
     <div className="mt-4">
       <h1 className="text-6xl font-bold ml-4">Weather Forecast</h1>
       <div className="weather">
-        
         <div className="flex-col justify-start">
-        
-        <SearchBar
-          handleChange={handleChange}
-          fetchWeather={fetchWeather}
-          city={city}
-        />
-        
-          <WeatherForecast weatherObject={weatherObject} handleChange={handleChange}
-          fetchWeather={fetchWeather}
-          city={city}/>
+          <SearchBar
+            handleChange={handleChange}
+            fetchWeather={fetchWeather}
+            city={city}
+          />
+
+          <WeatherForecast
+            weatherObject={weatherObject}
+            handleChange={handleChange}
+            fetchWeather={fetchWeather}
+            city={city}
+          />
         </div>
       </div>
     </div>
