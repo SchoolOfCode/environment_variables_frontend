@@ -19,7 +19,7 @@ const WeatherForecast = ({ weatherObject }) => {
           <h1 className="text-6xl font-bold mt-3">
             {Math.floor(weatherObject?.list[0].main.temp)}°C{" "}
           </h1>
-          <h2>{weatherObject?.list[0].weather[0].description}</h2>
+          <h2 className="text-xl font-bold">{weatherObject?.list[0].weather[0].description}</h2>
         </div>
         <div className="pl-4 pr-6">
           <img
@@ -31,11 +31,10 @@ const WeatherForecast = ({ weatherObject }) => {
         <div className="flex-col content-center mt-5">
           <h3 className="font-bold">feels like:</h3>
           <span>{Math.floor(weatherObject?.list[0].main.feels_like)}°C</span>
-          <h3 className="font-bold">humidity:</h3>
-          <span> {weatherObject?.list[0].main.humidity}%</span>
-          <h3 className="font-bold">wind speed:</h3>
+          <h3 className="font-bold mt-5">humidity:</h3>
+          <span > {weatherObject?.list[0].main.humidity}%</span>
+          <h3 className="font-bold mt-5">wind speed:</h3>
           <span>{weatherObject?.list[0].wind.speed}m/s</span>
-          <h3></h3>
         </div>
       </div>
       {/* 5 day forecast cards */}
