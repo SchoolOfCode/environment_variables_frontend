@@ -12,7 +12,7 @@ export default function Footer () {
         <div class="social-media">
 
         <Link href="https://www.facebook.com">
-          <a><AiFillFacebook/></a>
+          <a target='blank' ><AiFillFacebook/></a>
         </Link>
         <Link href="/">
           <a><AiFillInstagram/></a>
