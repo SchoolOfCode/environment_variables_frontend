@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 import dynamic from "next/dynamic";
 import LandingBanner from "../components/Landing/Landing";
 import Weather from "../components/Weather/Weather";
+import Footer from "../components/Footer/Footer";
 
 const MapWithNoSSR = dynamic(() => import("../components/Map/Map.jsx"), {
   ssr: false,
@@ -21,6 +22,7 @@ export default function Home() {
         <LandingBanner />
         <MapWithNoSSR />
         <Weather />
+        <Footer />
       </div>
     </>
   );
