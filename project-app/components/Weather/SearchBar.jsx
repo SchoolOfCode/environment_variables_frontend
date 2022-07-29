@@ -1,10 +1,8 @@
 import React from "react";
 
-const SearchBar = ({fetchWeather, handleChange, city}) => {
-
- 
+const SearchBar = ({ fetchWeather, handleChange, city }) => {
   return (
-    <div>
+    <div className="w-80 ml-4">
       <label
         htmlFor="default-search"
         className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
