@@ -19,7 +19,7 @@ const WeatherForecast = ({ weatherObject }) => {
         </div>
         <div className="pl-4 pr-6">
           <img
-            src={`http://openweathermap.org/img/wn/${weatherObject?.list[0].weather[0].icon}@2x.png`}
+            src={`https://openweathermap.org/img/wn/${weatherObject?.list[0].weather[0].icon}@2x.png`}
             viewBox="0 0 32 32"
             className="fill-current h-48 w-48"
           />
@@ -43,7 +43,7 @@ const WeatherForecast = ({ weatherObject }) => {
             {Math.floor(weatherObject?.list[8].main.temp)}°C
           </p>
           <img
-            src={`http://openweathermap.org/img/wn/${weatherObject?.list[8].weather[0].icon}@2x.png`}
+            src={`https://openweathermap.org/img/wn/${weatherObject?.list[8].weather[0].icon}@2x.png`}
             viewBox="0 0 32 32"
             className="fill-current h-40 w-40 text-yellow-300"
           />
@@ -56,7 +56,7 @@ const WeatherForecast = ({ weatherObject }) => {
             {Math.floor(weatherObject?.list[16].main.temp)}°C
           </p>
           <img
-            src={`http://openweathermap.org/img/wn/${weatherObject?.list[16].weather[0].icon}@2x.png`}
+            src={`https://openweathermap.org/img/wn/${weatherObject?.list[16].weather[0].icon}@2x.png`}
             viewBox="0 0 32 32"
             className="fill-current h-40 w-40 text-yellow-300"
           />
@@ -69,7 +69,7 @@ const WeatherForecast = ({ weatherObject }) => {
             {Math.floor(weatherObject?.list[24].main.temp)}°C
           </p>
           <img
-            src={`http://openweathermap.org/img/wn/${weatherObject?.list[24].weather[0].icon}@2x.png`}
+            src={`https://openweathermap.org/img/wn/${weatherObject?.list[24].weather[0].icon}@2x.png`}
             viewBox="0 0 32 32"
             className="fill-current h-40 w-40 text-yellow-300"
           />
@@ -82,7 +82,7 @@ const WeatherForecast = ({ weatherObject }) => {
             {Math.floor(weatherObject?.list[32].main.temp)}°C
           </p>
           <img
-            src={`http://openweathermap.org/img/wn/${weatherObject?.list[32].weather[0].icon}@2x.png`}
+            src={`https://openweathermap.org/img/wn/${weatherObject?.list[32].weather[0].icon}@2x.png`}
             viewBox="0 0 32 32"
             className="fill-current h-40 w-40 text-yellow-300"
           />
