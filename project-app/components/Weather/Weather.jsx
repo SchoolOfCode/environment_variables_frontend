@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 import SearchBar from "./SearchBar";
 import WeatherForecast from "./WeatherForecast";
+import WeatherReqs from "./WeatherReqs";
 
 const Weather = () => {
   const [weatherObject, setWeatherObject] = useState();
@@ -50,6 +51,7 @@ const Weather = () => {
           />
         </div>
       </div>
+      <WeatherReqs/>
     </div>
   );
 };
