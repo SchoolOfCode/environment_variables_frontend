@@ -54,7 +54,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="fixed">
+    <div className="fixed z-20">
       <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
         <div>Logo</div>
         <Link href="#home">
