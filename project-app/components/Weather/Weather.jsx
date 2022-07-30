@@ -26,7 +26,7 @@ const Weather = () => {
     console.log(data);
     setWeatherObject(data);
     //uncomment the below city State after development stage - means each time you make a change, props cant be found
-    setCity("");
+    // setCity("");
   }
 
   useEffect(() => {
@@ -37,21 +37,21 @@ const Weather = () => {
     <div id="weather" className="mt-4">
       <h2 className="text-6xl font-bold ml-4">Weather Forecast</h2>
       <div className="weather">
-        <div>
+        <div className="flex">
           <SearchBar
             handleChange={handleChange}
             fetchWeather={fetchWeather}
             city={city}
           />
-          <WeatherForecast
-            weatherObject={weatherObject}
-            handleChange={handleChange}
-            fetchWeather={fetchWeather}
-            city={city}
-          />
+          <WeatherReqs />
         </div>
+        <WeatherForecast
+          weatherObject={weatherObject}
+          handleChange={handleChange}
+          fetchWeather={fetchWeather}
+          city={city}
+        />
       </div>
-      <WeatherReqs />
     </div>
   );
 };
