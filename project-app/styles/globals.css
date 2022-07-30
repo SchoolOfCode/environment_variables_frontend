@@ -18,4 +18,8 @@ body{
 img {
   border: none;
 }
+.hero-background{
+  width: 100%;
+  height:auto
+}
 
