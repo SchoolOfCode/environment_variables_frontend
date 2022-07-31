@@ -1,11 +1,19 @@
 import React from "react";
 
 const WeatherForecast = ({ weatherObject }) => {
+  function datConvertor(timeStamp) {
+    let unix = timeStamp;
+    let milliSeconds = unix * 1000;
+    let dateObject = new Date(milliSeconds);
+    let displayDate = dateObject.toLocaleString("en-US", { weekday: "long" });
+    return displayDate;
+  }
+
   return (
     //main div container
     <div className=" flex flex-col xl:flex-row justify-between md:justify-evenly mb-4 mt-4 ml-4 mr-4 bg-[url('/weather-background.jpg')] bg-cover">
       {/* todays weather stats */}
-      <div className="flex justify-between md:justify-evenly rounded bg-[#004F54]/75 p-2 w-full xl:w-2/5">
+      <div className="flex justify-between md:justify-evenly rounded bg-[#004F54]/75 p-2 md:pt-10 w-full xl:w-2/5">
         <div>
           <h2 className="text-2xl text-white lg:text-5xl font-bold mb-6 mt-5">
             Today
@@ -49,7 +57,7 @@ const WeatherForecast = ({ weatherObject }) => {
       <div className="flex justify-evenly rounded bg-[#004F54]/75 w-full xl:w-2/5 mt-4 xl:mt-0 ">
         <div className="flex flex-col rounded border shadow-lg mt-4 mb-4 w-48 p-4 ml-4 justify-evenly items-center text-xl font-bold mb-4">
           <p className="text-white">
-            {weatherObject?.list[8].dt_txt.slice(0, 10)}
+            {datConvertor(weatherObject?.list[8].dt)}
           </p>
           <p className="text-3xl text-white">
             {" "}
@@ -66,7 +74,7 @@ const WeatherForecast = ({ weatherObject }) => {
         </div>
         <div className="flex-col shadow-lg  border rounded mt-4 mb-4 w-48 p-4 ml-4 flex justify-evenly items-center text-xl font-bold mb-4">
           <p className="text-white">
-            {weatherObject?.list[16].dt_txt.slice(0, 10)}
+            {datConvertor(weatherObject?.list[16].dt)}
           </p>
           <p className="text-3xl text-white">
             {" "}
@@ -83,7 +91,7 @@ const WeatherForecast = ({ weatherObject }) => {
         </div>
         <div className="flex-col rounded  border shadow-lg mt-4 mb-4 w-48 p-4 ml-4 flex justify-evenly items-center text-xl text-white font-bold mb-4">
           <p className="text-white">
-            {weatherObject?.list[24].dt_txt.slice(0, 10)}
+            {datConvertor(weatherObject?.list[24].dt)}
           </p>
           <p className="text-3xl">
             {" "}
@@ -100,7 +108,7 @@ const WeatherForecast = ({ weatherObject }) => {
         </div>
         <div className="flex-col rounded  border shadow-lg mt-4 mb-4 w-48 p-4 ml-4 mr-4 flex justify-evenly items-center text-xl font-bold mb-4">
           <p className="text-white">
-            {weatherObject?.list[32].dt_txt.slice(0, 10)}
+            {datConvertor(weatherObject?.list[32].dt)}
           </p>
           <p className="text-3xl text-white">
             {" "}
