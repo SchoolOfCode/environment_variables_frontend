@@ -3,14 +3,14 @@ import React from "react";
 const WeatherForecast = ({ weatherObject }) => {
   return (
     //main div container
-    <div className="flex justify-evenly mb-4 mt-4 ml-4 ">
+    <div className="flex flex-col xl:flex-row justify-between md:justify-evenly mb-4 mt-4 ml-4 mr-4 ">
       {/* todays weather stats */}
-      <div className="flex justify-evenly rounded bg-stone-300 p-2  w-2/5">
+      <div className="flex justify-between md:justify-evenly rounded bg-stone-300 p-2 w-full xl:w-2/5">
         <div>
-          <h2 className="text-5xl font-bold mb-6 mt-5">Today</h2>
+          <h2 className="text-2xl lg:text-5xl font-bold mb-6 mt-5">Today</h2>
 
           <div className="text-2xl font-bold">{weatherObject?.city.name}</div>
-          <h1 className="text-6xl font-bold mt-3">
+          <h1 className="text-3xl lg:text-6xl font-bold mt-3">
             {Math.floor(weatherObject?.list[0].main.temp)}°C{" "}
           </h1>
           <h2 className="text-xl font-bold">
@@ -35,8 +35,8 @@ const WeatherForecast = ({ weatherObject }) => {
         </div>
       </div>
       {/* 5 day forecast cards */}
-      <div className="flex justify-between rounded bg-stone-300 ">
-        <div className="flex-col rounded shadow-lg mt-4 mb-4 w-48 p-4 ml-4 flex justify-evenly items-center text-xl font-bold mb-4">
+      <div className="flex justify-evenly rounded bg-stone-300 w-full xl:w-2/5 mt-4 xl:mt-1 ">
+        <div className="flex flex-col rounded shadow-lg mt-4 mb-4 w-48 p-4 ml-4 justify-evenly items-center text-xl font-bold mb-4">
           <p>{weatherObject?.list[8].dt_txt.slice(0, 10)}</p>
           <p className="text-3xl">
             {" "}

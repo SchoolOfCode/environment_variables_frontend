@@ -35,16 +35,18 @@ const Weather = () => {
 
   return (
     <div id="weather" className="mt-4">
-      <h2 className="text-6xl font-bold ml-4">Weather Forecast</h2>
+      <h2 className="text-3xl md:text-5xl font-bold ml-32">
+        Check The Weather
+      </h2>
+      <div className="flex">
+        <SearchBar
+          handleChange={handleChange}
+          fetchWeather={fetchWeather}
+          city={city}
+        />
+        <WeatherReqs />
+      </div>
       <div className="weather">
-        <div className="flex">
-          <SearchBar
-            handleChange={handleChange}
-            fetchWeather={fetchWeather}
-            city={city}
-          />
-          <WeatherReqs />
-        </div>
         <WeatherForecast
           weatherObject={weatherObject}
           handleChange={handleChange}
