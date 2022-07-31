@@ -3,17 +3,21 @@ import React from "react";
 const WeatherForecast = ({ weatherObject }) => {
   return (
     //main div container
-    <div className="flex flex-col xl:flex-row justify-between md:justify-evenly mb-4 mt-4 ml-4 mr-4 ">
+    <div className=" flex flex-col xl:flex-row justify-between md:justify-evenly mb-4 mt-4 ml-4 mr-4 bg-[url('/weather-background.jpg')]">
       {/* todays weather stats */}
-      <div className="flex justify-between md:justify-evenly rounded bg-stone-300 p-2 w-full xl:w-2/5">
+      <div className="flex justify-between md:justify-evenly rounded bg-[#004F54]/75 p-2 w-full xl:w-2/5">
         <div>
-          <h2 className="text-2xl lg:text-5xl font-bold mb-6 mt-5">Today</h2>
+          <h2 className="text-2xl text-white lg:text-5xl font-bold mb-6 mt-5">
+            Today
+          </h2>
 
-          <div className="text-2xl font-bold">{weatherObject?.city.name}</div>
-          <h1 className="text-3xl lg:text-6xl font-bold mt-3">
+          <div className="text-2xl text-white font-bold">
+            {weatherObject?.city.name}
+          </div>
+          <h1 className="text-3xl text-white lg:text-6xl font-bold mt-3">
             {Math.floor(weatherObject?.list[0].main.temp)}°C{" "}
           </h1>
-          <h2 className="text-xl font-bold">
+          <h2 className="text-xl text-white font-bold">
             {weatherObject?.list[0].weather[0].description}
           </h2>
         </div>
@@ -26,19 +30,28 @@ const WeatherForecast = ({ weatherObject }) => {
         </div>
 
         <div className="flex-col content-center mt-5">
-          <h3 className="font-bold">feels like:</h3>
-          <span>{Math.floor(weatherObject?.list[0].main.feels_like)}°C</span>
-          <h3 className="font-bold mt-5">humidity:</h3>
-          <span> {weatherObject?.list[0].main.humidity}%</span>
-          <h3 className="font-bold mt-5">wind speed:</h3>
-          <span>{weatherObject?.list[0].wind.speed}m/s</span>
+          <h3 className="font-bold text-white">feels like:</h3>
+          <span className="text-white">
+            {Math.floor(weatherObject?.list[0].main.feels_like)}°C
+          </span>
+          <h3 className="font-bold text-white mt-5">humidity:</h3>
+          <span className="text-white">
+            {" "}
+            {weatherObject?.list[0].main.humidity}%
+          </span>
+          <h3 className="font-bold text-white mt-5">wind speed:</h3>
+          <span className="text-white">
+            {weatherObject?.list[0].wind.speed}m/s
+          </span>
         </div>
       </div>
       {/* 5 day forecast cards */}
-      <div className="flex justify-evenly rounded bg-stone-300 w-full xl:w-2/5 mt-4 xl:mt-1 ">
+      <div className="flex justify-evenly rounded bg-[#004F54]/75 w-full xl:w-2/5 mt-4 xl:mt-0 ">
         <div className="flex flex-col rounded shadow-lg mt-4 mb-4 w-48 p-4 ml-4 justify-evenly items-center text-xl font-bold mb-4">
-          <p>{weatherObject?.list[8].dt_txt.slice(0, 10)}</p>
-          <p className="text-3xl">
+          <p className="text-white">
+            {weatherObject?.list[8].dt_txt.slice(0, 10)}
+          </p>
+          <p className="text-3xl text-white">
             {" "}
             {Math.floor(weatherObject?.list[8].main.temp)}°C
           </p>
@@ -47,11 +60,15 @@ const WeatherForecast = ({ weatherObject }) => {
             viewBox="0 0 32 32"
             className="fill-current h-40 w-40 text-yellow-300"
           />
-          <p>{weatherObject?.list[8].weather[0].description}</p>
+          <p className="text-white">
+            {weatherObject?.list[8].weather[0].description}
+          </p>
         </div>
         <div className="flex-col shadow-lg rounded mt-4 mb-4 w-48 p-4 ml-4 flex justify-evenly items-center text-xl font-bold mb-4">
-          <p>{weatherObject?.list[16].dt_txt.slice(0, 10)}</p>
-          <p className="text-3xl">
+          <p className="text-white">
+            {weatherObject?.list[16].dt_txt.slice(0, 10)}
+          </p>
+          <p className="text-3xl text-white">
             {" "}
             {Math.floor(weatherObject?.list[16].main.temp)}°C
           </p>
@@ -60,10 +77,14 @@ const WeatherForecast = ({ weatherObject }) => {
             viewBox="0 0 32 32"
             className="fill-current h-40 w-40 text-yellow-300"
           />
-          <p>{weatherObject?.list[16].weather[0].description}</p>
+          <p className="text-white">
+            {weatherObject?.list[16].weather[0].description}
+          </p>
         </div>
-        <div className="flex-col rounded shadow-lg mt-4 mb-4 w-48 p-4 ml-4 flex justify-evenly items-center text-xl font-bold mb-4">
-          <p>{weatherObject?.list[24].dt_txt.slice(0, 10)}</p>
+        <div className="flex-col rounded shadow-lg mt-4 mb-4 w-48 p-4 ml-4 flex justify-evenly items-center text-xl text-white font-bold mb-4">
+          <p className="text-white">
+            {weatherObject?.list[24].dt_txt.slice(0, 10)}
+          </p>
           <p className="text-3xl">
             {" "}
             {Math.floor(weatherObject?.list[24].main.temp)}°C
@@ -73,11 +94,15 @@ const WeatherForecast = ({ weatherObject }) => {
             viewBox="0 0 32 32"
             className="fill-current h-40 w-40 text-yellow-300"
           />
-          <p>{weatherObject?.list[24].weather[0].description}</p>
+          <p className="text-white">
+            {weatherObject?.list[24].weather[0].description}
+          </p>
         </div>
         <div className="flex-col rounded shadow-lg mt-4 mb-4 w-48 p-4 ml-4 mr-4 flex justify-evenly items-center text-xl font-bold mb-4">
-          <p>{weatherObject?.list[32].dt_txt.slice(0, 10)}</p>
-          <p className="text-3xl">
+          <p className="text-white">
+            {weatherObject?.list[32].dt_txt.slice(0, 10)}
+          </p>
+          <p className="text-3xl text-white">
             {" "}
             {Math.floor(weatherObject?.list[32].main.temp)}°C
           </p>
@@ -86,7 +111,9 @@ const WeatherForecast = ({ weatherObject }) => {
             viewBox="0 0 32 32"
             className="fill-current h-40 w-40 text-yellow-300"
           />
-          <p>{weatherObject?.list[32].weather[0].description}</p>
+          <p className="text-white">
+            {weatherObject?.list[32].weather[0].description}
+          </p>
         </div>
       </div>
     </div>

@@ -34,11 +34,11 @@ const Weather = () => {
   }, []);
 
   return (
-    <div id="weather" className="mt-4">
-      <h2 className="text-3xl md:text-5xl font-bold ml-32">
+    <div id="weather" className="mt-8">
+      <h2 className="text-3xl text-[#004F54] md:text-5xl font-bold ml-40">
         Check The Weather
       </h2>
-      <div className="flex">
+      <div className="flex flex-col sm:flex-row md:justify-start">
         <SearchBar
           handleChange={handleChange}
           fetchWeather={fetchWeather}

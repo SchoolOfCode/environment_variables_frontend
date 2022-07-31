@@ -6,12 +6,14 @@ const WeatherReqs = () => {
   return (
     <>
       <button
-        className="bg-[#004F54] text-white font-bold uppercase text-sm px-2 py-2 mt-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        className="bg-[#004F54] ml-4 md:ml-1 text-white font-bold uppercase text-xs md:text-sm px-4 py-2 md:px-2 md:py-2 mt-2 sm:mt-0 rounded shadow hover:shadow-lg outline-none 
+        focus:outline-none mr-1 mb-1 ease-linear transition-all duration-100 w-24"
         type="button"
         onClick={() => setShowModal(true)}
       >
         Weather Tips
       </button>
+
       {showModal ? (
         <>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -39,18 +41,18 @@ const WeatherReqs = () => {
                     {/* hot icons */}
                     <div className="flex p-4">
                       <div className="mr-10 bg-red-600 rounded-xl shadow-2xl p-4">
-                        <Image src="/sunglasses.svg" width={125} height={125} />
+                        <Image src="/sunglasses.svg" width={100} height={100} />
                       </div>
                       <div className="bg-red-600 rounded-xl shadow-2xl p-4">
-                        <Image src="/cap.svg" width={125} height={125} />
+                        <Image src="/cap.svg" width={100} height={100} />
                       </div>
                     </div>
                     <div className="flex p-4">
                       <div className="mr-10 bg-red-600 rounded-xl shadow-2xl p-4">
-                        <Image src="/water.svg" width={125} height={125} />
+                        <Image src="/water.svg" width={100} height={100} />
                       </div>
                       <div className="bg-red-600 rounded-xl shadow-2xl p-4">
-                        <Image src="/sun-cream.svg" width={125} height={125} />
+                        <Image src="/sun-cream.svg" width={100} height={100} />
                       </div>
                     </div>
                   </div>
@@ -60,18 +62,18 @@ const WeatherReqs = () => {
                     {/* cold icons */}
                     <div className="flex p-4">
                       <div className="mr-10 bg-sky-600 rounded-xl shadow-2xl p-4">
-                        <Image src="/jacket.svg" width={125} height={125} />
+                        <Image src="/jacket.svg" width={100} height={100} />
                       </div>
                       <div className="bg-sky-600 rounded-xl shadow-2xl p-4">
-                        <Image src="/gloves.svg" width={125} height={125} />
+                        <Image src="/gloves.svg" width={100} height={100} />
                       </div>
                     </div>
                     <div className="flex p-4">
                       <div className="mr-10 bg-sky-600 rounded-xl shadow-2xl p-4">
-                        <Image src="/boots.svg" width={125} height={125} />
+                        <Image src="/boots.svg" width={100} height={100} />
                       </div>
                       <div className="bg-sky-600 rounded-xl shadow-2xl p-4">
-                        <Image src="/winter-hat.svg" width={125} height={125} />
+                        <Image src="/winter-hat.svg" width={100} height={100} />
                       </div>
                     </div>
                   </div>
@@ -87,7 +89,7 @@ const WeatherReqs = () => {
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
                   <button
-                    className="text-[#004F54] background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    className="text-[#004F54] background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-100"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
