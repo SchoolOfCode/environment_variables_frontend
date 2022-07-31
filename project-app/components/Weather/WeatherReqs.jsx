@@ -82,7 +82,7 @@ const WeatherReqs = () => {
                   <li>- Stay hydrated</li>
                   <li>- Take appropriate clothing</li>
                   <li>- Be prepared for sudden changes in weather</li>
-                  <li>- Wear a rucksack and keep extra clothes</li>
+                  <li>- Wear a rucksack to carry essentials</li>
                 </ul>
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
