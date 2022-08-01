@@ -27,7 +27,7 @@ const Navbar = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://www.antgroup.com"
+              href="/about"
             >
               About Us
             </a>
