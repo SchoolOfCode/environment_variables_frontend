@@ -4,10 +4,9 @@ import Navbar from "../components/Navbar/Navbar";
 import dynamic from "next/dynamic";
 import LandingBanner from "../components/Landing/Landing";
 import Weather from "../components/Weather/Weather";
-import OurMission from "../components/OurMission/OurMission.jsx"
+import OurMission from "../components/OurMission/OurMission.jsx";
 
 import ImageGallery from "../components/ImageGallery/ImageGallery";
-
 
 import Footer from "../components/Footer/Footer";
 
@@ -28,11 +27,15 @@ export default function Home() {
         <LandingBanner />
         <Stats />
 
-        <OurMission/>
+        <OurMission />
 
-        <ImageGallery/>
-
-        <MapWithNoSSR />
+        <ImageGallery />
+        <div className="w-full ml-4 mr-4 mt-4 mb-16 md:w-3/5">
+          <h2 className="text-2xl text font-bold">
+            Find a cleanup near you...
+          </h2>
+          <MapWithNoSSR />
+        </div>
         <Weather />
         <Footer />
       </div>

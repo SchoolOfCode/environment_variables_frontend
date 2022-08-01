@@ -2,7 +2,7 @@ import React from "react";
 
 const SearchBar = ({ fetchWeather, handleChange, city }) => {
   return (
-    <div className="w-96 xl:w-80 ml-4 xl:ml-40 mr-4">
+    <div className="w-96 xl:w-80 ml-4 mr-4 mb-4">
       <label
         htmlFor="default-search"
         className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
