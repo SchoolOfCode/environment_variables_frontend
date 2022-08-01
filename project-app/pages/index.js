@@ -10,7 +10,6 @@ import Footer from "../components/Footer/Footer";
 
 import Stats from "../components/Stats/Stats";
 
-
 const MapWithNoSSR = dynamic(() => import("../components/Map/Map.jsx"), {
   ssr: false,
 });

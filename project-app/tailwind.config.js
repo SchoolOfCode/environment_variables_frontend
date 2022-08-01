@@ -14,11 +14,10 @@ module.exports = {
       },
 
       backgroundImage: {
-        "hero-background": "url('/hero-background.png')", 
+        "hero-background": "url('/hero-background.png')",
+        "weather-background": "url('/weather-background.jpg')",
       },
-
     },
   },
   plugins: [],
-}
-
+};
