@@ -5,7 +5,10 @@
 body{
   overflow-x: hidden;
   width: 100vw;
-  background-color: brown;
+
+  background-color: #f15100;
+
+
 }
 
 img {
