@@ -27,7 +27,7 @@ export default function Map() {
     const [position, setPosition] = useState([
       52.817356506889425, 0.8199988022288017,
     ]);
-
+    console.log(position);
     const markerRef = useRef(null);
     const eventHandlers = useMemo(
       () => ({
@@ -92,7 +92,8 @@ export default function Map() {
       <DraggableMarker />
       <Marker icon={ICON} position={[50.764687233616314, 0.282817434969637]}>
         <Popup>
-          <h3 className="text-lg font-bold">Eastbourne Pier Cleanup</h3>{" "}
+          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
+          <br />
           <span className="text-lg font-bold">Location: </span>
           <span className="text-lg"> Eastbourne Pier</span>
           <br />
@@ -121,7 +122,8 @@ export default function Map() {
       </Marker>
       <Marker icon={ICON} position={[50.75557501067619, 0.2649897700883658]}>
         <Popup>
-          <h3 className="text-lg font-bold">Eastbourne Pier Cleanup</h3>{" "}
+          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
+          <br />
           <span className="text-lg font-bold">Location: </span>
           <span className="text-lg"> Eastbourne Pier</span>
           <br />
@@ -150,7 +152,8 @@ export default function Map() {
       </Marker>
       <Marker icon={ICON} position={[50.77767391366154, 0.3014166296154623]}>
         <Popup>
-          <h3 className="text-lg font-bold">Eastbourne Pier Cleanup</h3>{" "}
+          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
+          <br />
           <span className="text-lg font-bold">Location: </span>
           <span className="text-lg"> Eastbourne Pier</span>
           <br />
@@ -179,7 +182,8 @@ export default function Map() {
       </Marker>
       <Marker icon={ICON} position={[50.75898456492425, 0.2400856926565753]}>
         <Popup>
-          <h3 className="text-lg font-bold">Eastbourne Pier Cleanup</h3>{" "}
+          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
+          <br />
           <span className="text-lg font-bold">Location: </span>
           <span className="text-lg"> Eastbourne Pier</span>
           <br />
@@ -208,7 +212,8 @@ export default function Map() {
       </Marker>
       <Marker icon={ICON} position={[50.78029517229998, -1.075059110234425]}>
         <Popup>
-          <h3 className="text-lg font-bold">Eastbourne Pier Cleanup</h3>{" "}
+          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
+          <br />
           <span className="text-lg font-bold">Location: </span>
           <span className="text-lg"> Eastbourne Pier</span>
           <br />
@@ -237,7 +242,8 @@ export default function Map() {
       </Marker>
       <Marker icon={ICON} position={[50.776949712097135, -1.1435608447074601]}>
         <Popup>
-          <h3 className="text-lg font-bold">Eastbourne Pier Cleanup</h3>{" "}
+          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
+          <br />
           <span className="text-lg font-bold">Location: </span>
           <span className="text-lg"> Eastbourne Pier</span>
           <br />
@@ -266,7 +272,8 @@ export default function Map() {
       </Marker>
       <Marker icon={ICON} position={[50.80959469871429, -0.5261761200190278]}>
         <Popup>
-          <h3 className="text-lg font-bold">Eastbourne Pier Cleanup</h3>{" "}
+          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
+          <br />
           <span className="text-lg font-bold">Location: </span>
           <span className="text-lg"> Eastbourne Pier</span>
           <br />
