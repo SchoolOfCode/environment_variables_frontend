@@ -1,0 +1,23 @@
+.missionTitle {
+    font-size: 50px;
+}
+
+.missionParagraph {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.missionContainer {
+    margin: 2em 2em 5em 2em;
+}
+
+.paragraphContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.imageCSS {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
