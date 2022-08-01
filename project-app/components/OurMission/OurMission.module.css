@@ -9,11 +9,12 @@
 
 .missionContainer {
     margin: 2em 2em 5em 2em;
+    display: flex;
 }
 
 .paragraphContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .imageCSS {
