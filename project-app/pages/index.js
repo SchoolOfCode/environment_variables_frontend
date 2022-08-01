@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 import dynamic from "next/dynamic";
 import LandingBanner from "../components/Landing/Landing";
 import Weather from "../components/Weather/Weather";
+import ImageGallery from "../components/ImageGallery/ImageGallery";
 
 import Footer from "../components/Footer/Footer";
 
@@ -24,6 +25,7 @@ export default function Home() {
         <Navbar />
         <LandingBanner />
         <Stats />
+        <ImageGallery/>
         <MapWithNoSSR />
         <Weather />
         <Footer />
