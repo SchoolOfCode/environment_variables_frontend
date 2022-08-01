@@ -6,6 +6,9 @@ import LandingBanner from "../components/Landing/Landing";
 import Weather from "../components/Weather/Weather";
 import OurMission from "../components/OurMission/OurMission.jsx"
 
+import ImageGallery from "../components/ImageGallery/ImageGallery";
+
+
 import Footer from "../components/Footer/Footer";
 
 import Stats from "../components/Stats/Stats";
@@ -24,7 +27,11 @@ export default function Home() {
         <Navbar />
         <LandingBanner />
         <Stats />
+
         <OurMission/>
+
+        <ImageGallery/>
+
         <MapWithNoSSR />
         <Weather />
         <Footer />
