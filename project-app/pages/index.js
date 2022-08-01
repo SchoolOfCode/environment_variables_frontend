@@ -30,8 +30,8 @@ export default function Home() {
         <OurMission />
 
         <ImageGallery />
-        <div className="w-full ml-4 mr-4 mt-4 mb-16 md:w-3/5">
-          <h2 className="text-2xl text font-bold">
+        <div className=" w-3/5 ml-4 mr-4 mt-4 mb-16">
+          <h2 className="text-3xl text-[#004F54] font-bold">
             Find a cleanup near you...
           </h2>
           <MapWithNoSSR />

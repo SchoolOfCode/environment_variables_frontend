@@ -3,14 +3,18 @@ import "leaflet/dist/leaflet.css";
 import { icon } from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { OpenStreetMapProvider, GeoSearchControl } from "leaflet-geosearch";
+import { GestureHandling } from "leaflet-gesture-handling";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
+import "leaflet-gesture-handling/dist/leaflet-gesture-handling.css";
 
 export function ChangeView({ coords }) {
   const map = useMap();
   map.setView(coords, 12);
   return null;
 }
+//stops map from scrolling while hovering over it (user must press ctrl to enable zoom scroll))
+L.Map.addInitHook("addHandler", "gestureHandling", GestureHandling);
 
 const ICON = icon({
   iconUrl: "/litter.svg",
@@ -78,7 +82,12 @@ export default function Map() {
   };
 
   return (
-    <MapContainer center={center} zoom={12} style={{ height: "60vh" }}>
+    <MapContainer
+      center={center}
+      zoom={12}
+      gestureHandling={true}
+      style={{ height: "70vh" }}
+    >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
