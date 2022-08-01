@@ -1,10 +1,13 @@
 .missionTitle {
     font-size: 50px;
+    color: #004F54;
 }
 
 .missionParagraph {
     font-size: 20px;
     margin-top: 15px;
+    color: #004F54;
+
 }
 
 .missionContainer {
@@ -12,13 +15,14 @@
     display: flex;
 }
 
-.paragraphContainer {
+.textContainer {
     display: flex;
     flex-direction: column;
 }
 
-.imageCSS {
+.imageStyling {
     height: 300px;
     width: 300px;
     border-radius: 50%;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
 }

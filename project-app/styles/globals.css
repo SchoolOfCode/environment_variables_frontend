@@ -5,6 +5,7 @@
 body{
   overflow-x: hidden;
   width: 100vw;
+  background-color: brown;
 }
 
 img {
