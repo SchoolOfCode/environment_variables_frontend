@@ -20,7 +20,7 @@ export default function Home() {
       <Head>
         <title>Project Clean-Up|Home</title>
       </Head>
-      <div className={styles.container}>
+      <div className="overflow-hidden font-sans">
         <Navbar />
         <LandingBanner />
         <Stats />
