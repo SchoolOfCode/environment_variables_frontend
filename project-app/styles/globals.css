@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body{
   overflow-x: hidden;
   width: 100vw;
+}
+
+img {
+  border: none;
 }
 
 .geosearch {
@@ -15,11 +18,6 @@ body{
   border: none;
 }
 
-img {
-  border: none;
-}
-.hero-background{
-  width: 100%;
-  height:auto
-}
+
+
 

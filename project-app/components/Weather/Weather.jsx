@@ -34,24 +34,26 @@ const Weather = () => {
   }, []);
 
   return (
-    <div id="weather" className="mt-4">
-      <h2 className="text-6xl font-bold ml-4">Weather Forecast</h2>
-      <div className="weather">
-        <div>
-          <SearchBar
-            handleChange={handleChange}
-            fetchWeather={fetchWeather}
-            city={city}
-          />
-          <WeatherForecast
-            weatherObject={weatherObject}
-            handleChange={handleChange}
-            fetchWeather={fetchWeather}
-            city={city}
-          />
-        </div>
+    <div id="weather" className="mt-8">
+      <h2 className="text-3xl text-[#004F54] md:text-5xl font-bold ml-40">
+        Check The Weather
+      </h2>
+      <div className="flex flex-col sm:flex-row md:justify-start">
+        <SearchBar
+          handleChange={handleChange}
+          fetchWeather={fetchWeather}
+          city={city}
+        />
+        <WeatherReqs />
       </div>
-      <WeatherReqs />
+      <div className="weather">
+        <WeatherForecast
+          weatherObject={weatherObject}
+          handleChange={handleChange}
+          fetchWeather={fetchWeather}
+          city={city}
+        />
+      </div>
     </div>
   );
 };

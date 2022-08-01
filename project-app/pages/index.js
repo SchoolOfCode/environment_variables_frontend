@@ -5,6 +5,9 @@ import Navbar from "../components/Navbar/Navbar";
 import dynamic from "next/dynamic";
 import LandingBanner from "../components/Landing/Landing";
 import Weather from "../components/Weather/Weather";
+
+import Footer from "../components/Footer/Footer";
+
 import Stats from "../components/Stats/Stats";
 
 const MapWithNoSSR = dynamic(() => import("../components/Map/Map.jsx"), {
@@ -17,12 +20,13 @@ export default function Home() {
       <Head>
         <title>Project Clean-Up|Home</title>
       </Head>
-      <div className={styles.container}>
+      <div className="overflow-hidden font-sans">
         <Navbar />
         <LandingBanner />
         <Stats />
         <MapWithNoSSR />
         <Weather />
+        <Footer />
       </div>
     </>
   );
