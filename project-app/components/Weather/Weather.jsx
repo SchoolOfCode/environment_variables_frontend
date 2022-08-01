@@ -26,7 +26,7 @@ const Weather = () => {
     console.log(data);
     setWeatherObject(data);
     //uncomment the below city State after development stage - means each time you make a change, props cant be found
-    setCity("");
+    //setCity("");
   }
 
   useEffect(() => {
