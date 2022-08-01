@@ -16,9 +16,9 @@ const MapWithNoSSR = dynamic(() => import("../components/Map/Map.jsx"), {
 
 export default function Home() {
   return (
-    <>
+    <div className="bg-[#E6E5E4]">
       <Head>
-        <title>Project Clean-Up|Home</title>
+        <title>Project Clean-Up | Home</title>
       </Head>
       <div className="overflow-hidden font-sans">
         <Navbar />
@@ -29,6 +29,6 @@ export default function Home() {
         <Weather />
         <Footer />
       </div>
-    </>
+    </div>
   );
 }

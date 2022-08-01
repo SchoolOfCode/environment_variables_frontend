@@ -4,7 +4,7 @@ import React from "react";
 
 function NavButton( {buttonText}) {
     return (
-        <button className = "bg-orange-500 hover:bg-orange-700 text-black font-bold py-2 px-4 rounded">
+        <button className = "bg-orange-500 hover:bg-orange-700 text-black font-bold py-2 px-4 rounded mt-[20em]">
         {buttonText}
         </button>
     )
