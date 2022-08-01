@@ -8,12 +8,12 @@ const LandingBanner = () => {
       <div className="relative container mx-auto p-4 flex items-center justify-center z-10 h-48 w-2/4 mt-[10rem]">
         <div>
           <div className="flex flex-col justify-center items-center text-center w-[50em]">
-            <h1 className="text-[#004F54]-800 flex justify-center text-[70px] font-semibold leading-none align-center mt-[5em] ">
+            <h1 className="text-[#004F54] flex justify-center text-[70px] font-semibold leading-none align-center mt-[3em] mb-[1em] mt-[4em]">
               Project Clean-Up
             </h1>
             <div className="flex flex-row items-center justify-center space-x-[2em]">
-              <NavButton buttonText="Join A Cleanup" className="flex items-center justify-center ml-[5em]"/>
-              <NavButton buttonText="Start A Cleanup" className="flex items-center justify-center mr-[5em] "/>
+              <NavButton buttonText="Join A Cleanup" className="flex items-center justify-center"/>
+              <NavButton buttonText="Start A Cleanup" className="flex items-center justify-center"/>
             </div>
           </div>
         </div>
