@@ -3,18 +3,22 @@ import "leaflet/dist/leaflet.css";
 import { icon } from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { OpenStreetMapProvider, GeoSearchControl } from "leaflet-geosearch";
+import { GestureHandling } from "leaflet-gesture-handling";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
+import "leaflet-gesture-handling/dist/leaflet-gesture-handling.css";
 
 export function ChangeView({ coords }) {
   const map = useMap();
   map.setView(coords, 12);
   return null;
 }
+//stops map from scrolling while hovering over it (user must press ctrl to enable zoom scroll))
+L.Map.addInitHook("addHandler", "gestureHandling", GestureHandling);
 
 const ICON = icon({
   iconUrl: "/litter.svg",
-  iconSize: [48, 48],
+  iconSize: [38, 38],
 });
 
 export default function Map() {
@@ -78,7 +82,13 @@ export default function Map() {
   };
 
   return (
-    <MapContainer center={center} zoom={12} style={{ height: "50vh" }}>
+    <MapContainer
+      zoomControl={false}
+      center={center}
+      zoom={12}
+      gestureHandling={true}
+      style={{ height: "60vh" }}
+    >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -92,210 +102,32 @@ export default function Map() {
       <DraggableMarker />
       <Marker icon={ICON} position={[50.764687233616314, 0.282817434969637]}>
         <Popup>
-          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
+          <h3 className="text-xs sm:text-sm font-bold underline">
+            Eastbourne Pier Cleanup
+          </h3>
+
+          <span className="text-[9px] sm:text-xs font-bold">Location: </span>
+          <span className="text-[8px]"> Eastbourne Pier</span>
           <br />
-          <span className="text-lg font-bold">Location: </span>
-          <span className="text-lg"> Eastbourne Pier</span>
+
+          <span className="text-[9px] sm:text-xs font-bold">Date: </span>
+          <span className="text-[8px]"> 22.08.22</span>
           <br />
+
+          <span className="text-[9px] sm:text-xs font-bold">Time: </span>
+          <span className="text-[8px] sm:text-md"> 09:00 - 12:00</span>
           <br />
-          <span className="text-lg font-bold">Date: </span>
-          <span className="text-lg"> 22.08.22</span>
+
+          <span className="text-[9px] sm:text-xs font-bold">Host: </span>
+          <span className="text-[8px]"> Blake Lawrence</span>
+
           <br />
-          <br />
-          <span className="text-lg font-bold">Time: </span>
-          <span className="text-lg"> 09:00 - 12:00</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Host: </span>
-          <span className="text-lg"> Blake Lawrence</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Notes: </span>
-          <span className="text-lg">
+          <span className="text-[9px] sm:text-xs font-bold">Notes: </span>
+          <span className="text-[8px]">
             Easy walk, no hills, will be collecting on sand and pavement
           </span>
           <br />
-          <button className="p-2 border rounded bg-[#004F54] p-2 border rounded bg-[#004F54] text-white mt-4">
-            Join
-          </button>
-        </Popup>
-      </Marker>
-      <Marker icon={ICON} position={[50.75557501067619, 0.2649897700883658]}>
-        <Popup>
-          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
-          <br />
-          <span className="text-lg font-bold">Location: </span>
-          <span className="text-lg"> Eastbourne Pier</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Date: </span>
-          <span className="text-lg"> 22.08.22</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Time: </span>
-          <span className="text-lg"> 09:00 - 12:00</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Host: </span>
-          <span className="text-lg"> Blake Lawrence</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Notes: </span>
-          <span className="text-lg">
-            Easy walk, no hills, will be collecting on sand and pavement
-          </span>
-          <br />
-          <button className="p-2 border rounded bg-[#004F54] p-2 border rounded bg-[#004F54] text-white mt-4">
-            Join
-          </button>
-        </Popup>
-      </Marker>
-      <Marker icon={ICON} position={[50.77767391366154, 0.3014166296154623]}>
-        <Popup>
-          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
-          <br />
-          <span className="text-lg font-bold">Location: </span>
-          <span className="text-lg"> Eastbourne Pier</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Date: </span>
-          <span className="text-lg"> 22.08.22</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Time: </span>
-          <span className="text-lg"> 09:00 - 12:00</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Host: </span>
-          <span className="text-lg"> Blake Lawrence</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Notes: </span>
-          <span className="text-lg">
-            Easy walk, no hills, will be collecting on sand and pavement
-          </span>
-          <br />
-          <button className="p-2 border rounded bg-[#004F54] p-2 border rounded bg-[#004F54] text-white mt-4">
-            Join
-          </button>
-        </Popup>
-      </Marker>
-      <Marker icon={ICON} position={[50.75898456492425, 0.2400856926565753]}>
-        <Popup>
-          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
-          <br />
-          <span className="text-lg font-bold">Location: </span>
-          <span className="text-lg"> Eastbourne Pier</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Date: </span>
-          <span className="text-lg"> 22.08.22</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Time: </span>
-          <span className="text-lg"> 09:00 - 12:00</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Host: </span>
-          <span className="text-lg"> Blake Lawrence</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Notes: </span>
-          <span className="text-lg">
-            Easy walk, no hills, will be collecting on sand and pavement
-          </span>
-          <br />
-          <button className="p-2 border rounded bg-[#004F54] text-white mt-4">
-            Join
-          </button>
-        </Popup>
-      </Marker>
-      <Marker icon={ICON} position={[50.78029517229998, -1.075059110234425]}>
-        <Popup>
-          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
-          <br />
-          <span className="text-lg font-bold">Location: </span>
-          <span className="text-lg"> Eastbourne Pier</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Date: </span>
-          <span className="text-lg"> 22.08.22</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Time: </span>
-          <span className="text-lg"> 09:00 - 12:00</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Host: </span>
-          <span className="text-lg"> Blake Lawrence</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Notes: </span>
-          <span className="text-lg">
-            Easy walk, no hills, will be collecting on sand and pavement
-          </span>
-          <br />
-          <button className="p-2 border rounded bg-[#004F54] p-2 border rounded bg-[#004F54] text-white mt-4">
-            Join
-          </button>
-        </Popup>
-      </Marker>
-      <Marker icon={ICON} position={[50.776949712097135, -1.1435608447074601]}>
-        <Popup>
-          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
-          <br />
-          <span className="text-lg font-bold">Location: </span>
-          <span className="text-lg"> Eastbourne Pier</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Date: </span>
-          <span className="text-lg"> 22.08.22</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Time: </span>
-          <span className="text-lg"> 09:00 - 12:00</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Host: </span>
-          <span className="text-lg"> Blake Lawrence</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Notes: </span>
-          <span className="text-lg">
-            Easy walk, no hills, will be collecting on sand and pavement
-          </span>
-          <br />
-          <button className="p-2 border rounded bg-[#004F54] p-2 border rounded bg-[#004F54] text-white mt-4">
-            Join
-          </button>
-        </Popup>
-      </Marker>
-      <Marker icon={ICON} position={[50.80959469871429, -0.5261761200190278]}>
-        <Popup>
-          <h3 className="text-xl font-bold">Eastbourne Pier Cleanup</h3>
-          <br />
-          <span className="text-lg font-bold">Location: </span>
-          <span className="text-lg"> Eastbourne Pier</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Date: </span>
-          <span className="text-lg"> 22.08.22</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Time: </span>
-          <span className="text-lg"> 09:00 - 12:00</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Host: </span>
-          <span className="text-lg"> Blake Lawrence</span>
-          <br />
-          <br />
-          <span className="text-lg font-bold">Notes: </span>
-          <span className="text-lg">
-            Easy walk, no hills, will be collecting on sand and pavement
-          </span>
-          <br />
-          <button className="p-2 border rounded bg-[#004F54] p-2 border rounded bg-[#004F54] text-white mt-4">
+          <button className="flex items-center justify-center w-6 sm:w-10 text-[9px] sm:text-xs p-1 border rounded bg-[#004F54] p-2 border rounded bg-[#004F54] text-white mt-1">
             Join
           </button>
         </Popup>

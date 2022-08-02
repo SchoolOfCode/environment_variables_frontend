@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   overflow-x: hidden;
   width: 100vw;
 
   background-color: #f15100;
-
-
 }
 
 img {
@@ -18,10 +16,3 @@ img {
 .geosearch {
   background-color: rgba(255, 255, 255, 0.66);
 }
-.leaflet-marker-icon {
-  border: none;
-}
-
-
-
-
