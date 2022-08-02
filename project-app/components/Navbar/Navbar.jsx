@@ -40,7 +40,7 @@ const Navbar = () => {
         {
           key: "2",
           label: (
-            <a target="_blank" rel="noopener noreferrer" href="#startclean">
+            <a target="_blank" rel="noopener noreferrer" href="/start-a-clean">
               Start A Cleanup
             </a>
           ),
@@ -48,7 +48,7 @@ const Navbar = () => {
         {
           key: "3",
           label: (
-            <a target="_blank" rel="noopener noreferrer" href="#map">
+            <a href="#map">
               Join A Cleanup
             </a>
           ),
@@ -112,7 +112,7 @@ const Navbar = () => {
               </a>
             </div>
             <div className="p-4">
-              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="#startcleanup">
+              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" target="_blank" rel="noopener noreferrer" href="/start-a-clean">
                 Start A Cleanup
               </a>
             </div>
