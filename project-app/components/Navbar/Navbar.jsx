@@ -56,13 +56,13 @@ const Navbar = () => {
   return (
     <div className="fixed z-20">
       <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
-        <div>Logo</div>
+        <div className="underline rounded-sm p-[5px] bg-[#006C72] text-[#white] text-[20px]">Project Clean-Up</div>
         <Link href="#home">
-          <a className="text-[white] hidden md:flex items-center ">Home</a>
+          <a className="text-[white] hidden md:flex items-center text-xl">Home</a>
         </Link>
         <Dropdown
           overlay={menu}
-          className="text-[white] hidden md:flex items-center"
+          className="text-[white] hidden md:flex items-center text-xl"
         >
           <a onClick={(e) => e.preventDefault()}>
             <Space>
@@ -72,10 +72,10 @@ const Navbar = () => {
           </a>
         </Dropdown>
         <Link href="#weather">
-          <a className="text-[white] hidden md:flex items-center ">Weather</a>
+          <a className="text-[white] hidden md:flex items-center text-xl">Weather</a>
         </Link>
         <Link href="#contact">
-          <a className="text-[white] hidden md:flex items-center ">Contact</a>
+          <a className="text-[white] hidden md:flex items-center text-xl mr-[3em]">Contact</a>
         </Link>
         <AiOutlineMenu
           className="md:hidden absolute inset-y-[2em] right-[2em]"
@@ -91,13 +91,13 @@ const Navbar = () => {
           visible={visible}
           className="text-[#004F54]"
         >
-          <ul className="flex flex-col">
-            <div className="p-4">
-              <a className="text-[#004F54] text-xl" href="#home">
+          <ul className="flex flex-col ">
+            <div className="p-4" >
+              <a className="text-[#004F54] " href="#home">
                 Home
               </a>
             </div>
-            <div className="p-4">
+            <div className="p-4 ">
               <a className="text-[#004F54] text-xl" href="about">
                 About
               </a>

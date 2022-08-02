@@ -2,7 +2,7 @@ import StatCard from "./StatCard";
 
 export default function Stats() {
   return (
-    <div className="p-11">
+    <div className="p-11 bg-[#F1F3F3] bg-[100vw] shadow-xl	">
       <div className="flex justify-around items-center space-x-5">
         <StatCard number="10" text="Cleanups Started" image="/icon-abacus.svg"/>
         <StatCard number="10" text="Kilograms Collected" image="/icon-weight.svg"/>
