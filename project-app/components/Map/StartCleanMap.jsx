@@ -1,10 +1,11 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import "leaflet/dist/leaflet.css";
-import { icon } from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { OpenStreetMapProvider, GeoSearchControl } from "leaflet-geosearch";
+import { GestureHandling } from "leaflet-gesture-handling";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
+import "leaflet-gesture-handling/dist/leaflet-gesture-handling.css";
 
 export function ChangeView({ coords }) {
   const map = useMap();
@@ -15,14 +16,16 @@ export function ChangeView({ coords }) {
 export default function StartCleanMap() {
   const [geoData, setGeoData] = useState({ lat: 51.505, lng: -0.09 });
 
+  L.Map.addInitHook("addHandler", "gestureHandling", GestureHandling);
   const center = [geoData.lat, geoData.lng];
 
   function DraggableMarker() {
     const [draggable, setDraggable] = useState(false);
     const [position, setPosition] = useState([
-      52.817356506889425, 0.8199988022288017,
+      51.51035091584348, -0.11112390032246118,
     ]);
     console.log(position);
+
     const markerRef = useRef(null);
     const eventHandlers = useMemo(
       () => ({
@@ -73,7 +76,13 @@ export default function StartCleanMap() {
   };
 
   return (
-    <MapContainer center={center} zoom={12} style={{ height: "50vh" }}>
+    <MapContainer
+      center={center}
+      zoom={12}
+      zoomControl={false}
+      gestureHandling={true}
+      style={{ height: "50vh" }}
+    >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

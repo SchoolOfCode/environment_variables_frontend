@@ -28,9 +28,7 @@ const StartCleanForm = () => {
         location: Yup.string()
           .max(20, "Must be 20 characters or less")
           .required("Required"),
-        date: Yup.date()
-          //   .max(12, "Must be in format dd.mm.yy")
-          .required("Required"),
+        date: Yup.date().required("Required"),
         startTime: Yup.string()
           .max(8, "Must be 8 characters or less")
           .required("Required"),
@@ -44,10 +42,10 @@ const StartCleanForm = () => {
           .max(50, "Must be 50 characters or less")
           .required("Required"),
         latitude: Yup.number()
-          .max(30, "Must be 30 characters or less")
+          .max(50, "Must be 30 characters or less")
           .required("Required"),
         longitude: Yup.number()
-          .max(30, "Must be 30 characters or less")
+          .max(50, "Must be 30 characters or less")
           .required("Required"),
       })}
       onSubmit={(values, { setSubmitting }) => {

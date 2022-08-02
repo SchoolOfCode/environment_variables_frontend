@@ -15,6 +15,7 @@ export default function startClean() {
     <div className="h-full">
       <Navbar />
       <div className=" h-[30rem]"></div>
+
       <MapWithNoSSR />
 
       <StartCleanForm />
