@@ -102,32 +102,32 @@ export default function Map() {
       <DraggableMarker />
       <Marker icon={ICON} position={[50.764687233616314, 0.282817434969637]}>
         <Popup>
-          <h3 className="text-sm sm:text-base font-bold underline">
+          <h3 className="text-xs sm:text-sm font-bold underline">
             Eastbourne Pier Cleanup
           </h3>
 
-          <span className="text-xs sm:text-sm font-bold">Location: </span>
-          <span className="text-xs"> Eastbourne Pier</span>
+          <span className="text-[9px] sm:text-xs font-bold">Location: </span>
+          <span className="text-[8px]"> Eastbourne Pier</span>
           <br />
 
-          <span className="text-xs sm:text-sm font-bold">Date: </span>
-          <span className="text-xs"> 22.08.22</span>
+          <span className="text-[9px] sm:text-xs font-bold">Date: </span>
+          <span className="text-[8px]"> 22.08.22</span>
           <br />
 
-          <span className="text-xs sm:text-sm font-bold">Time: </span>
-          <span className="text-xs"> 09:00 - 12:00</span>
+          <span className="text-[9px] sm:text-xs font-bold">Time: </span>
+          <span className="text-[8px] sm:text-md"> 09:00 - 12:00</span>
           <br />
 
-          <span className="text-xs sm:text-sm font-bold">Host: </span>
-          <span className="text-xs"> Blake Lawrence</span>
+          <span className="text-[9px] sm:text-xs font-bold">Host: </span>
+          <span className="text-[8px]"> Blake Lawrence</span>
 
           <br />
-          <span className="text-xs sm:text-sm font-bold">Notes: </span>
-          <span className="text-xs">
+          <span className="text-[9px] sm:text-xs font-bold">Notes: </span>
+          <span className="text-[8px]">
             Easy walk, no hills, will be collecting on sand and pavement
           </span>
           <br />
-          <button className="p-1 sm:p-2 border rounded bg-[#004F54] p-2 border rounded bg-[#004F54] text-white mt-2">
+          <button className="flex items-center justify-center w-6 sm:w-10 text-[9px] sm:text-xs p-1 border rounded bg-[#004F54] p-2 border rounded bg-[#004F54] text-white mt-1">
             Join
           </button>
         </Popup>
