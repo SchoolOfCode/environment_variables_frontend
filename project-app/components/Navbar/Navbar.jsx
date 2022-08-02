@@ -58,7 +58,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="fixed z-[1001]">
+    <div className="fixed z-[1002]">
       <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
         <div className="underline rounded-sm p-[5px] bg-[#006C72] text-[#white] text-[20px]">Project Clean-Up</div>
         <Link href="#home">

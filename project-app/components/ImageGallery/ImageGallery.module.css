@@ -2,9 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
-  
-
 }
 
 .Carousel {
@@ -13,7 +10,7 @@
     align-items: center;
     height: 350px;
     width: 500px;
-    margin:50px 0px 100px 0px;
+    margin:50px 0px 0px 0px;
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
 }
 
