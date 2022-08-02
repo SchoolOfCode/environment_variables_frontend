@@ -5,7 +5,7 @@ const WeatherForecast = ({ weatherObject }) => {
     let unix = timeStamp;
     let milliSeconds = unix * 1000;
     let dateObject = new Date(milliSeconds);
-    let displayDate = dateObject.toLocaleString("en-US", { weekday: "long" });
+    let displayDate = dateObject.toLocaleString("en-US", { weekday: "short" });
     return displayDate;
   }
 
@@ -15,14 +15,14 @@ const WeatherForecast = ({ weatherObject }) => {
       {/* TODAYS FORECAST */}
       <div className="flex justify-between md:justify-evenly rounded bg-[#004F54]/75 p-2 md:pt-10 w-full xl:w-2/6 xl:mt-4 xl:mb-4">
         <div>
-          <h2 className="text-2xl text-white lg:text-5xl font-bold mb-6 mt-5">
+          <h2 className="text-3xl text-white lg:text-5xl font-bold mb-6 mt-5">
             Today
           </h2>
 
           <div className="text-xl sm:text-2xl text-white font-bold">
             {weatherObject?.city.name}
           </div>
-          <h2 className="text-3xl text-white lg:text-7xl font-bold mt-3">
+          <h2 className="text-4xl text-white lg:text-7xl font-bold mt-3">
             {Math.floor(weatherObject?.list[0].main.temp)}°C{" "}
           </h2>
           <h2 className=" text-lg sm:text-2xl text-white font-bold">
@@ -69,7 +69,6 @@ const WeatherForecast = ({ weatherObject }) => {
               {datConvertor(weatherObject?.list[8].dt)}
             </p>
             <p className="text-xl sm:text-3xl text-white">
-              {" "}
               {Math.floor(weatherObject?.list[8].main.temp)}°C
             </p>
           </div>
@@ -89,7 +88,6 @@ const WeatherForecast = ({ weatherObject }) => {
               {datConvertor(weatherObject?.list[16].dt)}
             </p>
             <p className="text-xl sm:text-3xl text-white">
-              {" "}
               {Math.floor(weatherObject?.list[16].main.temp)}°C
             </p>
           </div>
@@ -109,7 +107,6 @@ const WeatherForecast = ({ weatherObject }) => {
               {datConvertor(weatherObject?.list[24].dt)}
             </p>
             <p className="text-xl sm:text-3xl text-white">
-              {" "}
               {Math.floor(weatherObject?.list[24].main.temp)}°C
             </p>
           </div>
