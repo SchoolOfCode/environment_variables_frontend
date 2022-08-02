@@ -6,7 +6,7 @@ const WeatherReqs = () => {
   return (
     <>
       <button
-        className="bg-[#004F54] ml-4 md:ml-0 text-white font-bold uppercase text-xs md:text-sm p-2 sm:mt-0 rounded shadow hover:shadow-lg outline-none 
+        className="bg-[#004F54] ml-4 sm:ml-0 text-white font-bold uppercase text-xs md:text-sm p-2 sm:mt-0 rounded shadow hover:shadow-lg outline-none 
         focus:outline-none mr-1 mb-1 ease-linear transition-all duration-100 w-16 sm:w-18"
         type="button"
         onClick={() => setShowModal(true)}
