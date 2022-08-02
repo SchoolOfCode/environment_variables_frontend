@@ -11,7 +11,11 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
-    setVisible(true);
+    if(visible == false){
+      setVisible(true);
+    } else if (visible == true) {
+      setVisible(false)
+    }
   };
 
   const onClose = () => {
@@ -54,7 +58,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="fixed z-20">
+    <div className="fixed z-[1001]">
       <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
         <div className="underline rounded-sm p-[5px] bg-[#006C72] text-[#white] text-[20px]">Project Clean-Up</div>
         <Link href="#home">
@@ -92,33 +96,33 @@ const Navbar = () => {
           className="text-[#004F54]"
         >
           <ul className="flex flex-col ">
-            <div className="p-4" >
-              <a className="text-[#004F54] " href="#home">
+            <div className="p-4 pt-10" >
+              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="#home">
                 Home
               </a>
             </div>
             <div className="p-4 ">
-              <a className="text-[#004F54] text-xl" href="about">
+              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="about">
                 About
               </a>
             </div>
             <div className="p-4">
-              <a className="text-[#004F54] text-xl" href="#map">
+              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="#map">
                 Join A Cleanup
               </a>
             </div>
             <div className="p-4">
-              <a className="text-[#004F54] text-xl" href="#startcleanup">
+              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="#startcleanup">
                 Start A Cleanup
               </a>
             </div>
             <div className="p-4">
-              <a className="text-[#004F54] text-xl" href="#weather">
+              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="#weather">
                 Weather
               </a>
             </div>
             <div className="p-4">
-              <a className="text-[#004F54] text-xl" href="#contact">
+              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="#contact">
                 Contact
               </a>
             </div>
