@@ -19,13 +19,13 @@ const WeatherForecast = ({ weatherObject }) => {
             Today
           </h2>
 
-          <div className="text-2xl text-white font-bold">
+          <div className="text-xl sm:text-2xl text-white font-bold">
             {weatherObject?.city.name}
           </div>
           <h2 className="text-3xl text-white lg:text-7xl font-bold mt-3">
             {Math.floor(weatherObject?.list[0].main.temp)}°C{" "}
           </h2>
-          <h2 className="text-2xl text-white font-bold">
+          <h2 className=" text-lg sm:text-2xl text-white font-bold">
             {weatherObject?.list[0].weather[0].description}
           </h2>
         </div>
@@ -33,98 +33,112 @@ const WeatherForecast = ({ weatherObject }) => {
           <img
             src={`https://openweathermap.org/img/wn/${weatherObject?.list[0].weather[0].icon}@2x.png`}
             viewBox="0 0 32 32"
-            className="fill-current h-48 w-48"
+            className="fill-current w-36 h-36 sm:h-48 sm:w-48"
           />
         </div>
 
         <div className="flex-col content-center mt-5">
-          <h3 className="text-lg font-bold text-white">feels like:</h3>
-          <span className="text-2xl text-white">
+          <h3 className="text-md sm:text-lg font-bold text-white">
+            feels like:
+          </h3>
+          <span className="text-md sm:text-2xl text-white">
             {Math.floor(weatherObject?.list[0].main.feels_like)}°C
           </span>
-          <h3 className="font-bold text-white mt-5 text-lg">humidity:</h3>
-          <span className="text-white text-2xl">
+          <h3 className="font-bold text-white mt-5 text-md sm:text-lg">
+            humidity:
+          </h3>
+          <span className="text-white text-md sm:text-2xl">
             {" "}
             {weatherObject?.list[0].main.humidity}%
           </span>
-          <h3 className="font-bold text-white mt-5 text-lg">wind speed:</h3>
-          <span className="text-white text-2xl">
+          <h3 className="font-bold text-white mt-5 text-md sm:text-lg">
+            wind speed:
+          </h3>
+          <span className="text-white text-md sm:text-2xl">
             {weatherObject?.list[0].wind.speed}m/s
           </span>
         </div>
       </div>
       {/* 5 DAY FORECAST CARDS */}
       {/*Main Div  */}
-      <div className="flex justify-evenly rounded bg-[#004F54]/75 w-full xl:w-7/12 mt-4 mb-4">
+      <div className="flex flex-col sm:flex-row justify-evenly rounded bg-[#004F54]/75 w-full xl:w-7/12 mt-4 mb-4">
         {/* CARD 1 */}
-        <div className="flex flex-col rounded border shadow-lg mt-4 mb-4 w-54 p-4 ml-4 justify-evenly items-center text-xl font-bold mb-4">
-          <p className="text-white">
-            {datConvertor(weatherObject?.list[8].dt)}
-          </p>
-          <p className="text-3xl text-white">
-            {" "}
-            {Math.floor(weatherObject?.list[8].main.temp)}°C
-          </p>
+        <div className="flex flex-row sm:flex-col rounded border shadow-lg mt-4 mb-4 w-54 p-4 ml-2 mr-2 sm:ml-4 justify-evenly items-center text-xl font-bold mb-1 mb-0 sm:mb-4">
+          <div className="flex flex-col">
+            <p className="text-white">
+              {datConvertor(weatherObject?.list[8].dt)}
+            </p>
+            <p className="text-xl sm:text-3xl text-white">
+              {" "}
+              {Math.floor(weatherObject?.list[8].main.temp)}°C
+            </p>
+          </div>
           <img
             src={`https://openweathermap.org/img/wn/${weatherObject?.list[8].weather[0].icon}@2x.png`}
             viewBox="0 0 32 32"
-            className="fill-current h-36 w-36"
+            className="fill-current h-28 w-28 sm:h-36 sm:w-36"
           />
-          <p className="text-white">
+          <p className="text-white text-lg sm:text-xl">
             {weatherObject?.list[8].weather[0].description}
           </p>
         </div>
         {/* CARD 2 */}
-        <div className="flex-col shadow-lg  border rounded mt-4 mb-4 w-54 p-4 ml-4 flex justify-evenly items-center text-xl font-bold mb-4">
-          <p className="text-white">
-            {datConvertor(weatherObject?.list[16].dt)}
-          </p>
-          <p className="text-3xl text-white">
-            {" "}
-            {Math.floor(weatherObject?.list[16].main.temp)}°C
-          </p>
+        <div className="flex flex-row sm:flex-col rounded border shadow-lg mt-4 mb-4 w-54 p-4 ml-2 mr-2 sm:ml-4 justify-evenly items-center text-xl font-bold mb-1 mb-0 sm:mb-4">
+          <div className="flex flex-col">
+            <p className="text-white">
+              {datConvertor(weatherObject?.list[16].dt)}
+            </p>
+            <p className="text-xl sm:text-3xl text-white">
+              {" "}
+              {Math.floor(weatherObject?.list[16].main.temp)}°C
+            </p>
+          </div>
           <img
             src={`https://openweathermap.org/img/wn/${weatherObject?.list[16].weather[0].icon}@2x.png`}
             viewBox="0 0 32 32"
-            className="fill-current h-36 w-36"
+            className="fill-current h-28 w-28 sm:h-36 sm:w-36"
           />
-          <p className="text-white">
+          <p className="text-white text-lg sm:text-xl">
             {weatherObject?.list[16].weather[0].description}
           </p>
         </div>
         {/* CARD 3 */}
-        <div className="flex-col rounded  border shadow-lg mt-4 mb-4 w-54 p-4 ml-4 flex justify-evenly items-center text-xl text-white font-bold mb-4">
-          <p className="text-white">
-            {datConvertor(weatherObject?.list[24].dt)}
-          </p>
-          <p className="text-3xl">
-            {" "}
-            {Math.floor(weatherObject?.list[24].main.temp)}°C
-          </p>
+        <div className="flex flex-row sm:flex-col rounded border shadow-lg mt-4 mb-4 w-54 p-4 ml-2 mr-2 sm:ml-4 justify-evenly items-center text-xl font-bold mb-1 mb-0 sm:mb-4">
+          <div className="flex flex-col">
+            <p className="text-white">
+              {datConvertor(weatherObject?.list[24].dt)}
+            </p>
+            <p className="text-xl sm:text-3xl text-white">
+              {" "}
+              {Math.floor(weatherObject?.list[24].main.temp)}°C
+            </p>
+          </div>
           <img
             src={`https://openweathermap.org/img/wn/${weatherObject?.list[24].weather[0].icon}@2x.png`}
             viewBox="0 0 32 32"
-            className="fill-current h-36 w-36 text-yellow-300"
+            className="fill-current h-28 w-28 sm:h-36 sm:w-36"
           />
-          <p className="text-white">
+          <p className="text-white text-lg sm:text-xl">
             {weatherObject?.list[24].weather[0].description}
           </p>
         </div>
         {/* CARD 4 */}
-        <div className="flex-col rounded  border shadow-lg mt-4 mb-4 w-54 p-4 ml-4 mr-4 flex justify-evenly items-center text-xl font-bold mb-4">
-          <p className="text-white">
-            {datConvertor(weatherObject?.list[32].dt)}
-          </p>
-          <p className="text-3xl text-white">
-            {" "}
-            {Math.floor(weatherObject?.list[32].main.temp)}°C
-          </p>
+        <div className="flex flex-row sm:flex-col rounded border shadow-lg mt-4 mb-4 w-54 p-4 ml-2 mr-2 sm:ml-4 justify-evenly items-center text-xl font-bold mb-1 mb-0 sm:mb-4">
+          <div className="flex flex-col">
+            <p className="text-white">
+              {datConvertor(weatherObject?.list[32].dt)}
+            </p>
+            <p className="text-xl sm:text-3xl text-white">
+              {" "}
+              {Math.floor(weatherObject?.list[32].main.temp)}°C
+            </p>
+          </div>
           <img
             src={`https://openweathermap.org/img/wn/${weatherObject?.list[32].weather[0].icon}@2x.png`}
             viewBox="0 0 32 32"
-            className="fill-current h-36 w-36"
+            className="fill-current h-28 w-28 sm:h-36 sm:w-36"
           />
-          <p className="text-white">
+          <p className="text-white text-lg sm:text-xl">
             {weatherObject?.list[32].weather[0].description}
           </p>
         </div>
