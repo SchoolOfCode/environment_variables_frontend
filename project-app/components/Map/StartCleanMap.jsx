@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback, useRef } from "react";
+import { createContext, useContext, useState, useEffect, useMemo, useCallback, useRef } from "react";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { OpenStreetMapProvider, GeoSearchControl } from "leaflet-geosearch";
@@ -6,6 +6,7 @@ import { GestureHandling } from "leaflet-gesture-handling";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet-gesture-handling/dist/leaflet-gesture-handling.css";
+import { MapContext } from "../../context/MapContext";
 
 export function ChangeView({ coords }) {
   const map = useMap();
@@ -15,16 +16,14 @@ export function ChangeView({ coords }) {
 
 export default function StartCleanMap() {
   const [geoData, setGeoData] = useState({ lat: 51.505, lng: -0.09 });
+  const { setCoords, coords } = useContext(MapContext);
 
   L.Map.addInitHook("addHandler", "gestureHandling", GestureHandling);
   const center = [geoData.lat, geoData.lng];
 
   function DraggableMarker() {
     const [draggable, setDraggable] = useState(false);
-    const [position, setPosition] = useState([
-      51.51035091584348, -0.11112390032246118,
-    ]);
-    console.log(position);
+    //const [position, setPosition] = useState([51.51035091584348, -0.11112390032246118,]); - this was from the original map copy/paste
 
     const markerRef = useRef(null);
     const eventHandlers = useMemo(
@@ -32,7 +31,9 @@ export default function StartCleanMap() {
         dragend() {
           const marker = markerRef.current;
           if (marker != null) {
-            setPosition(marker.getLatLng());
+            console.log("MarkerGetLatLng:", marker.getLatLng())
+            setCoords([marker.getLatLng().lat, marker.getLatLng().lng]);
+            //setPosition([marker.getLatLng().lat, marker.getLatLng().lng]); - this was from the original map copy/paste
           }
         },
       }),
@@ -41,12 +42,11 @@ export default function StartCleanMap() {
     const toggleDraggable = useCallback(() => {
       setDraggable((d) => !d);
     }, []);
-
     return (
       <Marker
         draggable={draggable}
         eventHandlers={eventHandlers}
-        position={position}
+        position={coords}
         ref={markerRef}
       >
         <Popup minWidth={90}>
