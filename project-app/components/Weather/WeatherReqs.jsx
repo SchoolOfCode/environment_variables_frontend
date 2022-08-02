@@ -6,8 +6,8 @@ const WeatherReqs = () => {
   return (
     <>
       <button
-        className="bg-[#004F54] ml-4 sm:ml-2 md:ml-1 text-white font-bold uppercase text-xs md:text-sm rounded shadow hover:shadow-lg outline-none 
-        focus:outline-none mr-1 mb-1 ease-linear transition-all duration-100 w-16 py-1 sm:py-2"
+        className="bg-[#004F54] ml-4 md:ml-0 text-white font-bold uppercase text-xs md:text-sm p-2 sm:mt-0 rounded shadow hover:shadow-lg outline-none 
+        focus:outline-none mr-1 mb-1 ease-linear transition-all duration-100 w-16 sm:w-18"
         type="button"
         onClick={() => setShowModal(true)}
       >
@@ -22,7 +22,7 @@ const WeatherReqs = () => {
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                  <h3 className="ml-4 text-5xl font-bold text-[#004F54]">
+                  <h3 className="ml-6 text-5xl font-bold text-[#004F54]">
                     Weather Tips
                   </h3>
                   <button
