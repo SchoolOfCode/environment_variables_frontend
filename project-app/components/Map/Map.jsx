@@ -110,23 +110,23 @@ export default function Map() {
           </h3>
 
           <span className="text-[9px] sm:text-xs font-bold">Location: </span>
-          <span className="text-[8px]"> Eastbourne Pier</span>
+          <span className="text-[9px] sm:text-xs"> Eastbourne Pier</span>
           <br />
 
           <span className="text-[9px] sm:text-xs font-bold">Date: </span>
-          <span className="text-[8px]"> 22.08.22</span>
+          <span className="text-[9px] sm:text-xs"> 22.08.22</span>
           <br />
 
           <span className="text-[9px] sm:text-xs font-bold">Time: </span>
-          <span className="text-[8px] sm:text-md"> 09:00 - 12:00</span>
+          <span className="text-[9px] sm:text-xs"> 09:00 - 12:00</span>
           <br />
 
           <span className="text-[9px] sm:text-xs font-bold">Host: </span>
-          <span className="text-[8px]"> Blake Lawrence</span>
+          <span className="text-[9px] sm:text-xs"> Blake Lawrence</span>
 
           <br />
           <span className="text-[9px] sm:text-xs font-bold">Notes: </span>
-          <span className="text-[8px]">
+          <span className="text-[9px] sm:text-xs">
             Easy walk, no hills, will be collecting on sand and pavement
           </span>
           <br />
