@@ -37,9 +37,9 @@ export default function Home() {
             Find a cleanup near you...
           </h2>
           <MapWithNoSSR />
+          <a id="weather" className="flex invisible"></a>
         </div>
         <Weather />
-        <a id="weather" className="flex invisible"></a>
         <Footer />
       </div>
     </div>

@@ -72,7 +72,7 @@ const NavbarLogClean = () => {
           </a>
         </Dropdown>
         <Link href="/#weather">
-          <a className="text-[white] hidden md:flex items-center text-xl">
+          <a className="text-[white] hidden md:flex items-center text-xl mr-[3em]">
             Weather
           </a>
         </Link>
@@ -145,17 +145,6 @@ const NavbarLogClean = () => {
                   Weather
                 </a>
               </Link>
-            </div>
-            <div className="p-4">
-              {/* <Link href="/#weather" as={"/weather"}>
-                <a
-                  onClick={() => setVisible(false)}
-                  className="text-[#004F54] text-xl"
-                  href="#contact"
-                >
-                  Contact
-                </a>
-              </Link> */}
             </div>
           </ul>
         </Drawer>

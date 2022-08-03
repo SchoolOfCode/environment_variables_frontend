@@ -28,7 +28,11 @@ const NavbarHome = () => {
         {
           key: "1",
           label: (
-            <a rel="noopener noreferrer" href="/#about">
+            <a
+              className="text-md text-[#004F54]"
+              rel="noopener noreferrer"
+              href="/#about"
+            >
               About Us
             </a>
           ),
@@ -36,19 +40,31 @@ const NavbarHome = () => {
         {
           key: "2",
           label: (
-            <a rel="noopener noreferrer" href="/start-a-clean">
+            <a
+              className="text-md text-[#004F54]"
+              rel="noopener noreferrer"
+              href="/start-a-clean"
+            >
               Start A Cleanup
             </a>
           ),
         },
         {
           key: "3",
-          label: <a href="#map">Join A Cleanup</a>,
+          label: (
+            <a className="text-md text-[#004F54]" href="#map">
+              Join A Cleanup
+            </a>
+          ),
         },
         {
           key: "4",
           label: (
-            <a rel="noopener noreferrer" href="/log-a-clean">
+            <a
+              className="text-md text-[#004F54]"
+              rel="noopener noreferrer"
+              href="/log-a-clean"
+            >
               Log Your Cleanup
             </a>
           ),
