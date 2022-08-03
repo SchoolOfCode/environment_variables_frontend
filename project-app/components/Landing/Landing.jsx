@@ -1,6 +1,7 @@
 import NavButton from "./NavButton/NavButton.jsx";
 import Link from "next/link";
 
+
 const LandingBanner = () => {
   return (
     <div
@@ -9,13 +10,13 @@ const LandingBanner = () => {
       <div className="relative container mx-auto p-4 flex items-center justify-center z-10 h-48 w-2/4 mt-[10rem]">
         <div>
           <div className="flex flex-col justify-center items-center text-center w-[50em]">
-            <h1 className="text-[#004F54] flex justify-center text-[70px] font-semibold leading-none align-center mt-[3em] mb-[1em] mt-[4em]">
+            <h1 className="text-[40px] sm:text-[75px] text-[#004F54] flex justify-center font-semibold leading-none align-center mt-[3em] mb-[1em] mt-[4em]">
               Project Clean-Up
             </h1>
-            <div className="flex flex-row items-center justify-center space-x-[2em]">
+            <div className="flex flex-row items-center justify-center space-x-[2em] sm-">
               <Link href="#map">
                 <a>
-                  <NavButton buttonText="Join A Cleanup" className="flex items-center justify-center"/>
+                  <NavButton buttonText="Join A Cleanup" className="flex items-center justify-center "/>
                 </a>
               </Link>
               <Link target="_blank"
