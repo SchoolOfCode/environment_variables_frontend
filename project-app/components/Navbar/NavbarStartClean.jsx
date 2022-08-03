@@ -6,7 +6,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { Button, Drawer } from "antd";
 import React, { useState } from "react";
 
-const NavbarHome = () => {
+const NavbarStartClean = () => {
   const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
@@ -32,17 +32,18 @@ const NavbarHome = () => {
             </a>
           ),
         },
+
         {
           key: "2",
-          label: (
-            <a target="_blank" rel="noopener noreferrer" href="/start-a-clean">
-              Start A Cleanup
-            </a>
-          ),
+          label: <a href="/#map">Join A Cleanup</a>,
         },
         {
           key: "3",
-          label: <a href="#map">Join A Cleanup</a>,
+          label: (
+            <a rel="noopener noreferrer" href="/log-a-clean">
+              Log Your Cleanup
+            </a>
+          ),
         },
       ]}
     />
@@ -54,7 +55,7 @@ const NavbarHome = () => {
         <div className="underline rounded-sm p-[5px] bg-[#006C72] text-[#white] text-[20px]">
           Project Clean-Up
         </div>
-        <Link href="#home">
+        <Link href="/#home" as={"/"}>
           <a className="text-[white] hidden md:flex items-center text-xl">
             Home
           </a>
@@ -70,16 +71,16 @@ const NavbarHome = () => {
             </Space>
           </a>
         </Dropdown>
-        <Link href="#weather">
+        <Link href="/#weather" as={"/weather"}>
           <a className="text-[white] hidden md:flex items-center text-xl">
             Weather
           </a>
         </Link>
-        <Link href="#contact">
+        {/* <Link href="" as={"/"}>
           <a className="text-[white] hidden md:flex items-center text-xl mr-[3em]">
-            Contact
+            POSSIBLE LOGIN 
           </a>
-        </Link>
+        </Link> */}
         <AiOutlineMenu
           className="md:hidden absolute inset-y-[2em] right-[2em]"
           size={25}
@@ -96,31 +97,34 @@ const NavbarHome = () => {
         >
           <ul className="flex flex-col ">
             <div className="p-4 pt-10">
-              <a
-                onClick={() => setVisible(false)}
-                className="text-[#004F54] text-xl"
-                href="#home"
-              >
-                Home
-              </a>
+              <Link href="/#home" as={"/"}>
+                <a
+                  onClick={() => setVisible(false)}
+                  className="text-[#004F54] text-xl"
+                >
+                  Home
+                </a>
+              </Link>
             </div>
             <div className="p-4 ">
-              <a
-                onClick={() => setVisible(false)}
-                className="text-[#004F54] text-xl"
+              <Link
                 href="about"
+                className="text-[#004F54] text-xl"
+                as={"/about"}
               >
-                About
-              </a>
+                <a onClick={() => setVisible(false)}>About</a>
+              </Link>
             </div>
             <div className="p-4">
-              <a
-                onClick={() => setVisible(false)}
-                className="text-[#004F54] text-xl"
-                href="#map"
-              >
-                Join A Cleanup
-              </a>
+              <Link href="#map" className="text-[#004F54] text-xl" as={"/map"}>
+                <a
+                  onClick={() => setVisible(false)}
+                  className="text-[#004F54] text-xl"
+                  href="#map"
+                >
+                  Join A Cleanup
+                </a>
+              </Link>
             </div>
             <div className="p-4">
               <a
@@ -157,4 +161,4 @@ const NavbarHome = () => {
   );
 };
 
-export default NavbarHome;
+export default NavbarStartClean;

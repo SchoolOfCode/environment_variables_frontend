@@ -11,10 +11,10 @@ const NavbarHome = () => {
   const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
-    if(visible == false){
+    if (visible == false) {
       setVisible(true);
     } else if (visible == true) {
-      setVisible(false)
+      setVisible(false);
     }
   };
 
@@ -28,11 +28,7 @@ const NavbarHome = () => {
         {
           key: "1",
           label: (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="/about"
-            >
+            <a rel="noopener noreferrer" href="/about">
               About Us
             </a>
           ),
@@ -47,9 +43,13 @@ const NavbarHome = () => {
         },
         {
           key: "3",
+          label: <a href="#map">Join A Cleanup</a>,
+        },
+        {
+          key: "4",
           label: (
-            <a href="#map">
-              Join A Cleanup
+            <a rel="noopener noreferrer" href="/log-a-clean">
+              Log Your Cleanup
             </a>
           ),
         },
@@ -60,9 +60,13 @@ const NavbarHome = () => {
   return (
     <div className="fixed z-[1002]">
       <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
-        <div className="underline rounded-sm p-[5px] bg-[#006C72] text-[#white] text-[20px]">Project Clean-Up</div>
+        <div className="underline rounded-sm p-[5px] bg-[#006C72] text-[#white] text-[20px]">
+          Project Clean-Up
+        </div>
         <Link href="#home">
-          <a className="text-[white] hidden md:flex items-center text-xl">Home</a>
+          <a className="text-[white] hidden md:flex items-center text-xl">
+            Home
+          </a>
         </Link>
         <Dropdown
           overlay={menu}
@@ -76,10 +80,14 @@ const NavbarHome = () => {
           </a>
         </Dropdown>
         <Link href="#weather">
-          <a className="text-[white] hidden md:flex items-center text-xl">Weather</a>
+          <a className="text-[white] hidden md:flex items-center text-xl">
+            Weather
+          </a>
         </Link>
         <Link href="#contact">
-          <a className="text-[white] hidden md:flex items-center text-xl mr-[3em]">Contact</a>
+          <a className="text-[white] hidden md:flex items-center text-xl mr-[3em]">
+            Contact
+          </a>
         </Link>
         <AiOutlineMenu
           className="md:hidden absolute inset-y-[2em] right-[2em]"
@@ -96,33 +104,58 @@ const NavbarHome = () => {
           className="text-[#004F54]"
         >
           <ul className="flex flex-col ">
-            <div className="p-4 pt-10" >
-              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="#home">
+            <div className="p-4 pt-10">
+              <a
+                onClick={() => setVisible(false)}
+                className="text-[#004F54] text-xl"
+                href="#home"
+              >
                 Home
               </a>
             </div>
             <div className="p-4 ">
-              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="about">
+              <a
+                onClick={() => setVisible(false)}
+                className="text-[#004F54] text-xl"
+                href="about"
+              >
                 About
               </a>
             </div>
             <div className="p-4">
-              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="#map">
+              <a
+                onClick={() => setVisible(false)}
+                className="text-[#004F54] text-xl"
+                href="#map"
+              >
                 Join A Cleanup
               </a>
             </div>
             <div className="p-4">
-              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" rel="noopener noreferrer" href="/start-a-clean">
+              <a
+                onClick={() => setVisible(false)}
+                className="text-[#004F54] text-xl"
+                rel="noopener noreferrer"
+                href="/start-a-clean"
+              >
                 Start A Cleanup
               </a>
             </div>
             <div className="p-4">
-              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="#weather">
+              <a
+                onClick={() => setVisible(false)}
+                className="text-[#004F54] text-xl"
+                href="#weather"
+              >
                 Weather
               </a>
             </div>
             <div className="p-4">
-              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="#contact">
+              <a
+                onClick={() => setVisible(false)}
+                className="text-[#004F54] text-xl"
+                href="#contact"
+              >
                 Contact
               </a>
             </div>
