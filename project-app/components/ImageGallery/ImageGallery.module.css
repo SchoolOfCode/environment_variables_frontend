@@ -1,3 +1,10 @@
+/* @media (max-width: 500px){
+    .Carousel{
+        height: 100px;
+        width: 200px;
+    }
+} */
+
 .imageContainer {
     display: flex;
     justify-content: center;
