@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import {
   AiFillFacebook,
   AiFillInstagram,
@@ -27,8 +27,7 @@ export default function Footer() {
       </div>
       <p className="text-base pl-[4%] tracking-wider font-normal text-gray-50">
         Copyright &copy;2022
-        
       </p>
     </footer>
-  );
+  )
 }

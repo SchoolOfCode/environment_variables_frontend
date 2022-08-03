@@ -7,6 +7,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { Button, Drawer } from "antd";
 import React, { useState } from "react";
 
+
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
 
@@ -118,12 +119,12 @@ const Navbar = () => {
             </div>
             <div className="p-4">
               <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="#weather">
-                Weather
+                Weather jena
               </a>
             </div>
             <div className="p-4">
               <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" href="#contact">
-                Contact
+               Contact
               </a>
             </div>
           </ul>

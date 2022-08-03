@@ -4,9 +4,11 @@ import * as Yup from "yup";
 import data from "../../libs/startLib";
 import { MapContext } from "../../context/MapContext";
 
+
 const StartCleanForm = () => {
   const { setCoords, coords } = useContext(MapContext);
   console.log("Form Coordinates:", coords);
+
 
   return (
     <Formik
