@@ -1,15 +1,15 @@
 import LogCleanForm from "../components/Forms/LogClean";
-import Navbar from "../components/Navbar/Navbar";
+import NavbarLogClean from "../components/Navbar/NavbarLogClean";
 import Footer from "../components/Footer/Footer";
 
 export default function LogClean() {
   return (
     <div className="h-full">
-      <Navbar />
+      <NavbarLogClean />
       <div className="h-[70%] p-[4rem]">
-      <LogCleanForm />
+        <LogCleanForm />
       </div>
-     
+
       <Footer />
     </div>
   );

@@ -6,7 +6,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { Button, Drawer } from "antd";
 import React, { useState } from "react";
 
-const NavbarStartClean = () => {
+const NavbarLogClean = () => {
   const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
@@ -40,8 +40,8 @@ const NavbarStartClean = () => {
         {
           key: "3",
           label: (
-            <a rel="noopener noreferrer" href="/log-a-clean">
-              Log Your Cleanup
+            <a rel="noopener noreferrer" href="/start-a-clean">
+              Start A Cleanup
             </a>
           ),
         },
@@ -127,12 +127,12 @@ const NavbarStartClean = () => {
               </Link>
             </div>
             <div className="p-4">
-              <Link href="/log-a-clean">
+              <Link href="/start-a-clean">
                 <a
                   onClick={() => setVisible(false)}
                   className="text-[#004F54] text-xl"
                 >
-                  Log Your Cleanup
+                  Start A Cleanup
                 </a>
               </Link>
             </div>
@@ -164,4 +164,4 @@ const NavbarStartClean = () => {
   );
 };
 
-export default NavbarStartClean;
+export default NavbarLogClean;

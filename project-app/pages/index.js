@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Navbar from "../components/Navbar/Navbar";
+import NavbarHome from "../components/Navbar/NavbarHome";
 import dynamic from "next/dynamic";
 import LandingBanner from "../components/Landing/Landing";
 import Weather from "../components/Weather/Weather";
@@ -23,10 +23,10 @@ export default function Home() {
         <title>Project Clean-Up | Home</title>
       </Head>
       <div className="overflow-hidden font-sans">
-        <Navbar />
+        <NavbarHome />
         <LandingBanner />
         <Stats />
-
+        <a id="about" className="flex invisible pb-[100px]"></a>
         <OurMission />
 
         <ImageGallery />
@@ -39,6 +39,7 @@ export default function Home() {
           <MapWithNoSSR />
         </div>
         <Weather />
+        <a id="weather" className="flex invisible"></a>
         <Footer />
       </div>
     </div>

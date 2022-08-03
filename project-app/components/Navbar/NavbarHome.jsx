@@ -28,7 +28,7 @@ const NavbarHome = () => {
         {
           key: "1",
           label: (
-            <a rel="noopener noreferrer" href="/about">
+            <a rel="noopener noreferrer" href="/#about">
               About Us
             </a>
           ),
@@ -36,7 +36,7 @@ const NavbarHome = () => {
         {
           key: "2",
           label: (
-            <a target="_blank" rel="noopener noreferrer" href="/start-a-clean">
+            <a rel="noopener noreferrer" href="/start-a-clean">
               Start A Cleanup
             </a>
           ),
@@ -117,9 +117,19 @@ const NavbarHome = () => {
               <a
                 onClick={() => setVisible(false)}
                 className="text-[#004F54] text-xl"
-                href="about"
+                href="/#about"
               >
                 About
+              </a>
+            </div>
+            <div className="p-4">
+              <a
+                onClick={() => setVisible(false)}
+                className="text-[#004F54] text-xl"
+                rel="noopener noreferrer"
+                href="/start-a-clean"
+              >
+                Start A Cleanup
               </a>
             </div>
             <div className="p-4">
@@ -135,10 +145,9 @@ const NavbarHome = () => {
               <a
                 onClick={() => setVisible(false)}
                 className="text-[#004F54] text-xl"
-                rel="noopener noreferrer"
-                href="/start-a-clean"
+                href="/log-a-clean"
               >
-                Start A Cleanup
+                Log Your Cleanup
               </a>
             </div>
             <div className="p-4">
