@@ -7,6 +7,7 @@ import { GestureHandling } from "leaflet-gesture-handling";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet-gesture-handling/dist/leaflet-gesture-handling.css";
+import { JoinCleanModal, JoinCleanForm } from "../Forms/JoinClean";
 
 export function ChangeView({ coords }) {
   const map = useMap();
@@ -129,9 +130,7 @@ export default function Map() {
             Easy walk, no hills, will be collecting on sand and pavement
           </span>
           <br />
-          <button className="flex items-center justify-center w-6 sm:w-10 text-[9px] sm:text-xs p-1 border rounded bg-[#004F54] p-2 border rounded bg-[#004F54] text-white mt-1">
-            Join
-          </button>
+          <JoinCleanModal />
         </Popup>
       </Marker>
     </MapContainer>
