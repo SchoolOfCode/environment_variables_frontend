@@ -16,8 +16,8 @@ Our back-end is hosted in a different repository. You can find it and its docume
 
 
 ## Tech Stack
-**Client:** Next,js, TailwindCSS, Auth0
-**Server:** Node, Express
+- **Client:** Next,js, TailwindCSS, Auth0
+- **Server:** Node, Express
 
 
 ## Demo
