@@ -1,4 +1,4 @@
-const data = [
+const dataStartClean = [
   {
     userID: 2,
     cleanName: "putney clean",
@@ -12,4 +12,4 @@ const data = [
   },
 ];
 
-export default data;
+export default dataStartClean;

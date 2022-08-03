@@ -34,7 +34,7 @@ const Weather = () => {
   }, []);
 
   return (
-    <div id="weather" className="mt-8">
+    <div className="mt-8">
       <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#004F54] font-bold ml-4">
         Check The Weather...
       </h2>
@@ -46,6 +46,7 @@ const Weather = () => {
         />
         <WeatherReqs />
       </div>
+
       <div className="weather">
         <WeatherForecast
           weatherObject={weatherObject}
