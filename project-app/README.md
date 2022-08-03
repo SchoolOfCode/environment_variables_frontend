@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Clean-up
+A School of Code final project, by The Environment Variables.
 
-## Getting Started
+It is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), styled with Tailwind CSS and deployed on Netlify.
 
-First, run the development server:
+Our back-end is hosted in a different repository. You can find it and its documentation [here](https://github.com/SchoolOfCode/environment_variables_backend).
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Authors (aka, The Environment Variables)
+- [Emma Gill](https://github.com/SurfingElectron)
+- [Amira Gucher-Blackman](https://github.com/amiragucher)
+- [Blake Lawrence](https://github.com/BlakeLawrence)
+- [Edgaras Markunas](https://github.com/EdMark11)
+- [Simran Rai](https://github.com/srai98i)
+- [Jena Zubaydi](https://github.com/jena-84)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Tech Stack
+**Client:** Next,js, TailwindCSS, Auth0
+**Server:** Node, Express
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+## Demo
+Our app is currently deployed on Netlify, and you can check it out [here](https://main--neon-fenglisu-2f7d12.netlify.app/).
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Lessons Learned
+What did you learn while building this project? What challenges did you face and how did you overcome them?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Appendix - 3rd Party Documentation
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind Documentation](https://tailwindcss.com/docs/installation) 
+- [Auth0 Documentation](https://auth0.com/docs)
+- [Leaflet Documentation](https://leafletjs.com/reference.html)
+    - [Leaflet Geosearch](https://smeijer.github.io/leaflet-geosearch/)
+    - [Leaflet Gesture Handling](https://www.npmjs.com/package/leaflet-gesture-handling)
+- [Formik Documentation](https://formik.org/docs/overview)
+- [Yup Documentation](https://github.com/jquense/yup)
+- [FontSource Documentation](https://fontsource.org/docs/introduction)
+- [Netlify Documenation](https://docs.netlify.com/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Appendix - Useful Resources
+- [Tailwind cheatsheet](https://nerdcave.com/tailwind-cheat-sheet)
