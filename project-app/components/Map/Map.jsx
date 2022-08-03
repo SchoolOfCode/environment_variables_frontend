@@ -95,10 +95,12 @@ export default function Map() {
       />
       <Search provider={new OpenStreetMapProvider()} />
 
-      {geoData.lat && geoData.lng && (
+      {/* this is for the standard marker on refresh that we dont want */}
+      {/* {geoData.lat && geoData.lng && (
         <Marker position={[geoData.lat, geoData.lng]} />
-      )}
+      )} */}
       <ChangeView coords={center} />
+
       <DraggableMarker />
       <Marker icon={ICON} position={[50.764687233616314, 0.282817434969637]}>
         <Popup>

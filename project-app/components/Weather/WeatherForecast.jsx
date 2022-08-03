@@ -1,6 +1,7 @@
 import React from "react";
 
 const WeatherForecast = ({ weatherObject }) => {
+  //converts the map api's unix stamp into a readable date
   function datConvertor(timeStamp) {
     let unix = timeStamp;
     let milliSeconds = unix * 1000;
@@ -10,10 +11,10 @@ const WeatherForecast = ({ weatherObject }) => {
   }
 
   return (
-    //main div container
+    //main weather container
     <div className=" flex flex-col xl:flex-row justify-between md:justify-evenly mb-4 mt-4 ml-4 mr-4 bg-[url('/weather-background.jpg')] bg-cover">
-      {/* TODAYS FORECAST */}
-      <div className="flex justify-between md:justify-evenly rounded bg-[#004F54]/75 p-2 md:pt-10 w-full xl:w-2/6 xl:mt-4 xl:mb-4">
+      {/* TODAY*/}
+      <div className="flex justify-between md:justify-evenly rounded bg-[#004F54]/50 p-2 md:pt-10 w-full xl:w-2/6 xl:mt-4 xl:mb-4">
         <div>
           <h2 className="text-3xl text-white lg:text-5xl font-bold mb-6 mt-5">
             Today
@@ -33,7 +34,7 @@ const WeatherForecast = ({ weatherObject }) => {
           <img
             src={`https://openweathermap.org/img/wn/${weatherObject?.list[0].weather[0].icon}@2x.png`}
             viewBox="0 0 32 32"
-            className="fill-current w-36 h-36 sm:h-48 sm:w-48"
+            className="fill-current w-36 h-36 sm:h-44 sm:w-44"
           />
         </div>
 
@@ -59,9 +60,9 @@ const WeatherForecast = ({ weatherObject }) => {
           </span>
         </div>
       </div>
-      {/* 5 DAY FORECAST CARDS */}
+      {/* NEXT 4 DAY FORECAST CARDS */}
       {/*Main Div  */}
-      <div className="flex flex-col sm:flex-row justify-evenly rounded bg-[#004F54]/75 w-full xl:w-7/12 mt-4 mb-4">
+      <div className="flex flex-col sm:flex-row justify-evenly rounded bg-[#004F54]/50 w-full xl:w-7/12 mt-4 mb-4">
         {/* CARD 1 */}
         <div className="flex flex-row sm:flex-col rounded border shadow-lg mt-4 mb-4 w-54 p-4 ml-2 mr-2 sm:ml-4 justify-evenly items-center text-xl font-bold mb-0 sm:mb-4">
           <div className="flex flex-col">
