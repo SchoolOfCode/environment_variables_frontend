@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-
 import data from "../../libs";
 
 const LogCleanForm = () => {
@@ -36,47 +35,60 @@ const LogCleanForm = () => {
         }, 400);
       }}
     >
-      <Form>
+      <Form className="w-[60%] p-[4rem] ml-[22%]">
+      <p className="text-3xl font-medium text-left m-[1] p-[0] pl-[34%] text-[#004F54]">Log A Clean</p>
+      <div className="ml-[25%]">
         <label
           htmlFor="cleanID"
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900"
+          className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
         >
           Clean ID
         </label>
         <Field
-          className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           name="cleanID"
           type="text"
+          placeholder="324-123"
+          className="w-[50%] h-[3rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
         />
         <ErrorMessage name="cleanID" />
 
-        <label htmlFor="userID">User ID</label>
+        <label 
+        htmlFor="userID"
+        className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900">User ID</label>
         <Field
           name="userID"
           type="text"
-          className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          placeholder="324-123"
+          className="w-[50%] h-[3rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          
         />
         <ErrorMessage name="userID" />
 
-        <label htmlFor="bagsCollected">Bags Collected</label>
+        <label 
+        htmlFor="bagsCollected"
+        className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900">Bags Collected</label>
         <Field
           name="bagsCollected"
           type="text"
-          className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          placeholder="50"
+          className="w-[50%] h-[3rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
         />
         <ErrorMessage name="bagsCollected" />
 
-        <label htmlFor="volunteers">Volunteers</label>
+        <label 
+        htmlFor="volunteers"
+        className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900">Volunteers</label>
         <Field
           name="volunteers"
           type="text"
-          className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          placeholder="15"
+          className="w-[50%] h-[3rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
         />
         <ErrorMessage name="volunteers" />
-
-        <button
+         </div>
+         <button
           type="submit"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="text-white uppercase tracking-widest m-[1.2rem] ml-[32%]  bg-[#FF9505] hover:bg-orange-700  focus:outline-none font-medium rounded-lg text-lg sm:w-auto px-[3rem] py-2.5 text-center"
         >
           Submit
         </button>

@@ -21,10 +21,9 @@ export default function startClean() {
     <MapContext.Provider value={{ setCoords, coords }}>
       <div className="h-full">
         <Navbar />
-        <div className=" h-[30rem]"></div>
-
+        <div className="h-[auto] w-[75%] pl-[25%]">
         <MapWithNoSSR />
-
+        </div>
         <StartCleanForm coords={coords} />
         <Footer />
       </div>

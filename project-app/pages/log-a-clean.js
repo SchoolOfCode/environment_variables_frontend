@@ -6,8 +6,10 @@ export default function LogClean() {
   return (
     <div className="h-full">
       <Navbar />
-      <div className=" h-[30rem]"></div>
+      <div className="h-[70%] p-[4rem]">
       <LogCleanForm />
+      </div>
+     
       <Footer />
     </div>
   );
