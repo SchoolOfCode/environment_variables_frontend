@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import data from "../../libs/startLib";
-import { MapContext } from "../../context/MapContext"
+import { MapContext } from "../../context/MapContext";
 
 const StartCleanForm = () => {
   const { setCoords, coords } = useContext(MapContext);
-  console.log("Form Coordinates:", coords)
+  console.log("Form Coordinates:", coords);
 
   return (
     <Formik
@@ -45,10 +45,8 @@ const StartCleanForm = () => {
         notes: Yup.string()
           .max(50, "Must be 50 characters or less")
           .required("Required"),
-        latitude: Yup.number()
-          .required("Required"),
-        longitude: Yup.number()
-          .required("Required"),
+        latitude: Yup.number(),
+        longitude: Yup.number(),
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
