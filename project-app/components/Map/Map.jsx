@@ -7,6 +7,7 @@ import { GestureHandling } from "leaflet-gesture-handling";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet-gesture-handling/dist/leaflet-gesture-handling.css";
+import { JoinCleanModal, JoinCleanForm } from "../Forms/JoinClean";
 
 export function ChangeView({ coords }) {
   const map = useMap();
@@ -95,10 +96,12 @@ export default function Map() {
       />
       <Search provider={new OpenStreetMapProvider()} />
 
-      {geoData.lat && geoData.lng && (
+      {/* this is for the standard marker on refresh that we dont want */}
+      {/* {geoData.lat && geoData.lng && (
         <Marker position={[geoData.lat, geoData.lng]} />
-      )}
+      )} */}
       <ChangeView coords={center} />
+
       <DraggableMarker />
       <Marker icon={ICON} position={[50.764687233616314, 0.282817434969637]}>
         <Popup>
@@ -107,29 +110,27 @@ export default function Map() {
           </h3>
 
           <span className="text-[9px] sm:text-xs font-bold">Location: </span>
-          <span className="text-[8px]"> Eastbourne Pier</span>
+          <span className="text-[9px] sm:text-xs"> Eastbourne Pier</span>
           <br />
 
           <span className="text-[9px] sm:text-xs font-bold">Date: </span>
-          <span className="text-[8px]"> 22.08.22</span>
+          <span className="text-[9px] sm:text-xs"> 22.08.22</span>
           <br />
 
           <span className="text-[9px] sm:text-xs font-bold">Time: </span>
-          <span className="text-[8px] sm:text-md"> 09:00 - 12:00</span>
+          <span className="text-[9px] sm:text-xs"> 09:00 - 12:00</span>
           <br />
 
           <span className="text-[9px] sm:text-xs font-bold">Host: </span>
-          <span className="text-[8px]"> Blake Lawrence</span>
+          <span className="text-[9px] sm:text-xs"> Blake Lawrence</span>
 
           <br />
           <span className="text-[9px] sm:text-xs font-bold">Notes: </span>
-          <span className="text-[8px]">
+          <span className="text-[9px] sm:text-xs">
             Easy walk, no hills, will be collecting on sand and pavement
           </span>
           <br />
-          <button className="flex items-center justify-center w-6 sm:w-10 text-[9px] sm:text-xs p-1 border rounded bg-[#004F54] p-2 border rounded bg-[#004F54] text-white mt-1">
-            Join
-          </button>
+          <JoinCleanModal />
         </Popup>
       </Marker>
     </MapContainer>

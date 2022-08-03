@@ -1,3 +1,9 @@
+@media (max-width: 750px){
+    .imageStyling{
+        display: none;
+    }
+}
+
 .missionTitle {
     font-size: 50px;
     color: #004F54;

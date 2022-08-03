@@ -1,5 +1,5 @@
 import StartCleanForm from "../components/Forms/StartClean";
-import Navbar from "../components/Navbar/Navbar";
+import NavbarStartClean from "../components/Navbar/NavbarStartClean";
 import Footer from "../components/Footer/Footer";
 import dynamic from "next/dynamic";
 import { useContext, createContext, useState } from "react";
@@ -20,11 +20,10 @@ export default function startClean() {
   return (
     <MapContext.Provider value={{ setCoords, coords }}>
       <div className="h-full">
-        <Navbar />
-        <div className=" h-[30rem]"></div>
-
+        <NavbarStartClean />
+        <div className="h-[auto] w-[75%] pl-[25%]">
         <MapWithNoSSR />
-
+        </div>
         <StartCleanForm coords={coords} />
         <Footer />
       </div>
