@@ -45,7 +45,7 @@ const NavbarHome = () => {
               rel="noopener noreferrer"
               href="/start-a-clean"
             >
-              Start A Cleanup
+              Start Cleanup
             </a>
           ),
         },
@@ -53,7 +53,7 @@ const NavbarHome = () => {
           key: "3",
           label: (
             <a className="text-md text-[#004F54]" href="#map">
-              Join A Cleanup
+              Join Cleanup
             </a>
           ),
         },
@@ -65,7 +65,7 @@ const NavbarHome = () => {
               rel="noopener noreferrer"
               href="/log-a-clean"
             >
-              Log Your Cleanup
+              Log Cleanup
             </a>
           ),
         },
@@ -145,7 +145,7 @@ const NavbarHome = () => {
                 rel="noopener noreferrer"
                 href="/start-a-clean"
               >
-                Start A Cleanup
+                Start Cleanup
               </a>
             </div>
             <div className="p-4">
@@ -154,7 +154,7 @@ const NavbarHome = () => {
                 className="text-[#004F54] text-xl"
                 href="#map"
               >
-                Join A Cleanup
+                Join Cleanup
               </a>
             </div>
             <div className="p-4">
@@ -163,7 +163,7 @@ const NavbarHome = () => {
                 className="text-[#004F54] text-xl"
                 href="/log-a-clean"
               >
-                Log Your Cleanup
+                Log Cleanup
               </a>
             </div>
             <div className="p-4">

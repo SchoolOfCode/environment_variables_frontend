@@ -35,13 +35,13 @@ const NavbarLogClean = () => {
 
         {
           key: "2",
-          label: <a href="/#map">Join A Cleanup</a>,
+          label: <a href="/#map">Join Cleanup</a>,
         },
         {
           key: "3",
           label: (
             <a rel="noopener noreferrer" href="/start-a-clean">
-              Start A Cleanup
+              Start Cleanup
             </a>
           ),
         },
@@ -122,7 +122,7 @@ const NavbarLogClean = () => {
                   onClick={() => setVisible(false)}
                   className="text-[#004F54] text-xl"
                 >
-                  Join A Cleanup
+                  Join Cleanup
                 </a>
               </Link>
             </div>
@@ -132,7 +132,7 @@ const NavbarLogClean = () => {
                   onClick={() => setVisible(false)}
                   className="text-[#004F54] text-xl"
                 >
-                  Start A Cleanup
+                  Start Cleanup
                 </a>
               </Link>
             </div>
