@@ -112,7 +112,7 @@ const Navbar = () => {
               </a>
             </div>
             <div className="p-4">
-              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" target="_blank" rel="noopener noreferrer" href="/start-a-clean">
+              <a onClick={ () => setVisible(false)} className="text-[#004F54] text-xl" rel="noopener noreferrer" href="/start-a-clean">
                 Start A Cleanup
               </a>
             </div>
