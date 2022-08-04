@@ -8,6 +8,7 @@ import Image from "next/image";
 const StartCleanForm = () => {
   const { setCoords, coords } = useContext(MapContext);
   const [showModal, setShowModal] = React.useState(false);
+  console.log("co-ords from form page:", coords);
 
   return (
     <Formik
@@ -25,7 +26,7 @@ const StartCleanForm = () => {
       }}
       validationSchema={Yup.object({
         userID: Yup.string()
-          .max(5, "Must be 5 characters or less")
+          .max(10, "Must be 10 characters or less")
           .required("Required"),
         cleanName: Yup.string()
           .max(20, "Must be 20 characters or less")
@@ -41,7 +42,7 @@ const StartCleanForm = () => {
           .max(8, "Must be 8 characters or less")
           .required("Required"),
         host: Yup.string()
-          .max(20, "Must be 20 characters or less")
+          .max(15, "Must be 15 characters or less")
           .required("Required"),
         notes: Yup.string()
           .max(50, "Must be 50 characters or less")
@@ -53,6 +54,7 @@ const StartCleanForm = () => {
         setTimeout(() => {
           dataStartClean.push(values); // substitute for post req
           console.log("data has been pushed", dataStartClean);
+          console.log("values", values);
           setSubmitting(false);
         }, 400);
       }}
@@ -124,7 +126,7 @@ const StartCleanForm = () => {
             Start Time
           </label>
           <Field
-            placeholder="09:00"
+            placeholder="10:00"
             name="startTime"
             type="text"
             className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
@@ -138,7 +140,7 @@ const StartCleanForm = () => {
             End Time
           </label>
           <Field
-            placeholder="20:00"
+            placeholder="13:00"
             name="endTime"
             type="text"
             className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
@@ -180,6 +182,7 @@ const StartCleanForm = () => {
             latitude
           </label>
           <Field
+            as="input"
             value={coords[0]}
             name="latitude"
             type="number"
@@ -194,6 +197,7 @@ const StartCleanForm = () => {
             longitude
           </label>
           <Field
+            as="input"
             value={coords[1]}
             name="longitude"
             type="number"
