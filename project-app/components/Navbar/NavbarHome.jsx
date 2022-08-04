@@ -1,11 +1,15 @@
-// import SocialMedia from "../SocialMedia/SocialMedia"
-import { DownOutlined, SmileOutlined } from "@ant-design/icons";
-import { Dropdown, Menu, Space } from "antd";
-import "antd/dist/antd.css";
-import Link from "next/link";
-import { AiOutlineMenu } from "react-icons/ai";
-import { Button, Drawer } from "antd";
+//Importing packages
 import React, { useState } from "react";
+import Link from "next/link";
+import { useUser} from '@auth0/nextjs-auth0';
+
+//Importing AntDesign Components
+import "antd/dist/antd.css";
+import { Drawer, Dropdown, Menu, Space } from "antd";
+
+//Importing icons
+import { DownOutlined } from "@ant-design/icons";
+import { AiOutlineMenu } from "react-icons/ai";
 
 const NavbarHome = () => {
   const [visible, setVisible] = useState(false);
