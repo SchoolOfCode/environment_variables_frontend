@@ -1,4 +1,12 @@
-import { createContext, useContext, useState, useEffect, useMemo, useCallback, useRef } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  useRef,
+} from "react";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { OpenStreetMapProvider, GeoSearchControl } from "leaflet-geosearch";
@@ -10,20 +18,19 @@ import { MapContext } from "../../context/MapContext";
 
 export function ChangeView({ coords }) {
   const map = useMap();
-  map.setView(coords, 12);
+  map.setView(coords);
   return null;
 }
 
 export default function StartCleanMap() {
   const [geoData, setGeoData] = useState({ lat: 51.505, lng: -0.09 });
   const { setCoords, coords } = useContext(MapContext);
+  console.log("co-ords from startMapClean component:", coords);
 
-  L.Map.addInitHook("addHandler", "gestureHandling", GestureHandling);
-  const center = [geoData.lat, geoData.lng];
+  const center = [coords[0], coords[1]];
 
   function DraggableMarker() {
-    const [draggable, setDraggable] = useState(false);
-    //const [position, setPosition] = useState([51.51035091584348, -0.11112390032246118,]); - this was from the original map copy/paste
+    const [draggable, setDraggable] = useState(true);
 
     const markerRef = useRef(null);
     const eventHandlers = useMemo(
@@ -31,9 +38,8 @@ export default function StartCleanMap() {
         dragend() {
           const marker = markerRef.current;
           if (marker != null) {
-            console.log("MarkerGetLatLng:", marker.getLatLng())
+            console.log("MarkerGetLatLng:", marker.getLatLng());
             setCoords([marker.getLatLng().lat, marker.getLatLng().lng]);
-            //setPosition([marker.getLatLng().lat, marker.getLatLng().lng]); - this was from the original map copy/paste
           }
         },
       }),
@@ -48,15 +54,7 @@ export default function StartCleanMap() {
         eventHandlers={eventHandlers}
         position={coords}
         ref={markerRef}
-      >
-        <Popup minWidth={90}>
-          <span onClick={toggleDraggable}>
-            {draggable
-              ? "Marker is now draggable"
-              : "Click here to enable drag"}
-          </span>
-        </Popup>
-      </Marker>
+      ></Marker>
     );
   }
   const Search = (props) => {
@@ -80,7 +78,6 @@ export default function StartCleanMap() {
       center={center}
       zoom={12}
       zoomControl={false}
-      gestureHandling={true}
       style={{ height: "50vh" }}
     >
       <TileLayer
@@ -88,10 +85,6 @@ export default function StartCleanMap() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Search provider={new OpenStreetMapProvider()} />
-
-      {geoData.lat && geoData.lng && (
-        <Marker position={[geoData.lat, geoData.lng]} />
-      )}
       <ChangeView coords={center} />
       <DraggableMarker />
     </MapContainer>
