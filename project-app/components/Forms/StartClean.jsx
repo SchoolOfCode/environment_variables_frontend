@@ -182,7 +182,6 @@ const StartCleanForm = () => {
             latitude
           </label>
           <Field
-            as="input"
             value={coords[0]}
             name="latitude"
             type="number"
@@ -197,7 +196,6 @@ const StartCleanForm = () => {
             longitude
           </label>
           <Field
-            as="input"
             value={coords[1]}
             name="longitude"
             type="number"
