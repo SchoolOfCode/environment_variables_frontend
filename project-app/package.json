@@ -22,6 +22,7 @@
     "leaflet-geosearch": "^3.6.1",
     "leaflet-gesture-handling": "^1.2.2",
     "next": "12.2.3",
+    "nodemailer": "^6.7.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
