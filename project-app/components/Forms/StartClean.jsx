@@ -66,10 +66,10 @@ const StartCleanForm = () => {
             htmlFor="userID"
             className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
           >
-            User ID
+            #User ID
           </label>
           <Field
-            placeholder="324-123"
+            placeholder="0123"
             className="w-[50%] h-[3rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             name="userID"
             type="text"
@@ -80,10 +80,10 @@ const StartCleanForm = () => {
             htmlFor="cleanName"
             className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
           >
-            Clean Name
+            Your Cleanup Name
           </label>
           <Field
-            placeholder="Heros"
+            placeholder="brighton pier cleanup"
             name="cleanName"
             type="text"
             className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
@@ -94,7 +94,7 @@ const StartCleanForm = () => {
             htmlFor="location"
             className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
           >
-            Location
+            Meeting Location
           </label>
           <Field
             placeholder="London"
@@ -152,7 +152,7 @@ const StartCleanForm = () => {
             Host
           </label>
           <Field
-            placeholder="Leon Smith"
+            placeholder="Your name"
             name="host"
             type="text"
             className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
@@ -166,6 +166,7 @@ const StartCleanForm = () => {
             Notes
           </label>
           <Field
+            as="textarea"
             name="notes"
             type="text"
             className=" w-[50%] h-[8rem] mb-[.6rem]  text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
