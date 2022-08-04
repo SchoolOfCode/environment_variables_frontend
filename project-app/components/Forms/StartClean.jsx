@@ -52,15 +52,19 @@ const StartCleanForm = () => {
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          dataStartClean.push(values); // substitute for post req
-          console.log("data has been pushed", dataStartClean);
-          console.log("values", values);
+          dataStartClean.push({
+            ...values,
+            latitude: coords[0],
+            longitude: coords[1],
+          }); // substitute for post req
+
+          console.log("this is what youll get in your DB", dataStartClean);
           setSubmitting(false);
         }, 400);
       }}
     >
-      <Form className=" w-[60%] p-[4rem] ml-[20%]">
-        <p className="text-3xl font-medium text-left m-[1] p-[0] pl-[36%] text-[#004F54]">
+      <Form className=" bg-[#004F54]/50 w-[50%] p-[4rem] ml-[20%]">
+        <p className="text-3xl font-medium text-left m-[1] p-[0] pl-[15%] text-[#004F54] ">
           Start A Clean
         </p>
         <div className="ml-[25%]">
@@ -72,7 +76,7 @@ const StartCleanForm = () => {
           </label>
           <Field
             placeholder="0123"
-            className="w-[50%] h-[3rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="border-[#FF9505] w-[50%] h-[3rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             name="userID"
             type="text"
           />
@@ -88,7 +92,7 @@ const StartCleanForm = () => {
             placeholder="brighton pier cleanup"
             name="cleanName"
             type="text"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="border-[#FF9505] w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="cleanName" />
 
@@ -102,7 +106,7 @@ const StartCleanForm = () => {
             placeholder="London"
             name="location"
             type="text"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="border-[#FF9505]  w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="location" />
 
@@ -115,7 +119,7 @@ const StartCleanForm = () => {
           <Field
             name="date"
             type="date"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="border-[#FF9505] w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="date" />
 
@@ -129,7 +133,7 @@ const StartCleanForm = () => {
             placeholder="10:00"
             name="startTime"
             type="text"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="border-[#FF9505]  w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="startTime" />
 
@@ -143,7 +147,7 @@ const StartCleanForm = () => {
             placeholder="13:00"
             name="endTime"
             type="text"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className=" border-[#FF9505]  w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="endTime" />
 
@@ -157,7 +161,7 @@ const StartCleanForm = () => {
             placeholder="Your name"
             name="host"
             type="text"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className=" border-[#FF9505] w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="host" />
 
@@ -171,11 +175,11 @@ const StartCleanForm = () => {
             as="textarea"
             name="notes"
             type="text"
-            className=" w-[50%] h-[8rem] mb-[.6rem]  text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className=" border-[#FF9505] w-[50%] h-[8rem] mb-[.6rem]  text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="notes" />
 
-          <label
+          {/* <label
             htmlFor="latitude"
             className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
           >
@@ -185,7 +189,7 @@ const StartCleanForm = () => {
             value={coords[0]}
             name="latitude"
             type="number"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-[#FF9505] text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="latitude" />
 
@@ -199,9 +203,9 @@ const StartCleanForm = () => {
             value={coords[1]}
             name="longitude"
             type="number"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white border-[#FF9505] dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
-          <ErrorMessage name="longitude" />
+          <ErrorMessage name="longitude" /> */}
         </div>
         <button
           type="submit"
