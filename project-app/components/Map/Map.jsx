@@ -24,17 +24,18 @@ const ICON = icon({
 
 export default function Map() {
   const [geoData, setGeoData] = useState({ lat: 51.505, lng: -0.09 });
-  const [mapData, setMapData] = useState({
-  cleanname: "Loading...",
-  date: "Loading...",
-  endtime: "Loading...",
-  host: "Loading...",
-  id: 1,
-  latitude: 52.817356506889425,
-  location: "Loading...",
-  longitude: 0.8199988022288017,
-  notes: "Loading...",
-  starttime: "Loading..."});
+  const [mapData, setMapData] = useState([{
+    cleanname: "Loading...",
+    date: "Loading...",
+    endtime: "Loading...",
+    host: "Loading...",
+    id: 1,
+    latitude: 52.817356506889425,
+    location: "Loading...",
+    longitude: 0.8199988022288017,
+    notes: "Loading...",
+    starttime: "Loading..."
+  }]);
 
   const center = [geoData.lat, geoData.lng];
 
@@ -62,7 +63,7 @@ export default function Map() {
       const response = await fetch(url);
       const data = await response.json();
       console.log("original data", data);
-      setMapData(data.payload[1]);
+      setMapData(data.payload);
     }
     fetchData();
   }, []);
@@ -88,37 +89,47 @@ export default function Map() {
         <Marker position={[geoData.lat, geoData.lng]} />
       )} */}
       <ChangeView coords={center} />
-      <Marker icon={ICON} position={[Number(mapData.latitude), Number(mapData.longitude)]}>
-        <Popup>
-          <h3 className="text-xs sm:text-sm font-bold underline">
-            {mapData.cleanname}
-          </h3>
 
-          <span className="text-[9px] sm:text-xs font-bold">Location: </span>
-          <span className="text-[9px] sm:text-xs"> {mapData.location}</span>
-          <br />
+      {mapData.map((data) => {
+        return (
 
-          <span className="text-[9px] sm:text-xs font-bold">Date: </span>
-          <span className="text-[9px] sm:text-xs"> {mapData.date}</span>
-          <br />
+          <Marker icon={ICON} position={[Number(data.latitude), Number(data.longitude)]}>
 
-          <span className="text-[9px] sm:text-xs font-bold">Time: </span>
-          <span className="text-[9px] sm:text-xs">
-            {" "}
-            {mapData.starttime} - {mapData.endtime}
-          </span>
-          <br />
+            <Popup>
+              <h3 className="text-xs sm:text-sm font-bold underline">
+                {data.cleanname}
+              </h3>
 
-          <span className="text-[9px] sm:text-xs font-bold">Host: </span>
-          <span className="text-[9px] sm:text-xs">{mapData.host}</span>
+              <span className="text-[9px] sm:text-xs font-bold">Location: </span>
+              <span className="text-[9px] sm:text-xs"> {data.location}</span>
+              <br />
 
-          <br />
-          <span className="text-[9px] sm:text-xs font-bold">Notes: </span>
-          <span className="text-[9px] sm:text-xs">{mapData.notes}</span>
-          <br />
-          <JoinCleanModal />
-        </Popup>
-      </Marker>
+              <span className="text-[9px] sm:text-xs font-bold">Date: </span>
+              <span className="text-[9px] sm:text-xs"> {data.date}</span>
+              <br />
+
+              <span className="text-[9px] sm:text-xs font-bold">Time: </span>
+              <span className="text-[9px] sm:text-xs">
+                {" "}
+                {data.starttime} - {data.endtime}
+              </span>
+              <br />
+
+              <span className="text-[9px] sm:text-xs font-bold">Host: </span>
+              <span className="text-[9px] sm:text-xs">{data.host}</span>
+
+              <br />
+              <span className="text-[9px] sm:text-xs font-bold">Notes: </span>
+              <span className="text-[9px] sm:text-xs">{data.notes}</span>
+              <br />
+              <JoinCleanModal />
+            </Popup>
+          </Marker>
+
+        )
+      })}
+
+
     </MapContainer>
   );
 }
