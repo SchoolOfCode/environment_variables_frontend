@@ -1,9 +1,17 @@
+//THIS PAGE IS ACCESS PROTECTED BY AUTH0
+
+//Importing packages
+import { useState } from "react";
+import dynamic from "next/dynamic";
+import {withPageAuthRequired } from '@auth0/nextjs-auth0';
+
+//Importing Context
+import { MapContext } from "../context/MapContext"
+
+//Importing custome components
 import StartCleanForm from "../components/Forms/StartClean";
 import NavbarStartClean from "../components/Navbar/NavbarStartClean";
 import Footer from "../components/Footer/Footer";
-import dynamic from "next/dynamic";
-import { useContext, createContext, useState } from "react";
-import { MapContext } from "../context/MapContext"
 
 const MapWithNoSSR = dynamic(
   () => import("../components/Map/StartCleanMap.jsx"),
@@ -30,3 +38,5 @@ export default function startClean() {
     </MapContext.Provider>
   );
 }
+
+export const getServerSideProps = withPageAuthRequired(); 

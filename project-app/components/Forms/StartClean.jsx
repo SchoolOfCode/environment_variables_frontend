@@ -8,6 +8,7 @@ import Image from "next/image";
 const StartCleanForm = () => {
   const { setCoords, coords } = useContext(MapContext);
   const [showModal, setShowModal] = React.useState(false);
+  console.log("co-ords from form page:", coords);
 
   return (
     <Formik
@@ -25,7 +26,7 @@ const StartCleanForm = () => {
       }}
       validationSchema={Yup.object({
         userID: Yup.string()
-          .max(5, "Must be 5 characters or less")
+          .max(10, "Must be 10 characters or less")
           .required("Required"),
         cleanName: Yup.string()
           .max(20, "Must be 20 characters or less")
@@ -41,7 +42,7 @@ const StartCleanForm = () => {
           .max(8, "Must be 8 characters or less")
           .required("Required"),
         host: Yup.string()
-          .max(20, "Must be 20 characters or less")
+          .max(15, "Must be 15 characters or less")
           .required("Required"),
         notes: Yup.string()
           .max(50, "Must be 50 characters or less")
@@ -51,14 +52,19 @@ const StartCleanForm = () => {
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          dataStartClean.push(values); // substitute for post req
-          console.log("data has been pushed", dataStartClean);
+          dataStartClean.push({
+            ...values,
+            latitude: coords[0],
+            longitude: coords[1],
+          }); // substitute for post req
+
+          console.log("this is what youll get in your DB", dataStartClean);
           setSubmitting(false);
         }, 400);
       }}
     >
-      <Form className=" w-[60%] p-[4rem] ml-[20%]">
-        <p className="text-3xl font-medium text-left m-[1] p-[0] pl-[36%] text-[#004F54]">
+      <Form className=" bg-[#004F54]/90 w-[50%] p-[4rem] ml-[20%]">
+        <p className="text-3xl font-medium text-left m-[1] p-[0] pl-[15%] text-[#004F54] ">
           Start A Clean
         </p>
         <div className="ml-[25%]">
@@ -66,11 +72,11 @@ const StartCleanForm = () => {
             htmlFor="userID"
             className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
           >
-            User ID
+            #User ID
           </label>
           <Field
-            placeholder="324-123"
-            className="w-[50%] h-[3rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            placeholder="0123"
+            className="border-[#FF9505] w-[50%] h-[3rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             name="userID"
             type="text"
           />
@@ -80,13 +86,13 @@ const StartCleanForm = () => {
             htmlFor="cleanName"
             className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
           >
-            Clean Name
+            Your Cleanup Name
           </label>
           <Field
-            placeholder="Heros"
+            placeholder="brighton pier cleanup"
             name="cleanName"
             type="text"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="border-[#FF9505] w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="cleanName" />
 
@@ -94,13 +100,13 @@ const StartCleanForm = () => {
             htmlFor="location"
             className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
           >
-            Location
+            Meeting Location
           </label>
           <Field
             placeholder="London"
             name="location"
             type="text"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="border-[#FF9505]  w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="location" />
 
@@ -113,7 +119,7 @@ const StartCleanForm = () => {
           <Field
             name="date"
             type="date"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="border-[#FF9505] w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="date" />
 
@@ -124,10 +130,10 @@ const StartCleanForm = () => {
             Start Time
           </label>
           <Field
-            placeholder="09:00"
+            placeholder="10:00"
             name="startTime"
             type="text"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="border-[#FF9505]  w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="startTime" />
 
@@ -138,10 +144,10 @@ const StartCleanForm = () => {
             End Time
           </label>
           <Field
-            placeholder="20:00"
+            placeholder="13:00"
             name="endTime"
             type="text"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className=" border-[#FF9505]  w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="endTime" />
 
@@ -152,10 +158,10 @@ const StartCleanForm = () => {
             Host
           </label>
           <Field
-            placeholder="Leon Smith"
+            placeholder="Your name"
             name="host"
             type="text"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className=" border-[#FF9505] w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="host" />
 
@@ -166,13 +172,14 @@ const StartCleanForm = () => {
             Notes
           </label>
           <Field
+            as="textarea"
             name="notes"
             type="text"
-            className=" w-[50%] h-[8rem] mb-[.6rem]  text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className=" border-[#FF9505] w-[50%] h-[8rem] mb-[.6rem]  text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="notes" />
 
-          <label
+          {/* <label
             htmlFor="latitude"
             className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
           >
@@ -182,7 +189,7 @@ const StartCleanForm = () => {
             value={coords[0]}
             name="latitude"
             type="number"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-[#FF9505] text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="latitude" />
 
@@ -196,9 +203,9 @@ const StartCleanForm = () => {
             value={coords[1]}
             name="longitude"
             type="number"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white border-[#FF9505] dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
-          <ErrorMessage name="longitude" />
+          <ErrorMessage name="longitude" /> */}
         </div>
         <button
           type="submit"
