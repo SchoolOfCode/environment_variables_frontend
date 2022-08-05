@@ -24,6 +24,7 @@ const ICON = icon({
 
 export default function Map() {
   const [geoData, setGeoData] = useState({ lat: 51.505, lng: -0.09 });
+  const [mapData, setMapData] = useState();
 
   const center = [geoData.lat, geoData.lng];
 
@@ -82,6 +83,21 @@ export default function Map() {
     return null; // don't want anything to show up from this comp
   };
 
+  //map fetching
+  const url = "http://localhost:5000/startclean";
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log("original data", data);
+      setMapData(data.payload[0]);
+    }
+    fetchData();
+  }, []);
+
+  console.log("new map data", mapData);
+
   return (
     <MapContainer
       zoomControl={false}
@@ -106,29 +122,30 @@ export default function Map() {
       <Marker icon={ICON} position={[50.764687233616314, 0.282817434969637]}>
         <Popup>
           <h3 className="text-xs sm:text-sm font-bold underline">
-            Eastbourne Pier Cleanup
+            {mapData.cleanname}
           </h3>
 
           <span className="text-[9px] sm:text-xs font-bold">Location: </span>
-          <span className="text-[9px] sm:text-xs"> Eastbourne Pier</span>
+          <span className="text-[9px] sm:text-xs"> {mapData.location}</span>
           <br />
 
           <span className="text-[9px] sm:text-xs font-bold">Date: </span>
-          <span className="text-[9px] sm:text-xs"> 22.08.22</span>
+          <span className="text-[9px] sm:text-xs"> {mapData.date}</span>
           <br />
 
           <span className="text-[9px] sm:text-xs font-bold">Time: </span>
-          <span className="text-[9px] sm:text-xs"> 09:00 - 12:00</span>
+          <span className="text-[9px] sm:text-xs">
+            {" "}
+            {mapData.starttime}/{mapData.endtime}
+          </span>
           <br />
 
           <span className="text-[9px] sm:text-xs font-bold">Host: </span>
-          <span className="text-[9px] sm:text-xs"> Blake Lawrence</span>
+          <span className="text-[9px] sm:text-xs">{mapData.host}</span>
 
           <br />
           <span className="text-[9px] sm:text-xs font-bold">Notes: </span>
-          <span className="text-[9px] sm:text-xs">
-            Easy walk, no hills, will be collecting on sand and pavement
-          </span>
+          <span className="text-[9px] sm:text-xs">{mapData.notes}</span>
           <br />
           <JoinCleanModal />
         </Popup>
