@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^1.9.1",
     "@fontsource/montserrat": "^4.5.11",
     "@sefailyasoz/react-carousel": "^1.1.1",
     "antd": "^4.22.1",
