@@ -24,27 +24,11 @@ const ICON = icon({
 });
 
 // default start location of map
-export default function Map() 
+export default function Map() {
   const [geoData, setGeoData] = useState({
     lat: 51.61845854689381,
     lng: -0.1972000288069415,
   });
-  
-  const [mapData, setMapData] = useState([
-    {
-      cleanname: "Loading...",
-      date: "Loading...",
-      endtime: "Loading...",
-      host: "Loading...",
-      id: 1,
-      latitude: 52.817356506889425,
-      location: "Loading...",
-      longitude: 0.8199988022288017,
-      notes: "Loading...",
-      starttime: "Loading...",
-    },
-  ]);
-
 
   // where map centers for the start
   const center = [geoData.lat, geoData.lng];
@@ -82,10 +66,8 @@ export default function Map()
     return null;
   };
 
-
   //Fetch request for Map markers/popup info
   const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
-
 
   console.log("you are on", url);
 
@@ -121,9 +103,7 @@ export default function Map()
       {mapData.map((data) => {
         return (
           <Marker
-
             key={data.id}
-
             icon={ICON}
             position={[Number(data.latitude), Number(data.longitude)]}
           >
