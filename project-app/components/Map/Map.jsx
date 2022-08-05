@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import "leaflet/dist/leaflet.css";
-import { icon } from "leaflet";
+import { icon, map } from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { OpenStreetMapProvider, GeoSearchControl } from "leaflet-geosearch";
 import { GestureHandling } from "leaflet-gesture-handling";
@@ -24,49 +24,20 @@ const ICON = icon({
 
 export default function Map() {
   const [geoData, setGeoData] = useState({ lat: 51.505, lng: -0.09 });
-  const [mapData, setMapData] = useState();
+  const [mapData, setMapData] = useState({
+  cleanname: "Loading...",
+  date: "Loading...",
+  endtime: "Loading...",
+  host: "Loading...",
+  id: 1,
+  latitude: 52.817356506889425,
+  location: "Loading...",
+  longitude: 0.8199988022288017,
+  notes: "Loading...",
+  starttime: "Loading..."});
 
   const center = [geoData.lat, geoData.lng];
 
-  function DraggableMarker() {
-    const [draggable, setDraggable] = useState(false);
-    const [position, setPosition] = useState([
-      52.817356506889425, 0.8199988022288017,
-    ]);
-    console.log(position);
-    const markerRef = useRef(null);
-    const eventHandlers = useMemo(
-      () => ({
-        dragend() {
-          const marker = markerRef.current;
-          if (marker != null) {
-            setPosition(marker.getLatLng());
-          }
-        },
-      }),
-      []
-    );
-    const toggleDraggable = useCallback(() => {
-      setDraggable((d) => !d);
-    }, []);
-
-    return (
-      <Marker
-        draggable={draggable}
-        eventHandlers={eventHandlers}
-        position={position}
-        ref={markerRef}
-      >
-        <Popup minWidth={90}>
-          <span onClick={toggleDraggable}>
-            {draggable
-              ? "Marker is now draggable"
-              : "Click here to enable drag"}
-          </span>
-        </Popup>
-      </Marker>
-    );
-  }
   const Search = (props) => {
     const map = useMap(); // access to leaflet map
     const { provider } = props;
@@ -91,7 +62,7 @@ export default function Map() {
       const response = await fetch(url);
       const data = await response.json();
       console.log("original data", data);
-      setMapData(data.payload[0]);
+      setMapData(data.payload[1]);
     }
     fetchData();
   }, []);
@@ -117,9 +88,7 @@ export default function Map() {
         <Marker position={[geoData.lat, geoData.lng]} />
       )} */}
       <ChangeView coords={center} />
-
-      <DraggableMarker />
-      <Marker icon={ICON} position={[50.764687233616314, 0.282817434969637]}>
+      <Marker icon={ICON} position={[Number(mapData.latitude), Number(mapData.longitude)]}>
         <Popup>
           <h3 className="text-xs sm:text-sm font-bold underline">
             {mapData.cleanname}
@@ -136,7 +105,7 @@ export default function Map() {
           <span className="text-[9px] sm:text-xs font-bold">Time: </span>
           <span className="text-[9px] sm:text-xs">
             {" "}
-            {mapData.starttime}/{mapData.endtime}
+            {mapData.starttime} - {mapData.endtime}
           </span>
           <br />
 
