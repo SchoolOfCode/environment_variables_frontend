@@ -63,7 +63,7 @@ const StartCleanForm = () => {
         }, 400);
       }}
     >
-      <Form className=" bg-[#004F54]/50 w-[50%] p-[4rem] ml-[20%]">
+      <Form className=" bg-[#004F54]/90 w-[50%] p-[4rem] ml-[20%]">
         <p className="text-3xl font-medium text-left m-[1] p-[0] pl-[15%] text-[#004F54] ">
           Start A Clean
         </p>
