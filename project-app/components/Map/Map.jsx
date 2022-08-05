@@ -72,7 +72,7 @@ export default function Map() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(url);
+      const response = await fetch(`${url}/startclean`);
       const data = await response.json();
       console.log("original data", data);
       setMapData(data.payload);
@@ -102,6 +102,7 @@ export default function Map() {
       {mapData.map((data) => {
         return (
           <Marker
+            key={data.id}
             icon={ICON}
             position={[Number(data.latitude), Number(data.longitude)]}
           >
