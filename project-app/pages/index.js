@@ -18,17 +18,6 @@ const MapWithNoSSR = dynamic(() => import("../components/Map/Map.jsx"), {
 });
 
 export default function Home() {
-  const url = "http://localhost:5000/startclean";
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data);
-    }
-    fetchData();
-  }, []);
-
   return (
     <div className="bg-[#E6E5E4]">
       <Head>

@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import "leaflet/dist/leaflet.css";
-import { icon } from "leaflet";
+import { icon, map } from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { OpenStreetMapProvider, GeoSearchControl } from "leaflet-geosearch";
 import { GestureHandling } from "leaflet-gesture-handling";
@@ -24,48 +24,21 @@ const ICON = icon({
 
 export default function Map() {
   const [geoData, setGeoData] = useState({ lat: 51.505, lng: -0.09 });
+  const [mapData, setMapData] = useState([{
+    cleanname: "Loading...",
+    date: "Loading...",
+    endtime: "Loading...",
+    host: "Loading...",
+    id: 1,
+    latitude: 52.817356506889425,
+    location: "Loading...",
+    longitude: 0.8199988022288017,
+    notes: "Loading...",
+    starttime: "Loading..."
+  }]);
 
   const center = [geoData.lat, geoData.lng];
 
-  function DraggableMarker() {
-    const [draggable, setDraggable] = useState(false);
-    const [position, setPosition] = useState([
-      52.817356506889425, 0.8199988022288017,
-    ]);
-    console.log(position);
-    const markerRef = useRef(null);
-    const eventHandlers = useMemo(
-      () => ({
-        dragend() {
-          const marker = markerRef.current;
-          if (marker != null) {
-            setPosition(marker.getLatLng());
-          }
-        },
-      }),
-      []
-    );
-    const toggleDraggable = useCallback(() => {
-      setDraggable((d) => !d);
-    }, []);
-
-    return (
-      <Marker
-        draggable={draggable}
-        eventHandlers={eventHandlers}
-        position={position}
-        ref={markerRef}
-      >
-        <Popup minWidth={90}>
-          <span onClick={toggleDraggable}>
-            {draggable
-              ? "Marker is now draggable"
-              : "Click here to enable drag"}
-          </span>
-        </Popup>
-      </Marker>
-    );
-  }
   const Search = (props) => {
     const map = useMap(); // access to leaflet map
     const { provider } = props;
@@ -81,6 +54,21 @@ export default function Map() {
 
     return null; // don't want anything to show up from this comp
   };
+
+  //map fetching
+  const url = "http://localhost:5000/startclean";
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log("original data", data);
+      setMapData(data.payload);
+    }
+    fetchData();
+  }, []);
+
+  console.log("new map data", mapData);
 
   return (
     <MapContainer
@@ -102,37 +90,46 @@ export default function Map() {
       )} */}
       <ChangeView coords={center} />
 
-      <DraggableMarker />
-      <Marker icon={ICON} position={[50.764687233616314, 0.282817434969637]}>
-        <Popup>
-          <h3 className="text-xs sm:text-sm font-bold underline">
-            Eastbourne Pier Cleanup
-          </h3>
+      {mapData.map((data) => {
+        return (
 
-          <span className="text-[9px] sm:text-xs font-bold">Location: </span>
-          <span className="text-[9px] sm:text-xs"> Eastbourne Pier</span>
-          <br />
+          <Marker icon={ICON} position={[Number(data.latitude), Number(data.longitude)]}>
 
-          <span className="text-[9px] sm:text-xs font-bold">Date: </span>
-          <span className="text-[9px] sm:text-xs"> 22.08.22</span>
-          <br />
+            <Popup>
+              <h3 className="text-xs sm:text-sm font-bold underline">
+                {data.cleanname}
+              </h3>
 
-          <span className="text-[9px] sm:text-xs font-bold">Time: </span>
-          <span className="text-[9px] sm:text-xs"> 09:00 - 12:00</span>
-          <br />
+              <span className="text-[9px] sm:text-xs font-bold">Location: </span>
+              <span className="text-[9px] sm:text-xs"> {data.location}</span>
+              <br />
 
-          <span className="text-[9px] sm:text-xs font-bold">Host: </span>
-          <span className="text-[9px] sm:text-xs"> Blake Lawrence</span>
+              <span className="text-[9px] sm:text-xs font-bold">Date: </span>
+              <span className="text-[9px] sm:text-xs"> {data.date}</span>
+              <br />
 
-          <br />
-          <span className="text-[9px] sm:text-xs font-bold">Notes: </span>
-          <span className="text-[9px] sm:text-xs">
-            Easy walk, no hills, will be collecting on sand and pavement
-          </span>
-          <br />
-          <JoinCleanModal />
-        </Popup>
-      </Marker>
+              <span className="text-[9px] sm:text-xs font-bold">Time: </span>
+              <span className="text-[9px] sm:text-xs">
+                {" "}
+                {data.starttime} - {data.endtime}
+              </span>
+              <br />
+
+              <span className="text-[9px] sm:text-xs font-bold">Host: </span>
+              <span className="text-[9px] sm:text-xs">{data.host}</span>
+
+              <br />
+              <span className="text-[9px] sm:text-xs font-bold">Notes: </span>
+              <span className="text-[9px] sm:text-xs">{data.notes}</span>
+              <br />
+              <JoinCleanModal />
+            </Popup>
+          </Marker>
+
+        )
+      })}
+
+
     </MapContainer>
   );
 }
