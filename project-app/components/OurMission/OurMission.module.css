@@ -1,34 +1,34 @@
-@media (max-width: 750px){
-    .imageStyling{
-        display: none;
-    }
+@media (max-width: 750px) {
+  .imageStyling {
+    display: none;
+  }
 }
 
 .missionTitle {
-    font-size: 50px;
-    color: #004F54;
+  font-size: 40px;
+  color: #004f54;
 }
 
 .missionParagraph {
-    font-size: 20px;
-    margin-top: 15px;
-    color: #004F54;
-
+  font-size: 16px;
+  margin-top: 15px;
+  color: #004f54;
 }
 
 .missionContainer {
-    margin: 2em 2em 5em 2em;
-    display: flex;
+  margin: 2em 2em 5em 2em;
+  display: flex;
 }
 
 .textContainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin-right: 6em;
 }
 
 .imageStyling {
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
 }
