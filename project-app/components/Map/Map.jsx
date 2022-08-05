@@ -24,18 +24,20 @@ const ICON = icon({
 
 export default function Map() {
   const [geoData, setGeoData] = useState({ lat: 51.505, lng: -0.09 });
-  const [mapData, setMapData] = useState([{
-    cleanname: "Loading...",
-    date: "Loading...",
-    endtime: "Loading...",
-    host: "Loading...",
-    id: 1,
-    latitude: 52.817356506889425,
-    location: "Loading...",
-    longitude: 0.8199988022288017,
-    notes: "Loading...",
-    starttime: "Loading..."
-  }]);
+  const [mapData, setMapData] = useState([
+    {
+      cleanname: "Loading...",
+      date: "Loading...",
+      endtime: "Loading...",
+      host: "Loading...",
+      id: 1,
+      latitude: 52.817356506889425,
+      location: "Loading...",
+      longitude: 0.8199988022288017,
+      notes: "Loading...",
+      starttime: "Loading...",
+    },
+  ]);
 
   const center = [geoData.lat, geoData.lng];
 
@@ -56,11 +58,12 @@ export default function Map() {
   };
 
   //map fetching
-  const url = "http://localhost:5000/startclean";
+  const url = NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
+  console.log("you are on", url);
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(url);
+      const response = await fetch(`${url}/startclean`);
       const data = await response.json();
       console.log("original data", data);
       setMapData(data.payload);
@@ -92,15 +95,18 @@ export default function Map() {
 
       {mapData.map((data) => {
         return (
-
-          <Marker icon={ICON} position={[Number(data.latitude), Number(data.longitude)]}>
-
+          <Marker
+            icon={ICON}
+            position={[Number(data.latitude), Number(data.longitude)]}
+          >
             <Popup>
               <h3 className="text-xs sm:text-sm font-bold underline">
                 {data.cleanname}
               </h3>
 
-              <span className="text-[9px] sm:text-xs font-bold">Location: </span>
+              <span className="text-[9px] sm:text-xs font-bold">
+                Location:{" "}
+              </span>
               <span className="text-[9px] sm:text-xs"> {data.location}</span>
               <br />
 
@@ -125,11 +131,8 @@ export default function Map() {
               <JoinCleanModal />
             </Popup>
           </Marker>
-
-        )
+        );
       })}
-
-
     </MapContainer>
   );
 }
