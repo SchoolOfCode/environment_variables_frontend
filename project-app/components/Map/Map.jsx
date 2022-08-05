@@ -11,19 +11,25 @@ import { JoinCleanModal, JoinCleanForm } from "../Forms/JoinClean";
 
 export function ChangeView({ coords }) {
   const map = useMap();
-  map.setView(coords, 12);
+  map.setView(coords);
   return null;
 }
 //stops map from scrolling while hovering over it (user must press ctrl to enable zoom scroll))
 L.Map.addInitHook("addHandler", "gestureHandling", GestureHandling);
 
+// custom map marker
 const ICON = icon({
   iconUrl: "/litter.svg",
   iconSize: [38, 38],
 });
 
-export default function Map() {
-  const [geoData, setGeoData] = useState({ lat: 51.505, lng: -0.09 });
+// default start location of map
+export default function Map() 
+  const [geoData, setGeoData] = useState({
+    lat: 51.61845854689381,
+    lng: -0.1972000288069415,
+  });
+  
   const [mapData, setMapData] = useState([
     {
       cleanname: "Loading...",
@@ -39,8 +45,27 @@ export default function Map() {
     },
   ]);
 
+
+  // where map centers for the start
   const center = [geoData.lat, geoData.lng];
 
+  // state for our backends Map marker and popup data
+  const [mapData, setMapData] = useState([
+    {
+      cleanname: "Loading...",
+      date: "Loading...",
+      endtime: "Loading...",
+      host: "Loading...",
+      id: 1,
+      latitude: 52.817356506889425,
+      location: "Loading...",
+      longitude: 0.8199988022288017,
+      notes: "Loading...",
+      starttime: "Loading...",
+    },
+  ]);
+
+  // our maps search bar
   const Search = (props) => {
     const map = useMap(); // access to leaflet map
     const { provider } = props;
@@ -54,11 +79,14 @@ export default function Map() {
       return () => map.removeControl(searchControl);
     }, [props]);
 
-    return null; // don't want anything to show up from this comp
+    return null;
   };
 
-  //map fetching
-  const url = NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
+
+  //Fetch request for Map markers/popup info
+  const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
+
+
   console.log("you are on", url);
 
   useEffect(() => {
@@ -73,11 +101,12 @@ export default function Map() {
 
   console.log("new map data", mapData);
 
+  // This is the Mian map render
   return (
     <MapContainer
       zoomControl={false}
       center={center}
-      zoom={12}
+      zoom={7.5}
       gestureHandling={true}
       style={{ height: "60vh" }}
     >
@@ -86,16 +115,15 @@ export default function Map() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Search provider={new OpenStreetMapProvider()} />
-
-      {/* this is for the standard marker on refresh that we dont want */}
-      {/* {geoData.lat && geoData.lng && (
-        <Marker position={[geoData.lat, geoData.lng]} />
-      )} */}
       <ChangeView coords={center} />
 
+      {/* data from backend being mapped over and rendered into individual map markers on the map */}
       {mapData.map((data) => {
         return (
           <Marker
+
+            key={data.id}
+
             icon={ICON}
             position={[Number(data.latitude), Number(data.longitude)]}
           >
