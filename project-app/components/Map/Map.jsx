@@ -67,7 +67,8 @@ export default function Map() {
   };
 
   //Fetch request for Map markers/popup info
-  const url = "http://localhost:5000/startclean";
+  const url = NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
+  console.log("you are on", url);
 
   useEffect(() => {
     async function fetchData() {
