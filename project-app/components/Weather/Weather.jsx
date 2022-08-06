@@ -42,7 +42,7 @@ const Weather = () => {
         Before you head out for the day, check the weather below so you can pack
         accordingly
       </p>
-      <p className="text-xs sm:text-[14px] text-[#004f54] ml-4 font-medium italic">
+      <p className="text-xs sm:text-[14px] text-[#004f54] ml-4 font-medium">
         Click the "tips" button for weather tips <WeatherReqs />
       </p>
       <div className="flex flex-col sm:flex-row sm:items-center md:justify-start">

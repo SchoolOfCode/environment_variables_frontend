@@ -15,12 +15,12 @@ const WeatherReqs = () => {
 
       {showModal ? (
         <>
-          <div className=" z-[1005] sm:ml0 mr-0 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 outline-none focus:outline-none">
+          <div className=" z-[1005] sm:ml-0 mr-0 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 outline-none focus:outline-none">
             <div className="relative w-5/6 sm:w-auto sm:my-6 sm:mx-auto sm:max-w-6xl">
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
-                <div className="flex items-start justify-between p-0 sm:p-2 border-b border-solid border-slate-200 rounded-t">
+                <div className="flex items-start justify-between p-0 sm:p-2 border-b border-solid border-slate-200 rounded">
                   <h3 className=" mt-2 ml-6 text-lg sm:text-2xl font-bold text-[#004F54]">
                     Weather Tips
                   </h3>
