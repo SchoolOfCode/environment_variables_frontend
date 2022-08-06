@@ -32,7 +32,7 @@ export default function Home() {
 
         <ImageGallery />
         {/* map container for sizing */}
-        <div className="w-full mr-4  ml-4 mt-4 mb-16">
+        <div className="w-full ml-4 mt-4 mb-16">
           <a id="map" className="flex invisible pb-[100px]"></a>
 
           <h2 className="text-lg sm:text-xl md:text-2xl text-[#004F54] font-bold">
@@ -41,8 +41,8 @@ export default function Home() {
           <p className="text-xs sm:text-md text-[#004F54]">
             Find a marker and click to reveal celanup details
           </p>
-          <MapWithNoSSR />
           <a id="weather" className="flex invisible"></a>
+          <MapWithNoSSR />
         </div>
         <Weather />
         <Footer />
