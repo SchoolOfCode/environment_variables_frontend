@@ -35,13 +35,15 @@ const Weather = () => {
 
   return (
     <div className="mt-8">
-      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#004F54] font-bold ml-4">
-        Check The Weather...
+      <h2 className="text-lg sm:text-xl md:text-2xl text-[#004F54] font-bold ml-4">
+        Want to check the weather?
       </h2>
-      <p className="text-[16px] text-[#004f54] ml-4">
-        Before you head out for the day, you can check the weather below
-        <br></br>
-        💡 Click the "tips" button for some usefull weather tips
+      <p className=" text-sm sm:text-[16px] text-[#004f54] ml-4 mr-4">
+        Before you head out for the day, check the weather below so you can pack
+        accordingly
+      </p>
+      <p className="text-[14px] text-[#004f54] ml-4 font-medium italic">
+        Click the "tips" button below for weather tips
       </p>
       <div className="flex flex-col sm:flex-row sm:items-center md:justify-start">
         <SearchBar
