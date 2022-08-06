@@ -32,13 +32,13 @@ export default function Home() {
 
         <ImageGallery />
         {/* map container for sizing */}
-        <div className="w-full ml-4 mt-4 mb-16">
+        <div className=" ml-1 mr-1 mt-4 mb-16">
           <a id="map" className="flex invisible pb-[100px]"></a>
 
-          <h2 className="text-lg sm:text-xl md:text-2xl text-[#004F54] font-bold">
+          <h2 className="text-lg ml-4 sm:text-xl md:text-2xl text-[#004F54] font-bold">
             Find a cleanup near you...
           </h2>
-          <p className="text-xs sm:text-md text-[#004F54]">
+          <p className="ml-4 text-xs sm:text-md text-[#004F54]">
             Find a marker and click to reveal celanup details
           </p>
           <a id="weather" className="flex invisible"></a>

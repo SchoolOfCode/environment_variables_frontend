@@ -18,8 +18,8 @@ img {
 }
 
 .leaflet-container {
-  margin-right: 2rem;
-
+  margin-right: 1rem;
+  margin-left: 1rem;
   border-radius: 15px;
   border: 1px solid #004f54;
 }
