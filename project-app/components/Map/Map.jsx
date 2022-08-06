@@ -26,8 +26,8 @@ const ICON = icon({
 // default start location of map
 export default function Map() {
   const [geoData, setGeoData] = useState({
-    lat: 51.61845854689381,
-    lng: -0.1972000288069415,
+    lat: 51.50602246978329,
+    lng: -0.10508367551547762,
   });
 
   // where map centers for the start
@@ -88,9 +88,9 @@ export default function Map() {
     <MapContainer
       zoomControl={false}
       center={center}
-      zoom={7.5}
+      zoom={9}
       gestureHandling={true}
-      style={{ height: "60vh" }}
+      style={{ height: "70vh" }}
     >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

@@ -31,7 +31,8 @@ export default function Home() {
         <OurMission />
 
         <ImageGallery />
-        <div className=" w-full  sm:w-1/2 ml-4 mr-4 sm:mr-0 mt-4 mb-16">
+        {/* map container for sizing */}
+        <div className="w-full mr-4  ml-4 mt-4 mb-16">
           <a id="map" className="flex invisible pb-[100px]"></a>
 
           <h2 className="text-lg sm:text-xl md:text-2xl text-[#004F54] font-bold">
