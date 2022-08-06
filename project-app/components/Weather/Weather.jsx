@@ -38,12 +38,12 @@ const Weather = () => {
       <h2 className="text-lg sm:text-xl md:text-2xl text-[#004F54] font-bold ml-4">
         Want to check the weather?
       </h2>
-      <p className=" text-sm sm:text-[16px] text-[#004f54] ml-4 mr-4">
+      <p className=" text-xs sm:text-[16px] text-[#004f54] ml-4 mr-4">
         Before you head out for the day, check the weather below so you can pack
         accordingly
       </p>
-      <p className="text-[14px] text-[#004f54] ml-4 font-medium italic">
-        Click the "tips" button below for weather tips
+      <p className="text-xs sm:text-[14px] text-[#004f54] ml-4 font-medium italic">
+        Click the "tips" button for weather tips <WeatherReqs />
       </p>
       <div className="flex flex-col sm:flex-row sm:items-center md:justify-start">
         <SearchBar
@@ -51,7 +51,6 @@ const Weather = () => {
           fetchWeather={fetchWeather}
           city={city}
         />
-        <WeatherReqs />
       </div>
 
       <div className="weather">

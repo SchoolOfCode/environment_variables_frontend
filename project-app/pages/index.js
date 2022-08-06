@@ -34,9 +34,12 @@ export default function Home() {
         <div className=" w-full  sm:w-1/2 ml-4 mr-4 sm:mr-0 mt-4 mb-16">
           <a id="map" className="flex invisible pb-[100px]"></a>
 
-          <h2 className="text-lg sm:text-xl md:text-2xl text-[#004F54] font-bold ml-4">
+          <h2 className="text-lg sm:text-xl md:text-2xl text-[#004F54] font-bold">
             Find a cleanup near you...
           </h2>
+          <p className="text-xs sm:text-md text-[#004F54]">
+            Find a marker and click to reveal celanup details
+          </p>
           <MapWithNoSSR />
           <a id="weather" className="flex invisible"></a>
         </div>
