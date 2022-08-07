@@ -75,7 +75,7 @@ export const JoinCleanModal = () => {
   return (
     <>
       <button
-        className="bg-[#004F54] ml-0 mb-3 md:ml-0 text-white font-medium text-xs md:text-sm px-1 py-1 mt-2 sm:mt-2 rounded hover:bg-[#004F54]/90 outline-none 
+        className="bg-[#004F54] ml-0 mb-4 md:ml-0 text-white font-medium text-xs md:text-sm px-1 py-1 mt-2 sm:mt-2 rounded hover:bg-[#004F54]/90 outline-none 
           focus:outline-none mr-1 mb-1 ease-linear transition-all duration-100 w-12"
         type="button"
         onClick={() => {
