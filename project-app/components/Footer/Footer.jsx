@@ -11,28 +11,28 @@ export default function Footer() {
       {/* Logo div */}
       <div className="text-white ml-2">logo here</div>
       <div className="mt-3 sm:mt-6">
-        <span className="text-white text-[9px] sm:text-xl ">
+        <span className="text-white text-[9px] sm:text-[14px] ">
           Built by Project-Cleanup
         </span>
-        <p className="text-[9px] sm:text-xl pl-[10%] tracking-wider font-normal text-gray-50">
+        <p className="text-[9px] sm:text-[12px] pl-[15%] tracking-wider font-normal text-gray-50">
           Copyright &copy;2022
         </p>
       </div>
       {/* Social Icons div */}
-      <div className="flex flex-row w-28 sm:w-64 justify-between sm:justify-evenly items-center space-y-1 h-auto w-min p-[.6rem]">
-        <div className="item w-6 h-6 sm:w-12 sm:h-12">
+      <div className="flex flex-row w-28 sm:w-60 justify-between sm:justify-evenly items-center space-y-1 h-auto w-min p-[.6rem]">
+        <div className="item w-6 h-6 sm:w-8 sm:h-8">
           <a href="https://www.facebook.com" target="blank">
-            <AiFillFacebook className="h-6 w-6 sm:h-12 sm:w-12 rounded-md mr-4 shadow-md text-gray-50" />
+            <AiFillFacebook className="h-6 w-6 sm:h-8 sm:w-8 rounded-md mr-4 shadow-md text-gray-50" />
           </a>
         </div>
-        <div className="item w-6 h-6 sm:w-12 sm:h-12">
+        <div className="item w-6 h-6 sm:w-8 sm:h-8">
           <a href="https://www.instagram.com" target="blank">
-            <AiFillInstagram className="h-6 w-6 sm:h-12 sm:w-12 rounded-md mr-4 shadow-md text-gray-50" />
+            <AiFillInstagram className="h-6 w-6 sm:h-8 sm:w-8 rounded-md mr-4 shadow-md text-gray-50" />
           </a>
         </div>
-        <div className="item w-6 h-6 sm:w-12 sm:h-12">
+        <div className="item w-6 h-6 sm:w-8 sm:h-8">
           <a href="https://www.twitter.com" target="blank">
-            <AiOutlineTwitter className="h-6 w-6 sm:h-12 sm:w-12 mr-2 rounded-md shadow-md text-gray-50" />
+            <AiOutlineTwitter className="h-6 w-6 sm:h-8 sm:w-8 mr-2 rounded-md shadow-md text-gray-50" />
           </a>
         </div>
       </div>
