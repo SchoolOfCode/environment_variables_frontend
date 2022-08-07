@@ -39,8 +39,8 @@ const Weather = () => {
         Want to check the weather?
       </h2>
       <p className=" text-xs sm:text-[16px] text-[#004f54] ml-4 mr-4">
-        Before you head out for the day, check the weather below so you can pack
-        accordingly
+        Before you head out for the day, it's a great idea to check the weather
+        so you can pack accordingly...
       </p>
       <p className="text-xs sm:text-[14px] text-[#004f54] ml-4 font-medium">
         Click the "tips" button for weather tips <WeatherReqs />
