@@ -7,28 +7,36 @@ import {
 
 export default function Footer() {
   return (
-    <footer className=" h-[6rem] m-[0] pl-[41%] bg-[#004F54]">
-      <div className="flex justify-evenly items-center space-x-8 space-y-1 h-auto w-min p-[.6rem]">
-        <div className="item w-12 h-12">
+    <footer className="flex justify-between items-center w-full h-[6rem] m-[0] pl-1 pr-1 sm:pl-4 sm:pr-4 bg-[#004F54]">
+      {/* Logo div */}
+      <div className="text-white ml-2">logo here</div>
+      <div className="mt-3 sm:mt-6">
+        <span className="text-white text-[9px] sm:text-xl ">
+          Built by Project-Cleanup
+        </span>
+        <p className="text-[9px] sm:text-xl pl-[10%] tracking-wider font-normal text-gray-50">
+          Copyright &copy;2022
+        </p>
+      </div>
+      {/* Social Icons div */}
+      <div className="flex flex-row w-28 sm:w-64 justify-between sm:justify-evenly items-center space-y-1 h-auto w-min p-[.6rem]">
+        <div className="item w-6 h-6 sm:w-12 sm:h-12">
           <a href="https://www.facebook.com" target="blank">
-            <AiFillFacebook className="h-12 w-12 rounded-md m-0 shadow-md text-gray-50" />
+            <AiFillFacebook className="h-6 w-6 sm:h-12 sm:w-12 rounded-md mr-4 shadow-md text-gray-50" />
           </a>
         </div>
-        <div className="item w-12 h-12">
+        <div className="item w-6 h-6 sm:w-12 sm:h-12">
           <a href="https://www.instagram.com" target="blank">
-            <AiFillInstagram className="h-12 w-12 rounded-md m-0 shadow-md text-gray-50" />
+            <AiFillInstagram className="h-6 w-6 sm:h-12 sm:w-12 rounded-md mr-4 shadow-md text-gray-50" />
           </a>
         </div>
-        <div className="item w-12 h-12">
+        <div className="item w-6 h-6 sm:w-12 sm:h-12">
           <a href="https://www.twitter.com" target="blank">
-            <AiOutlineTwitter className="h-12 w-12 rounded-md m-0 shadow-md text-gray-50" />
+            <AiOutlineTwitter className="h-6 w-6 sm:h-12 sm:w-12 mr-2 rounded-md shadow-md text-gray-50" />
           </a>
         </div>
       </div>
-      <p className="text-base pl-[4%] tracking-wider font-normal text-gray-50">
-        Copyright &copy;2022
-        
-      </p>
+      {/* copyright div */}
     </footer>
   );
 }
