@@ -90,7 +90,7 @@ export default function Map() {
       center={center}
       zoom={9}
       gestureHandling={true}
-      style={{ height: "60vh" }}
+      style={{ height: "70vh" }}
     >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
