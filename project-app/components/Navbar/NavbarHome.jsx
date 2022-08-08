@@ -12,6 +12,7 @@ import { DownOutlined } from "@ant-design/icons";
 import { AiOutlineMenu } from "react-icons/ai";
 
 const NavbarHome = () => {
+  
   const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
@@ -80,9 +81,11 @@ const NavbarHome = () => {
 
   //Auth0 check to see if user is logged in  
   const { user, error, isLoading } = useUser();  
-  if (isLoading) return <div>Loading...</div>;
+  
+  if (isLoading) return <div> Loading...</div>;
   if (error) return <div>{error.message}</div>;
   if(user) { 
+   
     return (
     <div className="fixed z-[1002]">
       <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
@@ -112,7 +115,7 @@ const NavbarHome = () => {
         </Link>
         <Link href="/api/auth/logout">
           <a className="text-[white] hidden md:flex items-center text-xl mr-[3em]">
-            {user.nickname} (Logout)
+            Welcome {user.name}{' '}/{' '}Logout
           </a>
         </Link>
         <AiOutlineMenu
@@ -154,6 +157,7 @@ const NavbarHome = () => {
                 className="text-[#004F54] text-xl"
                 rel="noopener noreferrer"
                 href="/start-a-clean"
+               
               >
                 Start Cleanup
               </a>
@@ -191,7 +195,7 @@ const NavbarHome = () => {
                 className="text-[#004F54] text-xl"
                 href="/api/auth/logout"
               >
-                {user.nickname} (Logout)
+                {user.name}/Logout
               </a>
             </div>
           </ul>
