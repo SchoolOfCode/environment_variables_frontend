@@ -95,11 +95,11 @@ const StartCleanForm = () => {
           </label>
           <Field
             placeholder="0123"
-            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border rounded-lg border-[#FF9505] shadow-inner text-black text-base  focus:ring-blue-500 focus:border-blue-500"
+            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
             name="userID"
             type="text"
           />
-          <ErrorMessage name="userID" className="text-white"/> */}
+          <ErrorMessage name="userID" component="div" className="text-white italic"/> */}
 
           <label
             htmlFor="cleanName"
@@ -111,9 +111,9 @@ const StartCleanForm = () => {
             placeholder="e.g. Brighton Pier clean-up"
             name="cleanName"
             type="text"
-            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border rounded-lg border-[#FF9505] shadow-inner text-black text-base  focus:ring-blue-500 focus:border-blue-500"
+            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="cleanName"/>
+          <ErrorMessage name="cleanName" component="div" className="text-white italic"/>
 
           <label
             htmlFor="location"
@@ -125,9 +125,9 @@ const StartCleanForm = () => {
             placeholder="e.g. Coffee shop at end of pier"
             name="location"
             type="text"
-            className="border-[#FF9505]  w-full h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
+            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="location" />
+          <ErrorMessage name="location" component="div" className="text-white italic"/>
 
           <label
             htmlFor="date"
@@ -138,9 +138,9 @@ const StartCleanForm = () => {
           <Field
             name="date"
             type="date"
-            className="border-[#FF9505] w-full h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
+            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="date" />
+          <ErrorMessage name="date" component="div" className="text-white italic"/>
 
           <label
             htmlFor="startTime"
@@ -152,9 +152,9 @@ const StartCleanForm = () => {
             placeholder="10:00"
             name="startTime"
             type="text"
-            className="border-[#FF9505]  w-full h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5"
+            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="startTime" />
+          <ErrorMessage name="startTime" component="div" className="text-white italic"/>
 
           <label
             htmlFor="endTime"
@@ -166,9 +166,9 @@ const StartCleanForm = () => {
             placeholder="13:00"
             name="endTime"
             type="text"
-            className=" border-[#FF9505] w-full h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 "
+            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="endTime" />
+          <ErrorMessage name="endTime" component="div" className="text-white italic"/>
 
           <label
             htmlFor="host"
@@ -180,9 +180,9 @@ const StartCleanForm = () => {
             placeholder="Your name"
             name="host"
             type="text"
-            className=" border-[#FF9505] w-full h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-black rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
+            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="host" />
+          <ErrorMessage name="host" component="div" className="text-white italic"/>
 
           <label
             htmlFor="notes"
@@ -194,14 +194,14 @@ const StartCleanForm = () => {
             as="textarea"
             name="notes"
             type="text"
-            className=" border-[#FF9505] w-full h-[6rem] mb-[.6rem]  text-base shadow-inner bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5"
+            className="ww-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="notes" />
+          <ErrorMessage name="notes" component="div" className="text-white italic"/>
 
-          <div className="flex justify-center w-full">
+          <div className="flex justify-center w-full pt-3">
             <button
               type="submit"
-              className="flex justify-self-center		text-white uppercase w-[110px] tracking-widest  bg-[#FF9505] hover:bg-orange-700  focus:outline-none font-medium rounded-lg text-lg px-[1rem] py-2.5 text-center"
+              className="flex rounded-lg w-[110px] h-10 bg-[#FF9505] hover:bg-orange-700 place-content-center place-items-center text-white font-medium text-lg uppercase tracking-wide"
               onClick={() => setShowModal(true)}
             >
               Submit
