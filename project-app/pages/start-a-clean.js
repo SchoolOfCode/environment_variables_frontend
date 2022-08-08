@@ -37,7 +37,7 @@ export default function startClean() {
           <div className="w-full  m:w-2/5 pt-12 mb-2">
             <MapWithNoSSR />
           </div>
-          <div className="w-full m:w-2/5 mb-6 pt-12">
+          <div className="w-full m:w-2/5 mb-14 pt-12">
             <StartCleanForm coords={coords} />
           </div>
         </div>

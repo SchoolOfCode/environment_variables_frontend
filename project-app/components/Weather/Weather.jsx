@@ -43,8 +43,12 @@ const Weather = () => {
         so you can pack accordingly...
       </p>
       <p className="text-xs sm:text-[14px] text-[#004f54] ml-4 font-medium">
-        Click the "tips" button for weather tips <WeatherReqs />
+        Click the "tips" button for weather tips
+        <span>
+          <WeatherReqs />
+        </span>
       </p>
+
       <div className="flex flex-col sm:flex-row sm:items-center md:justify-start">
         <SearchBar
           handleChange={handleChange}
@@ -52,7 +56,6 @@ const Weather = () => {
           city={city}
         />
       </div>
-
       <div className="weather">
         <WeatherForecast
           weatherObject={weatherObject}

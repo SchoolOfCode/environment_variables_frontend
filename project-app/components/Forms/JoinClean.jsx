@@ -5,22 +5,21 @@ import * as Yup from "yup";
 import data from "../../libs";
 
 export const JoinCleanForm = () => {
-
-  const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000"; 
+  const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
 
   const handleSubmit = async function (values) {
     const response = await fetch(`${url}/joinclean`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
         name: values.name,
         comments: values.comments,
-  }),
-});
-  const data = await response.json();
-  console.log(data);
-  }
-  
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+  };
+
   return (
     <Formik
       initialValues={{
@@ -37,7 +36,7 @@ export const JoinCleanForm = () => {
       })}
       onSubmit={handleSubmit}
     >
-    {/* (values, { setSubmitting }) => {
+      {/* (values, { setSubmitting }) => {
         setTimeout(() => {
           alert("Thanks for joining a clean");
           handleSubmit(values);
