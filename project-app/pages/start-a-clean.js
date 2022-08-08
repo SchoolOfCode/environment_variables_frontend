@@ -3,10 +3,10 @@
 //Importing packages
 import { useState } from "react";
 import dynamic from "next/dynamic";
-import {withPageAuthRequired } from '@auth0/nextjs-auth0';
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 //Importing Context
-import { MapContext } from "../context/MapContext"
+import { MapContext } from "../context/MapContext";
 
 //Importing custome components
 import StartCleanForm from "../components/Forms/StartClean";
@@ -29,14 +29,22 @@ export default function startClean() {
     <MapContext.Provider value={{ setCoords, coords }}>
       <div className="h-full">
         <NavbarStartClean />
-        <div className="h-[auto] w-[75%] pl-[25%]">
-        <MapWithNoSSR />
+        <h3 className="pt-32 ml-4 text-3xl text-[#004F54]">Start a clean...</h3>
+        <h4 className="ml-4 text-md text-[#004F54]">
+          stap 1: drag the map marker to cleanup location
+        </h4>
+        <div className="flex flex-col sm:flex-row">
+          <div className="w-full sm:w-1/3 pt-12 mb-2">
+            <MapWithNoSSR />
+          </div>
+          <div className="w-full sm:w-1/3 mb-6">
+            <StartCleanForm coords={coords} />
+          </div>
         </div>
-        <StartCleanForm coords={coords} />
         <Footer />
       </div>
     </MapContext.Provider>
   );
 }
 
-export const getServerSideProps = withPageAuthRequired(); 
+export const getServerSideProps = withPageAuthRequired();
