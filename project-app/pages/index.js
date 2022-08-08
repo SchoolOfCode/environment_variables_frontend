@@ -31,14 +31,18 @@ export default function Home() {
         <OurMission />
 
         <ImageGallery />
-        <div className=" w-full  sm:w-1/2 ml-4 mr-4 sm:mr-0 mt-4 mb-16">
+        {/* map container for sizing */}
+        <div className=" ml-1 mr-1 mt-4 mb-16">
           <a id="map" className="flex invisible pb-[100px]"></a>
 
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#004F54] font-bold">
+          <h2 className="text-lg ml-4 sm:text-xl md:text-2xl text-[#004F54] font-bold">
             Find a cleanup near you...
           </h2>
-          <MapWithNoSSR />
+          <p className="ml-4 text-xs sm:text-lg text-[#004F54]">
+            Find a marker and click to reveal cleanup details
+          </p>
           <a id="weather" className="flex invisible"></a>
+          <MapWithNoSSR />
         </div>
         <Weather />
         <Footer />
