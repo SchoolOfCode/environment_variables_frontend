@@ -6,35 +6,48 @@ import Image from "next/image";
 
 const LogCleanForm = () => {
   const [showModal, setShowModal] = React.useState(false);
+
+  const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
+
+  const handleSubmit = async function (values) {
+    const response = await fetch(`${url}/logclean`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        cleanname: values.cleanname,
+        bags: values.bags,
+        volunteers: values.volunteers
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+  };
+
   return (
     <Formik
       initialValues={{
-        cleanID: "",
-        userID: "",
-        bagsCollected: "",
+        cleanname: "",
+        bags: "",
         volunteers: "",
       }}
       validationSchema={Yup.object({
-        cleanID: Yup.string()
-          .max(5, "Must be 5 characters or less")
+        // cleanID: Yup.string()
+        //   .max(5, "Must be 5 characters or less")
+        //   .required("Required"),
+        // userID: Yup.string()
+        //   .max(5, "Must be 5 characters or less")
+        //   .required("Required"),
+        cleanname: Yup.string()
+          .max(30, "Must be 30 characters or less")
           .required("Required"),
-        userID: Yup.string()
-          .max(5, "Must be 5 characters or less")
+        bags: Yup.number()
+          .max(99999, "Must be less than 99999")
           .required("Required"),
-        bagsCollected: Yup.string()
-          .max(5, "Must be 5 characters or less")
-          .required("Required"),
-        volunteers: Yup.string()
-          .max(5, "Must be 5 characters or less")
+        volunteers: Yup.number()
+          .max(99999, "Must be less than 99999")
           .required("Required"),
       })}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          dataLogClean.push(values); // substitute for post req
-          console.log(dataLogClean);
-          setSubmitting(false);
-        }, 400);
-      }}
+      onSubmit={handleSubmit}
     >
       <div className="flex-col justify-center">
         <h3 className="text-3xl font-medium text-left mt-12 p-[0] pl-[34%] text-[#004F54]">
@@ -42,7 +55,7 @@ const LogCleanForm = () => {
         </h3>
         <Form className=" p-[1rem]  bg-[#004F54] flex-col justify-center">
           <div className="ml-4 flex-col justify-center">
-            <label
+            {/* <label
               htmlFor="cleanID"
               className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
             >
@@ -68,21 +81,35 @@ const LogCleanForm = () => {
               placeholder="324-123"
               className="w-[50%] h-[3rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             />
-            <ErrorMessage name="userID" />
+            <ErrorMessage name="userID" /> */}
 
             <label
-              htmlFor="bagsCollected"
+              htmlFor="cleanname"
+              className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
+            >
+              Clean Name
+            </label>
+            <Field
+              name="cleanname"
+              type="text"
+              placeholder="London Clean"
+              className="w-[50%] h-[3rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            />
+            <ErrorMessage name="cleanname" />
+
+            <label
+              htmlFor="bags"
               className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
             >
               Bags Collected
             </label>
             <Field
-              name="bagsCollected"
+              name="bags"
               type="text"
               placeholder="50"
               className="w-[50%] h-[3rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             />
-            <ErrorMessage name="bagsCollected" />
+            <ErrorMessage name="bags" />
 
             <label
               htmlFor="volunteers"
