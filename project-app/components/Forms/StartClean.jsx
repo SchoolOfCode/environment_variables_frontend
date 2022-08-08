@@ -64,8 +64,8 @@ const StartCleanForm = () => {
       }}
     >
       
-      <Form className="flex flex-col  bg-[#004F54]/90 w-90 mr-10 ml-4 rounded-xl">
-        <div className="ml-[22%]">
+      <Form className="flex flex-col  bg-[#004F54]/90 w-90   rounded-xl">
+        <div className="flex flex-col  ml-[22%]">
           <label
             htmlFor="userID"
             className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-white dark:text-gray-900"
@@ -204,15 +204,16 @@ const StartCleanForm = () => {
             className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white border-[#FF9505] dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           />
           <ErrorMessage name="longitude" /> */}
-        </div>
+      
 
         <button
           type="submit"
-          className="flex place-content-center	text-white uppercase w-[20%] tracking-widest m-[1.2rem] bg-[#FF9505] hover:bg-orange-700  focus:outline-none font-medium rounded-lg text-lg px-[1rem] py-2.5 text-center"
+          className="flex place-items-center 	text-white uppercase w-[7em] tracking-widest  bg-[#FF9505] hover:bg-orange-700  focus:outline-none font-medium rounded-lg text-lg px-[1rem] py-2.5 text-center"
           onClick={() => setShowModal(true)}
         >
           Submit
         </button>
+        </div>
         {showModal ? (
           <>
             <div className=" z-[1005] sm:ml-0 mr-0 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0  outline-none focus:outline-none">
