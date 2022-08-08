@@ -75,10 +75,12 @@ const StartCleanForm = () => {
       })}
       onSubmit={handleSubmit}
     >
-      <Form className="flex flex-col  bg-[#004F54]/90 w-90 mr-3   rounded-xl">
-        <div className="flex flex-col align-items-center ml-[22%] w-[60%]">
+
+      
+      <Form className="flex flex-col ml-[3rem] pb-[2rem] bg-[#004F54]/90 w-[70%] mr-9 rounded-xl">
+        <div className="flex flex-col ml-[20%] w-[60%]">
           {/* May not use User_Id */}
-          {/* <label
+          {/*<label
             htmlFor="userID"
             className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-white dark:text-gray-900"
           >
@@ -90,7 +92,8 @@ const StartCleanForm = () => {
             name="userID"
             type="text"
           />
-          <ErrorMessage name="userID" /> */}
+          <ErrorMessage name="userID" className="text-white"/> */}
+
 
           <label
             htmlFor="cleanName"
