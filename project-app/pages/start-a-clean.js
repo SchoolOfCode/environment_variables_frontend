@@ -27,17 +27,17 @@ export default function startClean() {
 
   return (
     <MapContext.Provider value={{ setCoords, coords }}>
-      <div className="h-full">
+      <div className="h-full place-content-center bg-[#E6E5E4]">
         <NavbarStartClean />
-        <h3 className="pt-32 ml-4 text-3xl text-[#004F54]">Start a clean...</h3>
+        <h2 className="pt-32 ml-4 text-3xl text-[#004F54]">Start a clean</h2>
         <h4 className="ml-4 text-md text-[#004F54]">
           stap 1: drag the map marker to cleanup location
         </h4>
-        <div className="flex flex-col sm:flex-row">
-          <div className="w-full sm:w-1/3 pt-12 mb-2">
+        <div className="flex flex-col sm:flex-row justify-evenly ">
+          <div className="w-full  m:w-2/5 pt-12 mb-2">
             <MapWithNoSSR />
           </div>
-          <div className="w-full sm:w-1/3 mb-6">
+          <div className="w-full m:w-2/5 mb-6 pt-12">
             <StartCleanForm coords={coords} />
           </div>
         </div>
