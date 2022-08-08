@@ -6,7 +6,7 @@ const WeatherReqs = () => {
   return (
     <>
       <button
-        className="bg-[#004F54] ml-4 sm:ml-0 text-white font-bold uppercase text-xs md:text-sm p-1 sm:p2 sm:mt-0 rounded shadow hover:shadow-lg outline-none focus:outline-none mb-1 ease-linear transition-all duration-75 w-12 sm:w-12 mt-1 sm:mt-4"
+        className="bg-[#004F54] ml-2 text-white font-bold uppercase text-[10px] md:text-xs p-0.5 sm:p1 sm:mt-0 rounded shadow hover:shadow-lg outline-none focus:outline-none mb-1 ease-linear transition-all duration-75 w-12 sm:w-12 mt-1 sm:mt-4"
         type="button"
         onClick={() => setShowModal(true)}
       >
@@ -15,13 +15,13 @@ const WeatherReqs = () => {
 
       {showModal ? (
         <>
-          <div className=" z-[1005] sm:ml0 mr-0 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+          <div className=" z-[1005] sm:ml-0 mr-0 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 outline-none focus:outline-none">
             <div className="relative w-5/6 sm:w-auto sm:my-6 sm:mx-auto sm:max-w-6xl">
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
-                <div className="flex items-start justify-between p-0 sm:p-2 border-b border-solid border-slate-200 rounded-t">
-                  <h3 className=" mt-2 ml-6 text-lg sm:text-3xl font-bold text-[#004F54]">
+                <div className="flex items-start justify-between p-0 sm:p-2 border-b border-solid border-slate-200 rounded">
+                  <h3 className=" mt-2 ml-6 text-lg sm:text-2xl font-bold text-[#004F54]">
                     Weather Tips
                   </h3>
                 </div>
@@ -63,20 +63,51 @@ const WeatherReqs = () => {
                       <div className="mr-2 sm:mr-10 bg-sky-600 rounded sm:rounded-xl shadow-2xl p-2">
                         <Image src="/boots.svg" width={75} height={75} />
                       </div>
-                      <div className="bg-sky-600 rounded sm:rounded-xl shadow-2xl p-2">
+                      <div className="flex flex-col items-center bg-sky-600 rounded sm:rounded-xl shadow-2xl p-2 text-sm">
                         <Image src="/winter-hat.svg" width={75} height={75} />
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <ul className=" mt-2 ml-6 text-xs sm:text-md">
-                  <h2 className="text-md sm:text-xl font-bold">Checklist</h2>
-                  <li>- Stay hydrated</li>
-                  <li>- Take appropriate clothing</li>
-                  <li>- Be prepared for sudden changes in weather</li>
-                  <li>- Wear a rucksack to carry essentials</li>
-                </ul>
+                {/* Checklist hot */}
+                <div className="flex ">
+                  <div>
+                    <ul className=" mt-2 ml-6 text-[11px] sm:text-[12px] text-[#004F54]">
+                      <h2 className="text-md sm:text-xl font-bold text-[#004F54]">
+                        Hot Checklist
+                      </h2>
+                      <li>- Sunglasses</li>
+                      <li>- Cap</li>
+                      <li>- Sun Lotion</li>
+                      <li>- Water (lots of it)</li>
+                    </ul>
+                  </div>
+                  {/* checklist cold */}
+                  <div>
+                    <ul className=" mt-2 ml-6 text-[11px] sm:text-[12px] text-[#004F54]">
+                      <h2 className="text-md sm:text-xl font-bold text-[#004F54]">
+                        Cold Checklist
+                      </h2>
+                      <li>- Gloves</li>
+                      <li>- Jacket</li>
+                      <li>- Boots/ wellies</li>
+                      <li>- Warm hat</li>
+                    </ul>
+                  </div>
+                </div>
+                {/* tips */}
+                <div>
+                  <ul className=" mt-2 ml-6 text-[11px] sm:text-[12px] text-[#004F54]">
+                    <h2 className="text-md sm:text-xl font-bold text-[#004F54]">
+                      General tips
+                    </h2>
+                    <li>- Stay hydrated</li>
+                    <li>- Be prepared for sudden changes in weather</li>
+                    <li>- Wear a rucksack to carry essentials</li>
+                    <li>- Protect yourself from the elements</li>
+                    <li>- Carry a first aid kit as a precaution</li>
+                  </ul>
+                </div>
                 {/*footer*/}
                 <div className="flex items-center justify-end mt-1 sm:mt-0 p-0 sm:p-2 border-t border-solid border-slate-200 rounded-b">
                   <button
