@@ -64,8 +64,8 @@ const StartCleanForm = () => {
       }}
     >
       
-      <Form className="flex flex-col  bg-[#004F54]/90 w-90 mr-3   rounded-xl">
-        <div className="flex flex-col align-items-center ml-[22%] w-[60%]">
+      <Form className="flex flex-col ml-[3rem] pb-[2rem] bg-[#004F54]/90 w-[70%] mr-9 rounded-xl">
+        <div className="flex flex-col ml-[20%] w-[60%]">
           <label
             htmlFor="userID"
             className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-white dark:text-gray-900"
@@ -78,7 +78,7 @@ const StartCleanForm = () => {
             name="userID"
             type="text"
           />
-          <ErrorMessage name="userID" />
+          <ErrorMessage name="userID" className="text-white"/>
 
           <label
             htmlFor="cleanName"
@@ -241,9 +241,9 @@ const StartCleanForm = () => {
                     </div>
                   </div>
                   {/*footer*/}
-                  <div className="w-5 flex items-center justify-end mt-1 sm:mt-0 p-0 sm:p-2 border-t border-solid border-slate-200 rounded-b">
+                  <div className="flex items-center justify-end mt-1 sm:mt-0 p-0 sm:p-2 border-t border-solid border-slate-200 rounded-b">
                     <button
-                      className="text-[#004F54] background-transparent font-bold uppercase px-6 py-2 text-[9px] sm:text-sm outline-none focus:outline-none  sm:mb-1 ease-linear transition-all duration-75"
+                      className="text-[#004F54] background-transparent font-bold uppercase px-6 py-2 text-[9px] sm:text-sm outline-none focus:outline-none mr-1 sm:mb-1 ease-linear transition-all duration-75"
                       type="button"
                       onClick={() => setShowModal(false)}
                     >
