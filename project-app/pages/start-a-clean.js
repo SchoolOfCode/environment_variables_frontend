@@ -30,14 +30,16 @@ export default function startClean() {
       <div className="h-full">
         <NavbarStartClean />
         <h3 className="pt-32 ml-4 text-3xl text-[#004F54]">Start a clean...</h3>
-        <div className="pt-12 mb-2">
-          <h4 className="ml-4 text-md text-[#004F54]">
-            stap 1: drag the map marker to cleanup location
-          </h4>
-          <MapWithNoSSR />
-        </div>
-        <div className="w-full mb-6">
-          <StartCleanForm coords={coords} />
+        <h4 className="ml-4 text-md text-[#004F54]">
+          stap 1: drag the map marker to cleanup location
+        </h4>
+        <div className="flex flex-col sm:flex-row">
+          <div className="w-full sm:w-1/3 pt-12 mb-2">
+            <MapWithNoSSR />
+          </div>
+          <div className="w-full sm:w-1/3 mb-6">
+            <StartCleanForm coords={coords} />
+          </div>
         </div>
         <Footer />
       </div>
