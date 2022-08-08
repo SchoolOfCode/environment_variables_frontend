@@ -76,42 +76,40 @@ const StartCleanForm = () => {
       onSubmit={handleSubmit}
     >
 
-      
-      <Form className="flex flex-col ml-[3rem] pb-[2rem] bg-[#004F54]/90 w-[70%] mr-9 rounded-xl">
-        <div className="flex flex-col ml-[20%] w-[60%]">
+      <Form className="flex flex-col bg-[#004F54]/90 w-11/12 sm:w-3/4 rounded-xl">
+        <div className="flex flex-col p-5">
           {/* May not use User_Id */}
           {/*<label
             htmlFor="userID"
-            className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-white dark:text-gray-900"
+            className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-white"
           >
             #User ID
           </label>
           <Field
             placeholder="0123"
-            className="border-[#FF9505] w-[100%] h-[2.5rem] text-base shadow-inner bg-gray-50 border  text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="border-[#FF9505] w-full h-[2.5rem] text-base shadow-inner bg-gray-50 border  text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5"
             name="userID"
             type="text"
           />
           <ErrorMessage name="userID" className="text-white"/> */}
 
-
           <label
             htmlFor="cleanName"
-            className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-white dark:text-gray-900"
+            className="pb-2 text-white text-lg font-medium"
           >
             Your Cleanup Name
           </label>
           <Field
-            placeholder="brighton pier cleanup"
+            placeholder="e.g. Brighton Pier Clean-up"
             name="cleanName"
             type="text"
-            className="border-[#FF9505]w-[100%] h-[2.5rem] mb-[.6rem] shadow-inner text-black text-base bg-gray-50 border rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border rounded-lg border-[#FF9505] shadow-inner text-black text-base  focus:ring-blue-500 focus:border-blue-500"
           />
-          <ErrorMessage name="cleanName" />
+          <ErrorMessage name="cleanName"/>
 
           <label
             htmlFor="location"
-            className="mb-[0rem]  block text-lg p-[0.4rem] font-medium text-white dark:text-gray-900"
+            className="py-2 text-white text-lg font-medium"
           >
             Meeting Location
           </label>
@@ -119,26 +117,26 @@ const StartCleanForm = () => {
             placeholder="London"
             name="location"
             type="text"
-            className="border-[#FF9505]  w-[100%] h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="border-[#FF9505]  w-full h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
           />
           <ErrorMessage name="location" />
 
           <label
             htmlFor="date"
-            className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-white dark:text-gray-900"
+            className="py-2 text-white text-lg font-medium"
           >
             Date
           </label>
           <Field
             name="date"
             type="date"
-            className="border-[#FF9505] w-[100%] h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="border-[#FF9505] w-full h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
           />
           <ErrorMessage name="date" />
 
           <label
             htmlFor="startTime"
-            className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-white dark:text-gray-900"
+            className="py-2 text-white text-lg font-medium"
           >
             Start Time
           </label>
@@ -146,13 +144,13 @@ const StartCleanForm = () => {
             placeholder="10:00"
             name="startTime"
             type="text"
-            className="border-[#FF9505]  w-[100%] h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="border-[#FF9505]  w-full h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5"
           />
           <ErrorMessage name="startTime" />
 
           <label
             htmlFor="endTime"
-            className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-white dark:text-gray-900"
+            className="py-2 text-white text-lg font-medium"
           >
             End Time
           </label>
@@ -160,13 +158,13 @@ const StartCleanForm = () => {
             placeholder="13:00"
             name="endTime"
             type="text"
-            className=" border-[#FF9505] w-[100%] h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className=" border-[#FF9505] w-full h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 "
           />
           <ErrorMessage name="endTime" />
 
           <label
             htmlFor="host"
-            className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-white dark:text-gray-900"
+            className="py-2 text-white text-lg font-medium"
           >
             Host
           </label>
@@ -174,13 +172,13 @@ const StartCleanForm = () => {
             placeholder="Your name"
             name="host"
             type="text"
-            className=" border-[#FF9505] w-[100%] h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-black rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className=" border-[#FF9505] w-full h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-black rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
           />
           <ErrorMessage name="host" />
 
           <label
             htmlFor="notes"
-            className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-white dark:text-gray-900"
+            className="py-2 text-white text-lg font-medium"
           >
             Notes
           </label>
@@ -188,38 +186,11 @@ const StartCleanForm = () => {
             as="textarea"
             name="notes"
             type="text"
-            className=" border-[#FF9505] w-[100%] h-[6rem] mb-[.6rem]  text-base shadow-inner bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className=" border-[#FF9505] w-full h-[6rem] mb-[.6rem]  text-base shadow-inner bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5"
           />
           <ErrorMessage name="notes" />
 
-          {/* <label
-            htmlFor="latitude"
-            className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
-          >
-            latitude
-          </label>
-          <Field
-            value={coords[0]}
-            name="latitude"
-            type="number"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-[#FF9505] text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-          />
-          <ErrorMessage name="latitude" />
-
-          <label
-            htmlFor="longitude"
-            className="mb-[0rem] block text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
-          >
-            longitude
-          </label>
-          <Field
-            value={coords[1]}
-            name="longitude"
-            type="number"
-            className="w-[50%] h-[3rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white border-[#FF9505] dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-          />
-          <ErrorMessage name="longitude" /> */}
-          <div className="flex justify-center w-[100%]">
+          <div className="flex justify-center w-full">
             <button
               type="submit"
               className="flex justify-self-center		text-white uppercase w-[110px] tracking-widest  bg-[#FF9505] hover:bg-orange-700  focus:outline-none font-medium rounded-lg text-lg px-[1rem] py-2.5 text-center"
@@ -238,7 +209,7 @@ const StartCleanForm = () => {
                   {/*header*/}
                   <div className="flex items-start justify-center p-0 sm:p-2 border-b border-solid border-slate-200 rounded-t">
                     <h3 className=" mt-2 ml-6 mr-6 text-lg sm:text-3xl font-bold text-[#004F54]">
-                      Thanks For Doing Your Part
+                      Thank you for doing your part!
                     </h3>
                   </div>
                   {/*body*/}
@@ -247,15 +218,15 @@ const StartCleanForm = () => {
                     <div className="flex-col justify-center relative p-2 sm:p-6 sm:ml-8">
                       {/* cold icons */}
 
-                      <div className=" flex justify-center items-center mr-2 sm:mr-10 rounded sm:rounded-xl  p-2">
+                      <div className="flex justify-center items-center mr-2 sm:mr-10 rounded sm:rounded-xl  p-2">
                         <Image src="/planet.svg" width={75} height={75} />
                       </div>
                       <h4 className="text-[#004F54] text-md sm:text-xl">
-                        You can now find your cleanup on our map...
+                        Your clean-up has been added to the map
                       </h4>
                     </div>
                   </div>
-                  {/*footer*/}
+                  {/*Modal footer*/}
                   <div className="flex items-center justify-end mt-1 sm:mt-0 p-0 sm:p-2 border-t border-solid border-slate-200 rounded-b">
                     <button
                       className="text-[#004F54] background-transparent font-bold uppercase px-6 py-2 text-[9px] sm:text-sm outline-none focus:outline-none mr-1 sm:mb-1 ease-linear transition-all duration-75"

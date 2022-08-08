@@ -30,9 +30,9 @@ export default function startClean() {
       <div className="h-full place-content-center bg-[#E6E5E4]">
         <NavbarStartClean />
         <h2 className="pt-32 ml-4 text-3xl text-[#004F54]">Start a clean</h2>
-        <h4 className="ml-4 text-md text-[#004F54]">
+        <h3 className="ml-4 text-md text-[#004F54]">
           stap 1: drag the map marker to cleanup location
-        </h4>
+        </h3>
         <div className="flex flex-col sm:flex-row justify-evenly ">
           <div className="w-full  m:w-2/5 pt-12 mb-2">
             <MapWithNoSSR />
