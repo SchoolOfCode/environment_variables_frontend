@@ -83,8 +83,8 @@ const StartCleanForm = () => {
       onSubmit={handleSubmit}
     >
 
-      <Form className="flex flex-col bg-[#004F54]/90 w-11/12 sm:w-3/4 rounded-xl">
-        <div className="flex flex-col p-5">
+      <Form className="flex flex-col bg-[#004F54]/90 w-11/12 sm:w-10/12 rounded-xl">
+        <div className="flex flex-col py-4 sm:px-8 px-4">
           {/* CURRENTLY NOT USING THIS FIELD */}
           {/*<label
             htmlFor="userID"
@@ -197,7 +197,7 @@ const StartCleanForm = () => {
           />
           <ErrorMessage name="notes" component="div" className="text-white italic"/>
 
-          <div className="flex justify-center w-full pt-3">
+          <div className="flex justify-center w-full pt-4">
             <button
               type="submit"
               className="flex rounded-lg w-[110px] h-10 bg-[#FF9505] hover:bg-orange-700 place-content-center place-items-center text-white font-medium text-lg uppercase tracking-wide"
@@ -206,6 +206,8 @@ const StartCleanForm = () => {
             </button>
           </div>
         </div>
+
+        {/* End of form. Modal begins. */}  
 
         {showModal ? (
           <>
