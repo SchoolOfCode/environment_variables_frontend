@@ -15,7 +15,6 @@ const StartCleanForm = () => {
   //Defining state and context
   const { setCoords, coords } = useContext(MapContext);
   const [showModal, setShowModal] = React.useState(false);
-  console.log("co-ords from form page:", coords);
 
   //Defining functions
   const handleSubmit = async function (values) {
@@ -36,7 +35,7 @@ const StartCleanForm = () => {
       }),
     });
     const data = await response.json();
-    console.log(data);
+    if (data.success) {setShowModal(true)};
   };
 
   //Returning the form
@@ -63,7 +62,7 @@ const StartCleanForm = () => {
           .max(20, "Must be 20 characters or less")
           .required("Required"),
         location: Yup.string()
-          .max(20, "Must be 20 characters or less")
+          .max(50, "Must be 50 characters or less")
           .required("Required"),
         date: Yup.date().required("Required"),
         startTime: Yup.string()
@@ -76,8 +75,8 @@ const StartCleanForm = () => {
           .max(15, "Must be 15 characters or less")
           .required("Required"),
         notes: Yup.string()
-          .max(50, "Must be 50 characters or less")
-          .required("Required"), //Is this really required?
+          .max(50, "Must be 50 characters or less"),
+          //.required("Required"), Is this really required?
         latitude: Yup.number(),
         longitude: Yup.number(),
       })}
@@ -194,7 +193,7 @@ const StartCleanForm = () => {
             as="textarea"
             name="notes"
             type="text"
-            className="ww-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
+            className="w-full h-20 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
           <ErrorMessage name="notes" component="div" className="text-white italic"/>
 
@@ -202,12 +201,12 @@ const StartCleanForm = () => {
             <button
               type="submit"
               className="flex rounded-lg w-[110px] h-10 bg-[#FF9505] hover:bg-orange-700 place-content-center place-items-center text-white font-medium text-lg uppercase tracking-wide"
-              onClick={() => setShowModal(true)}
             >
               Submit
             </button>
           </div>
         </div>
+
         {showModal ? (
           <>
             <div className="z-[1005] fixed inset-0 flex justify-center items-center overflow-x-hidden overflow-y-auto">
