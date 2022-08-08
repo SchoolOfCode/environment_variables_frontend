@@ -1,17 +1,23 @@
+//Import packages
 import React, { useContext } from "react";
+import Image from "next/image";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import dataStartClean from "../../libs/startLib";
-import { MapContext } from "../../context/MapContext";
-import Image from "next/image";
 
+//Import context
+import { MapContext } from "../../context/MapContext";
+
+//Define constants
+const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
+
+//Component
 const StartCleanForm = () => {
+  //Defining state and context
   const { setCoords, coords } = useContext(MapContext);
   const [showModal, setShowModal] = React.useState(false);
   console.log("co-ords from form page:", coords);
 
-  const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
-
+  //Defining functions
   const handleSubmit = async function (values) {
     const response = await fetch(`${url}/startclean`, {
       method: "POST",
@@ -33,6 +39,7 @@ const StartCleanForm = () => {
     console.log(data);
   };
 
+  //Returning the form
   return (
     <Formik
       initialValues={{
@@ -48,9 +55,10 @@ const StartCleanForm = () => {
         longitude: "",
       }}
       validationSchema={Yup.object({
-        // userID: Yup.string()
-        //   .max(10, "Must be 10 characters or less")
-        //   .required("Required"),
+        /* NOT USING USER ID AT PRESENT
+        userID: Yup.string()
+          .max(10, "Must be 10 characters or less")
+           .required("Required"),*/
         cleanName: Yup.string()
           .max(20, "Must be 20 characters or less")
           .required("Required"),
@@ -69,7 +77,7 @@ const StartCleanForm = () => {
           .required("Required"),
         notes: Yup.string()
           .max(50, "Must be 50 characters or less")
-          .required("Required"),
+          .required("Required"), //Is this really required?
         latitude: Yup.number(),
         longitude: Yup.number(),
       })}
@@ -78,16 +86,16 @@ const StartCleanForm = () => {
 
       <Form className="flex flex-col bg-[#004F54]/90 w-11/12 sm:w-3/4 rounded-xl">
         <div className="flex flex-col p-5">
-          {/* May not use User_Id */}
+          {/* CURRENTLY NOT USING THIS FIELD */}
           {/*<label
             htmlFor="userID"
-            className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-white"
+            className="pb-2 text-white text-lg font-medium"
           >
             #User ID
           </label>
           <Field
             placeholder="0123"
-            className="border-[#FF9505] w-full h-[2.5rem] text-base shadow-inner bg-gray-50 border  text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5"
+            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border rounded-lg border-[#FF9505] shadow-inner text-black text-base  focus:ring-blue-500 focus:border-blue-500"
             name="userID"
             type="text"
           />
@@ -97,10 +105,10 @@ const StartCleanForm = () => {
             htmlFor="cleanName"
             className="pb-2 text-white text-lg font-medium"
           >
-            Your Cleanup Name
+            Your Clean-up Name
           </label>
           <Field
-            placeholder="e.g. Brighton Pier Clean-up"
+            placeholder="e.g. Brighton Pier clean-up"
             name="cleanName"
             type="text"
             className="w-full h-10 p-2.5 mb-1 bg-gray-50 border rounded-lg border-[#FF9505] shadow-inner text-black text-base  focus:ring-blue-500 focus:border-blue-500"
@@ -114,7 +122,7 @@ const StartCleanForm = () => {
             Meeting Location
           </label>
           <Field
-            placeholder="London"
+            placeholder="e.g. Coffee shop at end of pier"
             name="location"
             type="text"
             className="border-[#FF9505]  w-full h-[2.5rem] mb-[.6rem] text-base shadow-sm bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
