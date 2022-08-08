@@ -5,29 +5,47 @@ import * as Yup from "yup";
 import data from "../../libs";
 
 export const JoinCleanForm = () => {
+
+  const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000"; 
+
+  const handleSubmit = async function (values) {
+    const response = await fetch(`${url}/joinclean`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        name: values.name,
+        comments: values.comments,
+  }),
+});
+  const data = await response.json();
+  console.log(data);
+  }
+  
   return (
     <Formik
       initialValues={{
         name: "",
-        email: "",
+        comments: "",
       }}
       validationSchema={Yup.object({
         name: Yup.string()
           .max(30, "Must be 30 characters or less")
           .required("Required"),
-        email: Yup.string()
-          .max(30, "Must be 30 characters or less")
+        comments: Yup.string()
+          .max(50, "Must be 50 characters or less")
           .required("Required"),
       })}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={handleSubmit}
+    >
+    {/* (values, { setSubmitting }) => {
         setTimeout(() => {
           alert("Thanks for joining a clean");
-          data.push(values); // substitute for post req
+          handleSubmit(values);
+          data.push(values); //substitute for post req
           console.log(data);
           setSubmitting(false);
         }, 400);
-      }}
-    >
+      } */}
       <Form>
         <label
           htmlFor="name"
@@ -43,17 +61,17 @@ export const JoinCleanForm = () => {
         <ErrorMessage name="name" />
 
         <label
-          htmlFor="email"
+          htmlFor="comments"
           className="font-bold block text-sm text-gray-900 dark:text-gray-900"
         >
-          Email
+          Comments
         </label>
         <Field
-          name="email"
+          name="comments"
           type="text"
           className="mb-[5px] shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
         />
-        <ErrorMessage name="email" />
+        <ErrorMessage name="comments" />
 
         <button
           type="submit"
