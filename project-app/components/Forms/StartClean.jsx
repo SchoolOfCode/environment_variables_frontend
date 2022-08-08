@@ -210,34 +210,34 @@ const StartCleanForm = () => {
         </div>
         {showModal ? (
           <>
-            <div className=" z-[1005] sm:ml-0 mr-0 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0  outline-none focus:outline-none">
-              <div className="relative w-5/6 sm:w-auto sm:my-6 sm:mx-auto sm:max-w-6xl">
+            <div className="z-[1005] fixed inset-0 flex justify-center items-center overflow-x-hidden overflow-y-auto">
+              <div className="w-5/6 sm:w-auto sm:my-6 sm:mx-auto sm:max-w-6xl">
                 {/*content*/}
-                <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                  {/*header*/}
-                  <div className="flex items-start justify-center p-0 sm:p-2 border-b border-solid border-slate-200 rounded-t">
-                    <h3 className=" mt-2 ml-6 mr-6 text-lg sm:text-3xl font-bold text-[#004F54]">
+                <div className="flex flex-col w-full bg-white border-0 rounded-lg shadow-lg">
+                  {/*modal header*/}
+                  <div className="flex justify-center p-0 sm:p-2 border-b border-solid border-slate-200 rounded-t">
+                    <h2 className="mt-2 mx-6 text-xl sm:text-3xl font-bold text-[#004F54] text-center">
                       Thank you for doing your part!
-                    </h3>
+                    </h2>
                   </div>
-                  {/*body*/}
+                  {/*modal body*/}
                   <div className="flex justify-center">
                     {/* picture div */}
-                    <div className="flex-col justify-center relative p-2 sm:p-6 sm:ml-8">
-                      {/* cold icons */}
-
-                      <div className="flex justify-center items-center mr-2 sm:mr-10 rounded sm:rounded-xl  p-2">
+                    <div className="flex-col justify-center p-6 space-y-4">
+                      {/* icon */}
+                      <div className="flex justify-center items-center rounded sm:rounded-xl ">
                         <Image src="/planet.svg" width={75} height={75} />
                       </div>
-                      <h4 className="text-[#004F54] text-md sm:text-xl">
+                      {/* text */}
+                      <h3 className="text-[#004F54] text-lg sm:text-xl text-center">
                         Your clean-up has been added to the map
-                      </h4>
+                      </h3>
                     </div>
                   </div>
                   {/*Modal footer*/}
-                  <div className="flex items-center justify-end mt-1 sm:mt-0 p-0 sm:p-2 border-t border-solid border-slate-200 rounded-b">
+                  <div className="flex items-center justify-end border-t border-solid border-slate-200 rounded-b">
                     <button
-                      className="text-[#004F54] background-transparent font-bold uppercase px-6 py-2 text-[9px] sm:text-sm outline-none focus:outline-none mr-1 sm:mb-1 ease-linear transition-all duration-75"
+                      className="bg-transparent font-bold uppercase px-7 py-3 text-xs sm:text-sm"
                       type="button"
                       onClick={() => setShowModal(false)}
                     >
@@ -247,6 +247,7 @@ const StartCleanForm = () => {
                 </div>
               </div>
             </div>
+            {/* Applies a fade effect to the underlying page */}
             <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
           </>
         ) : null}
