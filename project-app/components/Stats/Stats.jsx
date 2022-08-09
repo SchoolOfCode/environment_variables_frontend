@@ -34,11 +34,6 @@ export default function Stats() {
 
   return (
     <div className="p-11 bg-[#F1F3F3] w-screen shadow-lg	">
-      <div>
-        <h2 className="flex sm:justify-center mr-2 sm:mr-0 ml-1 sm:ml-0 text-lg sm:text-xl md:text-2xl pb-10 font-semibold sm:font-medium text-[#004f54]">
-          Together we are making an incredible difference......
-        </h2>
-      </div>
       <div className="flex justify-around items-center space-x-5">
         <StatCard
           key={Math.random() * 500}
