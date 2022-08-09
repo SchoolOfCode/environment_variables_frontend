@@ -29,7 +29,7 @@ export default function startClean() {
     <MapContext.Provider value={{ setCoords, coords }}>
       <div className="h-full bg-[#E6E5E4] ">
         <NavbarStartClean />
-        <h2 className="pt-32 pb-8 text-5xl text-center text-[#004F54]">Start a clean</h2>
+        <h2 className="pt-32 pb-8 text-5xl text-center text-[#004F54]">Start A Clean</h2>
         <h3 className="ml-8 mb-0 text-lg rounded-md	 text-[#ffffff] bg-[#FF9505] w-[31rem] p-1 text-center">
           Important: Drag the marker to set your clean-up location
         </h3>
