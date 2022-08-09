@@ -57,25 +57,9 @@ export default function StartCleanMap() {
       ></Marker>
     );
   }
-  const Search = (props) => {
-    const map = useMap(); // access to leaflet map
-    const { provider } = props;
-
-    useEffect(() => {
-      const searchControl = new GeoSearchControl({
-        provider,
-      });
-
-      map.addControl(searchControl); // this is how you add a control in vanilla leaflet
-      return () => map.removeControl(searchControl);
-    }, [props]);
-
-    return null; // don't want anything to show up from this comp
-  };
 
   return (
-    
-    <MapContainer 
+    <MapContainer
       center={center}
       zoom={12}
       zoomControl={false}
@@ -85,9 +69,9 @@ export default function StartCleanMap() {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Search provider={new OpenStreetMapProvider()} />
+
       <ChangeView coords={center} />
       <DraggableMarker />
-    </MapContainer >
+    </MapContainer>
   );
 }
