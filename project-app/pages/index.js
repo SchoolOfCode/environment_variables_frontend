@@ -38,7 +38,7 @@ export default function Home() {
           <h2 className="text-lg ml-4 sm:text-xl md:text-2xl text-[#004F54] font-bold">
             Find a cleanup near you...
           </h2>
-          <p className="ml-4 text-xs sm:text-lg text-[#004F54]">
+          <p className="ml-4 text-sm sm:text-lg text-[#004F54]">
             Find a marker and click to reveal cleanup details
           </p>
           <a id="weather" className="flex invisible"></a>
