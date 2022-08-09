@@ -30,7 +30,7 @@ export default function startClean() {
       <div className="h-full bg-[#E6E5E4] ">
         <NavbarStartClean />
         <h2 className="pt-32 pb-8 text-5xl text-center text-[#004F54]">Start A Clean</h2>
-        <h3 className="ml-8 mb-0 text-lg rounded-md	 text-[#ffffff] bg-[#FF9505] w-[31rem] p-1 text-center">
+        <h3 className="ml-8 mb-0 text-lg rounded-md	 text-[#ffffff] bg-[#FF9505] w-10/12 sm:w-[31rem] p-1 text-center">
           Important: Drag the marker to set your clean-up location
         </h3>
 
@@ -39,7 +39,7 @@ export default function startClean() {
             <MapWithNoSSR />
           </div>
 
-          <div className="flex justify-center w-full  pt-4 mb-[25%]">
+          <div className="flex justify-center w-full mb-14 pt-4 ">
             <StartCleanForm coords={coords} />
           </div>
         </div>
