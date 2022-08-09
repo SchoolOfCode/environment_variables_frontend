@@ -1,16 +1,6 @@
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useRef,
-} from "react";
+import { useContext, useState, useMemo, useCallback, useRef } from "react";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
-import { OpenStreetMapProvider, GeoSearchControl } from "leaflet-geosearch";
-import { GestureHandling } from "leaflet-gesture-handling";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet-gesture-handling/dist/leaflet-gesture-handling.css";
