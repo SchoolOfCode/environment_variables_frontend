@@ -28,9 +28,9 @@ export default function Stats() {
     fetchBags();
     fetchCleans();
   }, []);
-  console.log("Total Volunteers data", volunteers);
-  console.log("Total bags data", bags);
-  console.log("Total Cleans data", totalCleans);
+  console.log("Total Volunteers data:", volunteers);
+  console.log("Total bags data:", bags);
+  console.log("Total Cleans data:", totalCleans);
 
   return (
     <div className="p-11 bg-[#F1F3F3] w-screen shadow-lg	">
