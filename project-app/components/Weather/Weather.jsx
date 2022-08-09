@@ -16,17 +16,24 @@ const Weather = () => {
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&units=metric`;
 
   async function fetchWeather() {
-    // This was an attempt to force the users to put in letters only, needs refactoring, DO NOT DELETE
-    // if (!/^[a-zA-Z]+$/.test(city)) {
-    //   alert("Please enter letters only");
-    // }
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data);
 
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
-    setWeatherObject(data);
-    //uncomment the below city State after development stage - means each time you make a change, props cant be found
-    setCity("");
+    if (response.status === 404) {
+
+        alert("Please enter a valid city name")
+      
+      } else if (response.status === 200){
+
+          setWeatherObject(data);
+        //uncomment the below city State after development stage - means each time you make a change, props cant be found
+          //setCity("");
+      }
+    } catch (error) {
+        console.log(error)
+    }
   }
 
   useEffect(() => {

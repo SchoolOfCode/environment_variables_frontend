@@ -13,7 +13,9 @@ import "@fontsource/montserrat/900.css";
 function MyApp({ Component, pageProps }) {
   return (
     <UserProvider>
+    <div className="bg-[#E6E5E4]">
       <Component {...pageProps} />
+    </div>
     </UserProvider>
   );
 }

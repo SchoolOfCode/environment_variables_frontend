@@ -1,6 +1,7 @@
 //THIS PAGE IS ACCESS PROTECTED BY AUTH0
 
 //Importing packages
+import Head from "next/head";
 import {withPageAuthRequired } from '@auth0/nextjs-auth0';
 
 //Importing custome components
@@ -10,13 +11,18 @@ import Footer from "../components/Footer/Footer";
 
 export default function LogClean() {
   return (
-    <div className="h-full">
+    <div className="h-full bg-[#E6E5E4] ">
+      <Head>
+        <title>Project Clean-Up | Log A Clean</title>
+      </Head>
       <NavbarLogClean />
-      <div className="h-[70%] p-[4rem]">
-        <LogCleanForm />
+      <h3 className="pt-32 pb-8 text-5xl text-center text-[#004F54]">Log A Clean</h3>
+      <div className="flex flex-col">
+        <div className="flex justify-center mb-[15%] pt-4">
+          <LogCleanForm />
+        </div>
       </div>
-
-      <Footer />
+      <Footer/>
     </div>
   );
 }
