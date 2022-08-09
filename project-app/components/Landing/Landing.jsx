@@ -1,7 +1,6 @@
 import NavButton from "./NavButton/NavButton.jsx";
 import Link from "next/link";
 
-
 const LandingBanner = () => {
   return (
     <div
@@ -14,14 +13,13 @@ const LandingBanner = () => {
             <h1 className="text-[40px] sm:text-[75px] text-[#004F54] flex justify-center font-semibold leading-none align-center mt-[3em] mb-[1em] mt-[4em]">
               Project Clean-Up
             </h1>
-            <div className="flex flex-col md:flex-row items-center justify-center md:space-x-[2em] space-y-[3em] md:space-y-[0]">
+            <div className="flex flex-col md:flex-row items-center justify-center md:space-x-[2em] space-y-[2em] md:space-y-[0]">
               <Link href="#map">
                 <a>
                   <NavButton
                     buttonText="Join Cleanup"
                     className="flex items-center justify-center"
                   />
-
                 </a>
               </Link>
               <Link rel="noopener noreferrer" href="/start-a-clean">
