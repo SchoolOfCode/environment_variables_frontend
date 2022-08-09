@@ -26,6 +26,7 @@ export default function Home() {
       <div className="overflow-hidden font-sans">
         <NavbarHome />
         <LandingBanner />
+
         <Stats />
         <a id="about" className="flex invisible pb-[100px]"></a>
         <OurMission />
