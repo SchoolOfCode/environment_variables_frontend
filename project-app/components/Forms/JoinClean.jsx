@@ -17,7 +17,8 @@ export const JoinCleanForm = () => {
       }),
     });
     const data = await response.json();
-    console.log(data);
+    console.log("Just seeing if this is being printed", data);
+    alert("Thanks for joining!")
   };
 
   return (
