@@ -7,7 +7,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="flex justify-between items-center w-full h-[6rem] m-[0] pl-1 pr-1 sm:pl-4 sm:pr-4 bg-[#004F54]">
+    <footer className="flex justify-between items-center w-full h-[6rem] m-[0] pl-1 pr-1 sm:pl-4 sm:pr-4 bg-[#004F54] fixed bottom-0">
       {/* Logo div */}
       <div className="text-white ml-2">logo here</div>
       <div className="mt-3 sm:mt-6">
