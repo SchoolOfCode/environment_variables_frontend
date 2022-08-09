@@ -10,13 +10,15 @@ import Footer from "../components/Footer/Footer";
 
 export default function LogClean() {
   return (
-    <div className="h-full">
+    <div className="h-full bg-[#E6E5E4]">
       <NavbarLogClean />
-      <div className="h-[70%] p-[4rem]">
-        <LogCleanForm />
+      <h3 className="pt-32 pb-8 text-5xl text-center text-[#004F54]">Log A Clean</h3>
+      <div className="flex flex-col">
+        <div className="flex justify-center mb-14 pt-4">
+          <LogCleanForm />
+        </div>
       </div>
-
-      <Footer />
+      <Footer/>
     </div>
   );
 }
