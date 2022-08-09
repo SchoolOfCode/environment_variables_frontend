@@ -74,8 +74,7 @@ export default function StartCleanMap() {
   };
 
   return (
-    
-    <MapContainer 
+    <MapContainer
       center={center}
       zoom={12}
       zoomControl={false}
@@ -88,6 +87,6 @@ export default function StartCleanMap() {
       <Search provider={new OpenStreetMapProvider()} />
       <ChangeView coords={center} />
       <DraggableMarker />
-    </MapContainer >
+    </MapContainer>
   );
 }

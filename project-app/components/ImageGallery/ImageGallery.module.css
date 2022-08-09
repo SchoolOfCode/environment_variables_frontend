@@ -9,21 +9,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
 }
 
 .Carousel {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 350px;
-    width: 500px;
+    height: 400px;
+    width: 950px;
     margin:50px 0px 0px 0px;
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
+  
 }
 
 .imageCSS {
-    border-radius: 25px;
-    height: 350px;
-    width: 500px; 
+    height: 400px;
+    width: 950px; 
+    filter: drop-shadow(25px 25px 25px rgba(0, 0, 0, 0.25));
   
 }
