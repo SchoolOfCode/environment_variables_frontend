@@ -1,5 +1,5 @@
+//Import packages
 import {
-  createContext,
   useContext,
   useState,
   useEffect,
@@ -7,32 +7,44 @@ import {
   useCallback,
   useRef,
 } from "react";
+
+//Import Leaflet packages
 import "leaflet/dist/leaflet.css";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
-import { OpenStreetMapProvider, GeoSearchControl } from "leaflet-geosearch";
-import { GestureHandling } from "leaflet-gesture-handling";
+import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet-gesture-handling/dist/leaflet-gesture-handling.css";
+// import { GestureHandling } from "leaflet-gesture-handling"; -NOT USED?
+
+//Import context
 import { MapContext } from "../../context/MapContext";
 
+//Define Functions
 export function ChangeView({ coords }) {
   const map = useMap();
   map.setView(coords);
   return null;
 }
 
+//Component
 export default function StartCleanMap() {
+  //Defining state and context
   const [geoData, setGeoData] = useState({ lat: 51.505, lng: -0.09 });
   const { setCoords, coords } = useContext(MapContext);
   console.log("co-ords from startMapClean component:", coords);
 
+  //Initialising other constants
   const center = [coords[0], coords[1]];
 
+  //Defining functions
   function DraggableMarker() {
+    //Function-scoped state
     const [draggable, setDraggable] = useState(true);
 
+    //Function-scoped constants
     const markerRef = useRef(null);
+
+    //Function-scoped functions
     const eventHandlers = useMemo(
       () => ({
         dragend() {
@@ -45,9 +57,11 @@ export default function StartCleanMap() {
       }),
       []
     );
+
     const toggleDraggable = useCallback(() => {
       setDraggable((d) => !d);
     }, []);
+
     return (
       <Marker
         draggable={draggable}
@@ -57,25 +71,10 @@ export default function StartCleanMap() {
       ></Marker>
     );
   }
-  const Search = (props) => {
-    const map = useMap(); // access to leaflet map
-    const { provider } = props;
 
-    useEffect(() => {
-      const searchControl = new GeoSearchControl({
-        provider,
-      });
-
-      map.addControl(searchControl); // this is how you add a control in vanilla leaflet
-      return () => map.removeControl(searchControl);
-    }, [props]);
-
-    return null; // don't want anything to show up from this comp
-  };
-
+  //Returning the map
   return (
-    
-    <MapContainer 
+    <MapContainer
       center={center}
       zoom={12}
       zoomControl={false}
@@ -85,9 +84,8 @@ export default function StartCleanMap() {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Search provider={new OpenStreetMapProvider()} />
       <ChangeView coords={center} />
       <DraggableMarker />
-    </MapContainer >
+    </MapContainer>
   );
 }

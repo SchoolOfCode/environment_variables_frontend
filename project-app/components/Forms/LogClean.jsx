@@ -16,7 +16,7 @@ const LogCleanForm = () => {
       body: JSON.stringify({
         cleanname: values.cleanname,
         bags: values.bags,
-        volunteers: values.volunteers
+        volunteers: values.volunteers,
       }),
     });
     const data = await response.json();
@@ -87,7 +87,7 @@ const LogCleanForm = () => {
               htmlFor="cleanname"
               className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
             >
-              Clean Name
+              Your Clean's Name
             </label>
             <Field
               name="cleanname"
@@ -101,7 +101,7 @@ const LogCleanForm = () => {
               htmlFor="bags"
               className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
             >
-              Bags Collected
+              Total Bags Collected (each bag is estimated at 5kg)
             </label>
             <Field
               name="bags"
@@ -115,7 +115,7 @@ const LogCleanForm = () => {
               htmlFor="volunteers"
               className="block mb-[0rem] text-lg p-[0.4rem] font-medium text-gray-900 dark:text-gray-900"
             >
-              Volunteers
+              Total Volunteers Attended
             </label>
             <Field
               name="volunteers"

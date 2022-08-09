@@ -4,7 +4,7 @@
 }
 
 .missionParagraph {
-  font-size: 15px;
+  font-size: 16px;
   margin-top: 15px;
   color: #004f54;
 }
@@ -32,7 +32,7 @@
     display: none;
   }
   .missionParagraph {
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 15px;
     color: #004f54;
   }
