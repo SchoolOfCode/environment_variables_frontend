@@ -35,7 +35,7 @@ export default function Stats() {
   return (
     <div className="p-11 bg-[#F1F3F3] w-screen shadow-lg	">
       <div>
-        <h2 className="flex justify-center mr-4 sm:mr-0 text-md sm:text-xl md:text-2xl pb-10 font-medium text-[#004f54]">
+        <h2 className="flex sm:justify-center mr-2 sm:mr-0 ml-1 sm:ml-0 text-lg sm:text-xl md:text-2xl pb-10 font-semibold sm:font-medium text-[#004f54]">
           Together we are making an incredible difference......
         </h2>
       </div>
