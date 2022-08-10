@@ -5,14 +5,13 @@ describe('loading up our page', () => {
       cy.contains('Join Cleanup').click()
 
       cy.url().should('include', '#map')
+
+      cy.get('[href="/#weather"]').click()
+
+      cy.get('#default-search').clear().type('dubai').get('.relative > .text-white').click()
+
+      cy.contains('Tips').click().get('.justify-end > .text-\[\#004F54\]').click()
+    //   cy.contains('Start Cleanup').click()
+
     })
   })
-
-//   describe('fetching weather', () => {
-//     it('searches for weather in a specific city', () => {
-
-//         cy.contains('weather').click()
-
-//         cy.url().should('include', '#weather')
-//     })
-//   })
