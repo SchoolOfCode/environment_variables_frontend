@@ -35,7 +35,11 @@ const StartCleanForm = () => {
       }),
     });
     const data = await response.json();
-    if (data.success) {setShowModal(true)};
+    if (coords[0] === 51.51035091584348) {
+      alert("You need to move the map marker to the exact cleanup location");
+    } else if (coords[0] !== 51.51035091584348 && data.success) {
+      setShowModal(true);
+    }
   };
 
   //Returning the form
@@ -74,15 +78,13 @@ const StartCleanForm = () => {
         host: Yup.string()
           .max(15, "Must be 15 characters or less")
           .required("Required"),
-        notes: Yup.string()
-          .max(50, "Must be 50 characters or less"),
-          //.required("Required"), Is this really required?
+        notes: Yup.string().max(50, "Must be 50 characters or less"),
+
         latitude: Yup.number(),
         longitude: Yup.number(),
       })}
       onSubmit={handleSubmit}
     >
-
       <Form className="flex flex-col bg-[#004F54]/90 w-11/12 sm:w-10/12 rounded-xl">
         <div className="flex flex-col py-4 sm:px-8 px-4">
           {/* CURRENTLY NOT USING THIS FIELD */}
@@ -112,13 +114,17 @@ const StartCleanForm = () => {
             type="text"
             className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="cleanName" component="div" className="text-white italic"/>
+          <ErrorMessage
+            name="cleanName"
+            component="div"
+            className="text-white italic"
+          />
 
           <label
             htmlFor="location"
             className="py-2 text-white text-lg font-medium"
           >
-            Meeting Location
+            Meet-up point
           </label>
           <Field
             placeholder="e.g. Coffee shop at end of pier"
@@ -126,12 +132,13 @@ const StartCleanForm = () => {
             type="text"
             className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="location" component="div" className="text-white italic"/>
+          <ErrorMessage
+            name="location"
+            component="div"
+            className="text-white italic"
+          />
 
-          <label
-            htmlFor="date"
-            className="py-2 text-white text-lg font-medium"
-          >
+          <label htmlFor="date" className="py-2 text-white text-lg font-medium">
             Date
           </label>
           <Field
@@ -139,7 +146,11 @@ const StartCleanForm = () => {
             type="date"
             className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="date" component="div" className="text-white italic"/>
+          <ErrorMessage
+            name="date"
+            component="div"
+            className="text-white italic"
+          />
 
           <label
             htmlFor="startTime"
@@ -150,10 +161,14 @@ const StartCleanForm = () => {
           <Field
             placeholder="10:00"
             name="startTime"
-            type="text"
+            type="time"
             className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="startTime" component="div" className="text-white italic"/>
+          <ErrorMessage
+            name="startTime"
+            component="div"
+            className="text-white italic"
+          />
 
           <label
             htmlFor="endTime"
@@ -164,15 +179,16 @@ const StartCleanForm = () => {
           <Field
             placeholder="13:00"
             name="endTime"
-            type="text"
+            type="time"
             className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="endTime" component="div" className="text-white italic"/>
+          <ErrorMessage
+            name="endTime"
+            component="div"
+            className="text-white italic"
+          />
 
-          <label
-            htmlFor="host"
-            className="py-2 text-white text-lg font-medium"
-          >
+          <label htmlFor="host" className="py-2 text-white text-lg font-medium">
             Host
           </label>
           <Field
@@ -181,7 +197,11 @@ const StartCleanForm = () => {
             type="text"
             className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="host" component="div" className="text-white italic"/>
+          <ErrorMessage
+            name="host"
+            component="div"
+            className="text-white italic"
+          />
 
           <label
             htmlFor="notes"
@@ -195,7 +215,11 @@ const StartCleanForm = () => {
             type="text"
             className="w-full h-20 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="notes" component="div" className="text-white italic"/>
+          <ErrorMessage
+            name="notes"
+            component="div"
+            className="text-white italic"
+          />
 
           <div className="flex justify-center w-full pt-4">
             <button
@@ -207,7 +231,7 @@ const StartCleanForm = () => {
           </div>
         </div>
 
-        {/* End of form. Modal begins. */}  
+        {/* End of form. Modal begins. */}
 
         {showModal ? (
           <>
