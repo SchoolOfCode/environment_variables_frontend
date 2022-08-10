@@ -3,7 +3,7 @@ import Style from "./OurMission.module.css";
 
 const OurMission = () => {
   return (
-    <div className={Style.missionContainer}>
+    <div id="mission" className={Style.missionContainer}>
       <div className={Style.textContainer}>
         <h2 className={Style.missionTitle}>What is Project Cleanup</h2>
         <p className={Style.missionParagraph}>

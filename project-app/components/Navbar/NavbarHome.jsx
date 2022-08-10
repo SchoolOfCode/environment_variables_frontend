@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0";
+import Image from "next/image";
 
 //Importing AntDesign Components
 import "antd/dist/antd.css";
@@ -94,9 +95,10 @@ const NavbarHome = () => {
     return (
       <div className="fixed z-[1002]">
         <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
-          <div className="underline rounded-sm p-[5px] bg-[#006C72] text-[#white] text-[20px]">
-            Project Clean-Up
-          </div>
+          <div className="h-12 w-12 sm:h-16 sm:w-16 relative">
+        <Image src="/logo-app.png" alt="Project Clean-up logo" layout="fill" objectFit="cover"/>
+      </div>
+      
           <Link href="#home">
             <a className="text-[white] hidden md:flex items-center text-xl">
               Home
@@ -120,7 +122,7 @@ const NavbarHome = () => {
           </Link>
           <Link href="/api/auth/logout">
             <a className="text-[white] hidden md:flex items-center text-xl mr-[3em]">
-              Welcome, {user.name} | Logout
+              Welcome, {user.nickname} | Logout
             </a>
           </Link>
           <AiOutlineMenu
