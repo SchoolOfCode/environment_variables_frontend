@@ -11,6 +11,8 @@ describe('loading up our page', () => {
       cy.get('#default-search').clear().type('dubai').get('.relative > .text-white').click()
 
       cy.contains('Tips').click().get('.justify-end > .text-\[\#004F54\]').click()
+
+      //This won't work until we add cypress as a user in auth0 settings
     //   cy.contains('Start Cleanup').click()
 
     })
