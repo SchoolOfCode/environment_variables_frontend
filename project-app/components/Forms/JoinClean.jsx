@@ -17,8 +17,7 @@ export const JoinCleanForm = () => {
       }),
     });
     const data = await response.json();
-    console.log("Just seeing if this is being printed", data);
-    alert("Thanks for joining!")
+    alert("Thanks for joining!");
   };
 
   return (
@@ -37,15 +36,6 @@ export const JoinCleanForm = () => {
       })}
       onSubmit={handleSubmit}
     >
-      {/* (values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert("Thanks for joining a clean");
-          handleSubmit(values);
-          data.push(values); //substitute for post req
-          console.log(data);
-          setSubmitting(false);
-        }, 400);
-      } */}
       <Form>
         <label
           htmlFor="name"

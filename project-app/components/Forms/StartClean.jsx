@@ -124,7 +124,7 @@ const StartCleanForm = () => {
             htmlFor="location"
             className="py-2 text-white text-lg font-medium"
           >
-            Meeting Information
+            Meet-up point
           </label>
           <Field
             placeholder="e.g. Coffee shop at end of pier"
