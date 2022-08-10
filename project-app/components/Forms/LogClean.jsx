@@ -56,7 +56,7 @@ const LogCleanForm = () => {
       onSubmit={handleSubmit}
     >    
 
-        <Form className="flex flex-col bg-[#004F54]/90 w-11/12 sm:w-1/2 rounded-xl pb-6">
+        <Form className="flex flex-col bg-[#004F54]/90 w-11/12 md:w-5/12 rounded-xl pb-6">
           <div className="flex flex-col py-4 sm:px-8 px-4 ">
             {/* <label
               htmlFor="cleanID"
