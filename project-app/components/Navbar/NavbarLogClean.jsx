@@ -56,22 +56,25 @@ const NavbarLogClean = () => {
     />
   );
   const { user, error, isLoading } = useUser();
+
   if (isLoading)
     return (
       <div className="fixed z-[1002]">
-        <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
+        <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[1em] py-[1em]">
           <div className=" rounded-sm p-[5px]  text-[#white] text-center text-[20px]">
             Loading Project Clean-Up...
           </div>
         </div>
       </div>
     );
+
   if (error) return <div>{error.message}</div>;
+  
   if (user) {
     return (
       <div className="fixed z-[1002]">
-        <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
-        <div className="h-12 w-12 sm:h-16 sm:w-16 relative">
+        <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[1em] py-[1em]">
+          <div className="h-10 w-10 sm:h-14 sm:w-14 relative">
         <Image src="/logo-app.png" alt="Project Clean-up logo" layout="fill" objectFit="cover"/>
       </div>
           <Link href="/#home" as={"/"}>
@@ -183,10 +186,10 @@ const NavbarLogClean = () => {
 
   return (
     <div className="fixed z-[1002]">
-      <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
-        <div className="underline rounded-sm p-[5px] bg-[#006C72] text-[#white] text-[20px]">
-          Project Clean-Up
-        </div>
+        <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[1em] py-[1em]">
+          <div className="h-10 w-10 sm:h-14 sm:w-14 relative">
+        <Image src="/logo-app.png" alt="Project Clean-up logo" layout="fill" objectFit="cover"/>
+      </div>
         <Link href="/#home" as={"/"}>
           <a className="text-[white] hidden md:flex items-center text-xl">
             Home
