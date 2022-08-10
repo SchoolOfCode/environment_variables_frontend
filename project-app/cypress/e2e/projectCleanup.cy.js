@@ -7,3 +7,12 @@ describe('loading up our page', () => {
       cy.url().should('include', '#map')
     })
   })
+
+//   describe('fetching weather', () => {
+//     it('searches for weather in a specific city', () => {
+
+//         cy.contains('weather').click()
+
+//         cy.url().should('include', '#weather')
+//     })
+//   })
