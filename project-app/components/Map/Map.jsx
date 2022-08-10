@@ -69,19 +69,19 @@ export default function Map() {
   //Fetch request for Map markers/popup info
   const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
 
-  console.log("you are on", url);
-
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(`${url}/startclean`);
       const data = await response.json();
-      console.log("original data", data);
+      /* MAP COORDS CONSOLE - DELETE AFTER BUILD */
+      // console.log("original data", data);
       setMapData(data.payload);
     }
     fetchData();
   }, []);
 
-  console.log("new map data", mapData);
+  /* MAP COORDS CONSOLE - DELETE AFTER BUILD */
+  // console.log("new map data", mapData);
 
   // This is the Mian map render
   return (

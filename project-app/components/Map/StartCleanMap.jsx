@@ -31,7 +31,8 @@ export default function StartCleanMap() {
   //Defining state and context
   const [geoData, setGeoData] = useState({ lat: 51.505, lng: -0.09 });
   const { setCoords, coords } = useContext(MapContext);
-  console.log("co-ords from startMapClean component:", coords);
+  /* MAP COORDS CONSOLE - DELETE AFTER BUILD */
+  // console.log("co-ords from startMapClean component:", coords);
 
   //Initialising other constants
   const center = [coords[0], coords[1]];
