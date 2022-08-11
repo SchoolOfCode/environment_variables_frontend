@@ -57,13 +57,13 @@ export const JoinCleanForm = () => {
         <Field
           name="comments"
           type="text"
-          className="mb-[5px] shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#FF9505]  focus:border-[#FF9505]  block w-full p-2.5 "
+          className="mb-[5px] shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#FF9505]  focus:border-[#FF9505] block w-full p-2.5 "
         />
         <ErrorMessage name="comments" />
 
         <button
           type="submit"
-          className="text-white bg-[#FF9505]  bg-[#FF9505]-700 hover:bg-[#FF9505]-800 focus:ring-4 focus:outline-none focus:ring-[#FF9505]-300 px-1 py-1 font-medium rounded-lg text-sm w-14 mt-2 text-center"
+          className="text-white bg-[#FF9505] hover:bg-orange-700 px-1 py-1 font-medium rounded-lg text-sm w-14 mt-2 text-center"
         >
           Submit
         </button>

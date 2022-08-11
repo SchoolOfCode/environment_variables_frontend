@@ -130,7 +130,7 @@ const LogCleanForm = () => {
         <div className="flex justify-center w-full pt-4">
           <button
             type="submit"
-            className="flex rounded-lg w-[110px] h-10 bg-[#FF9505] hover:bg-orange-700 place-content-center place-items-center text-white font-medium text-lg uppercase tracking-wide"
+            className="flex rounded-lg w-[110px] h-10 bg-[#FF9505] hover:bg-orange-700 place-content-center place-items-center text-white font-medium text-lg uppercase tracking-wide ease-linear transition-all duration-75"
             onClick={() => setShowModal(true)}
           >
             Submit
