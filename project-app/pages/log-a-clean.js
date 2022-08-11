@@ -14,7 +14,7 @@ export default function LogClean() {
     <div className="flex flex-col h-screen">
       
       <Head>
-        <title>Project Clean-Up | Log A Clean</title>
+        <title>Project Clean-Up | Log a Clean</title>
       </Head>
       <NavbarLogClean />
      
