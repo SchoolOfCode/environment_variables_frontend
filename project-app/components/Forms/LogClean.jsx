@@ -2,7 +2,7 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import Image from "next/Image";
+import Image from "next/image";
 
 //Component
 const LogCleanForm = () => {
