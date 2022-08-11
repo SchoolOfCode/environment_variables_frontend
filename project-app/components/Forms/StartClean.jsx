@@ -1,6 +1,6 @@
 //Import packages
 import React, { useContext } from "react";
-import Image from "next/image";
+import Image from "next/Image";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
