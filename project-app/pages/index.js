@@ -1,18 +1,18 @@
+//Importing packages
 import Head from "next/head";
-import Image from "next/image";
-import { useEffect } from "react";
-import NavbarHome from "../components/Navbar/NavbarHome";
 import dynamic from "next/dynamic";
+
+//Importing Components
+import NavbarHome from "../components/Navbar/NavbarHome";
 import LandingBanner from "../components/Landing/Landing";
-import Weather from "../components/Weather/Weather";
+import Stats from "../components/Stats/Stats";
 import OurMission from "../components/OurMission/OurMission.jsx";
-
+import NavGetInvolved from "../components/NavGetInvolved/NavGetInvolved"
 import ImageGallery from "../components/ImageGallery/ImageGallery";
-
+import Weather from "../components/Weather/Weather";
 import Footer from "../components/Footer/Footer";
 
-import Stats from "../components/Stats/Stats";
-
+//Leaflet specific as otherwise does not play nicely with Next.js
 const MapWithNoSSR = dynamic(() => import("../components/Map/Map.jsx"), {
   ssr: false,
 });
@@ -26,11 +26,10 @@ export default function Home() {
       <div className="overflow-hidden font-sans">
         <NavbarHome />
         <LandingBanner />
-
         <Stats />
         <a id="about" className="flex invisible pb-[100px]"></a>
         <OurMission />
-
+        <NavGetInvolved/>
         <ImageGallery />
         {/* map container for sizing */}
         <div className=" ml-1 mr-1 mt-4 mb-16">

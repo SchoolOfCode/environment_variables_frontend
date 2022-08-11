@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/Image";
 
 export default function StatCard({ image, number, text }) {
   return (

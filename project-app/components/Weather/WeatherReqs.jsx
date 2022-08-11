@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image from "next/Image";
 
 const WeatherReqs = () => {
   const [showModal, setShowModal] = React.useState(false);
