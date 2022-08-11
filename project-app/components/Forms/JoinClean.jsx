@@ -1,8 +1,10 @@
 import React from "react";
+import { useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import Link from "next/link";
 
-export const JoinCleanForm = () => {
+export const JoinCleanForm = ({ showModal, setShowModal }) => {
   const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
 
   const handleSubmit = async function (values) {
@@ -15,7 +17,10 @@ export const JoinCleanForm = () => {
       }),
     });
     const data = await response.json();
-    alert("Thanks for joining!");
+    alert(
+      "Thanks for joining a cleanup! Be there 15 mins prior on the day for the briefing."
+    );
+    setShowModal(false);
   };
 
   return (
@@ -74,10 +79,7 @@ export const JoinCleanForm = () => {
 
 export const JoinCleanModal = () => {
   const [showModal, setShowModal] = React.useState(false);
-  // function JoinCloseButton (){
-  //     if (showModal == true){
-  //     return "Close"}
-  //     else if (showModal == false) {return "Join"}}
+
   return (
     <>
       <button
@@ -97,7 +99,7 @@ export const JoinCleanModal = () => {
 
       {showModal ? (
         <>
-          <JoinCleanForm />
+          <JoinCleanForm setShowModal={setShowModal} showModal={showModal} />
         </>
       ) : null}
     </>
