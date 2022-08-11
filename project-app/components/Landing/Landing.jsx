@@ -15,13 +15,13 @@ const LandingBanner = () => {
             </h1>
             <hr className="flex items-center sm:w-[55rem] h-0.5 bg-[#004e5491] mb-[2rem]"></hr>
             <div className="flex items-center w-[20rem] sm:w-[35rem] text-[15px] sm:text-[20px] text-[#004F54]">
-            <p>Project Cleanup is a place where you can make a difference to our
-          environment by creating or joining litter cleanups. They can
-          be done anywhere from Beaches to Rivers or even National Parks to your
+            <p>Project Clean-Up is a place where you can join others to make a difference to our
+          environment by creating or joining litter clean-ups. They can
+          be done anywhere from beaches to rivers and even national parks to your
           very own neighbourhood!</p>
           </div>
             <div className="flex flex-col md:flex-row items-center justify-center md:space-x-[3em] space-y-[2rem] mt-[2rem] md:space-y-[0]">
-              <Link href="#mission">
+              <Link href="#about">
                 <a>
                   <NavButton
                     buttonText="Learn More"
@@ -29,7 +29,7 @@ const LandingBanner = () => {
                   />
                 </a>
               </Link>
-              <Link rel="noopener noreferrer" href="/start-a-clean">
+              <Link rel="noopener noreferrer" href="#get-involved">
                 <a>
                   <NavButton
                     buttonText="Get Involved"

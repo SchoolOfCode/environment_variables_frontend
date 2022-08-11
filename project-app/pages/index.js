@@ -27,21 +27,21 @@ export default function Home() {
         <NavbarHome />
         <LandingBanner />
         <Stats />
-        <a id="about" className="flex invisible pb-[100px]"></a>
+        <a id="about" className="flex invisible pb-[50px]"></a>
         <OurMission />
+        <a id="get-involved" className="flex invisible pb-[50px]"></a>
         <NavGetInvolved/>
         <ImageGallery />
         {/* map container for sizing */}
         <div className=" ml-1 mr-1 mt-4 mb-16">
-          <a id="map" className="flex invisible pb-[100px]"></a>
-
-          <h2 className="text-lg ml-4 sm:text-xl md:text-2xl text-[#004F54] font-bold">
-            Find a cleanup near you...
+          <a id="map" className="flex invisible pb-[50px]"></a>
+          <h2 className="text-lg sm:text-xl md:text-4xl text-[#004F54] font-bold ml-6">
+            Join a Clean-up
           </h2>
-          <p className="ml-4 text-sm sm:text-lg text-[#004F54]">
-            Find a marker and click to reveal cleanup details
-          </p>
-          <a id="weather" className="flex invisible"></a>
+          <h3 className="ml-4 sm:ml-6 mb-2 text-sm sm:text-lg rounded-md text-[#ffffff] bg-[#FF9505] w-11/12 sm:w-[30rem] p-1 text-center">
+          Find a marker and click to reveal clean-up details
+        </h3>
+          {/* <a id="weather" className="flex invisible pb-[50px]" ></a> */}
           <MapWithNoSSR />
         </div>
         <Weather />

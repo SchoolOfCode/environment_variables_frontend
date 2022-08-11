@@ -1,8 +1,10 @@
 import React from "react";
+import { useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import Link from "next/link";
 
-export const JoinCleanForm = () => {
+export const JoinCleanForm = ({ showModal, setShowModal }) => {
   const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
 
   const handleSubmit = async function (values) {
@@ -15,7 +17,10 @@ export const JoinCleanForm = () => {
       }),
     });
     const data = await response.json();
-    alert("Thanks for joining!");
+    alert(
+      "Thanks for joining a cleanup! Be there 15 mins prior on the day so your host can brief you."
+    );
+    setShowModal(false);
   };
 
   return (
@@ -42,11 +47,15 @@ export const JoinCleanForm = () => {
           Name
         </label>
         <Field
-          className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#FF9505]  focus:border-[#FF9505] block w-full p-2.5 "
+           className="mb-[5px] shadow-sm bg-gray-50   text-gray-900 text-sm rounded-lg  border border-[#004F54] focus:ring-[#FF9505] focus:border-[#FF9505] block w-full p-2.5  "
           name="name"
           type="text"
         />
-        <ErrorMessage name="name" />
+        <ErrorMessage name="name"
+        component="div"
+        className="text-[#FF9505] italic font-medium"
+
+        />
 
         <label
           htmlFor="comments"
@@ -57,13 +66,16 @@ export const JoinCleanForm = () => {
         <Field
           name="comments"
           type="text"
-          className="mb-[5px] shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#FF9505]  focus:border-[#FF9505]  block w-full p-2.5 "
+          className="mb-[5px] shadow-sm bg-gray-50   text-gray-900 text-sm rounded-lg  border border-[#004F54] focus:ring-[#FF9505] focus:border-[#FF9505] block w-full p-2.5  "
         />
-        <ErrorMessage name="comments" />
+        <ErrorMessage name="comments"
+         component="div"
+         className="text-[#FF9505] italic font-medium"
+          />
 
         <button
           type="submit"
-          className="text-white bg-[#FF9505]  bg-[#FF9505]-700 hover:bg-[#FF9505]-800 focus:ring-4 focus:outline-none focus:ring-[#FF9505]-300 px-1 py-1 font-medium rounded-lg text-sm w-14 mt-2 text-center"
+          className="text-white bg-[#FF9505] hover:bg-orange-700 px-1 py-1 font-medium rounded-lg text-sm w-14 mt-2 text-center"
         >
           Submit
         </button>
@@ -74,10 +86,7 @@ export const JoinCleanForm = () => {
 
 export const JoinCleanModal = () => {
   const [showModal, setShowModal] = React.useState(false);
-  // function JoinCloseButton (){
-  //     if (showModal == true){
-  //     return "Close"}
-  //     else if (showModal == false) {return "Join"}}
+
   return (
     <>
       <button
@@ -97,7 +106,7 @@ export const JoinCleanModal = () => {
 
       {showModal ? (
         <>
-          <JoinCleanForm />
+          <JoinCleanForm setShowModal={setShowModal} showModal={showModal} />
         </>
       ) : null}
     </>

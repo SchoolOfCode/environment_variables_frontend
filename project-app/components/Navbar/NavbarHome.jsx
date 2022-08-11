@@ -51,7 +51,7 @@ const NavbarHome = () => {
               rel="noopener noreferrer"
               href="/start-a-clean"
             >
-              Start Cleanup
+              Start a Clean-up
             </a>
           ),
         },
@@ -59,7 +59,7 @@ const NavbarHome = () => {
           key: "3",
           label: (
             <a className="text-md text-[#004F54]" href="#map">
-              Join Cleanup
+              Join a Clean-up
             </a>
           ),
         },
@@ -71,7 +71,7 @@ const NavbarHome = () => {
               rel="noopener noreferrer"
               href="/log-a-clean"
             >
-              Log Cleanup
+              Log a Clean-up
             </a>
           ),
         },
@@ -88,7 +88,7 @@ const NavbarHome = () => {
       <div className="fixed z-[1002]">
         <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[1em] py-[1em]">
           <div className=" rounded-sm p-[5px]  text-[#white] text-center text-[20px]">
-            Loading Project Clean-Up...
+            Loading user profile...
           </div>
         </div>
       </div>
@@ -121,19 +121,19 @@ const NavbarHome = () => {
           >
             <a onClick={(e) => e.preventDefault()}>
               <Space>
-                Do Your Part
+                Get Involved
                 <DownOutlined />
               </Space>
             </a>
           </Dropdown>
           <Link href="#weather">
             <a className="text-[white] hidden md:flex items-center text-xl">
-              Weather
+              Check Weather
             </a>
           </Link>
           <Link href="/api/auth/logout">
             <a className="text-[white] hidden md:flex items-center text-xl mr-[3em]">
-              Welcome, {user.nickname} | Logout
+              Welcome, {user.name} | Logout
             </a>
           </Link>
           <AiOutlineMenu
@@ -179,7 +179,7 @@ const NavbarHome = () => {
                   rel="noopener noreferrer"
                   href="/start-a-clean"
                 >
-                  Start Cleanup
+                  Start a Clean-up
                 </a>
               </div>
               <div className="p-4">
@@ -188,7 +188,7 @@ const NavbarHome = () => {
                   className="text-[#004F54] text-xl"
                   href="#map"
                 >
-                  Join Cleanup
+                  Join a Clean-up
                 </a>
               </div>
               <div className="p-4">
@@ -197,7 +197,7 @@ const NavbarHome = () => {
                   className="text-[#004F54] text-xl"
                   href="/log-a-clean"
                 >
-                  Log Cleanup
+                  Log a Clean-up
                 </a>
               </div>
               <div className="p-4">
@@ -206,7 +206,7 @@ const NavbarHome = () => {
                   className="text-[#004F54] text-xl"
                   href="#weather"
                 >
-                  Weather
+                  Check Weather
                 </a>
               </div>
               <div className="p-4">
@@ -249,14 +249,14 @@ const NavbarHome = () => {
         >
           <a onClick={(e) => e.preventDefault()}>
             <Space>
-              Do Your Part
+              Get Involved
               <DownOutlined />
             </Space>
           </a>
         </Dropdown>
         <Link href="#weather">
           <a className="text-[white] hidden md:flex items-center text-xl">
-            Weather
+            Check Weather
           </a>
         </Link>
         <Link href="/api/auth/login">
@@ -304,7 +304,7 @@ const NavbarHome = () => {
                 rel="noopener noreferrer"
                 href="/start-a-clean"
               >
-                Start Cleanup
+                Start a Clean-up
               </a>
             </div>
             <div className="p-4">
@@ -313,7 +313,7 @@ const NavbarHome = () => {
                 className="text-[#004F54] text-xl"
                 href="#map"
               >
-                Join Cleanup
+                Join a Clean-up
               </a>
             </div>
             <div className="p-4">
@@ -322,7 +322,7 @@ const NavbarHome = () => {
                 className="text-[#004F54] text-xl"
                 href="/log-a-clean"
               >
-                Log Cleanup
+                Log a Clean-up
               </a>
             </div>
             <div className="p-4">
@@ -331,7 +331,7 @@ const NavbarHome = () => {
                 className="text-[#004F54] text-xl"
                 href="#weather"
               >
-                Weather
+                Check Weather
               </a>
             </div>
             <div className="p-4">
