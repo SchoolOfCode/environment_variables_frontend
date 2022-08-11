@@ -8,32 +8,32 @@ const ImageGallery = () => (
       <div>
         <img
           className={Style.imageCSS}
-          src="https://www.bansteadscouts.co.uk/wp-content/uploads/1st-Tatts-litter-picking.jpg"
+          src="https://i.imgur.com/PZ1asZs.png"
         />
       </div>
       <div>
         <img
           className={Style.imageCSS}
-          src="https://yourharrogate.co.uk/wp-content/uploads/2021/04/Open-Country-litter-picking-Apr-21.jpg"
+          src="https://i.imgur.com/n40QdrD.png"
         />
       </div>
 
       <div>
         <img
           className={Style.imageCSS}
-          src="https://www.bansteadscouts.co.uk/wp-content/uploads/1st-Tatts-litter-picking4.jpg"
+          src="https://i.imgur.com/DZQN7GR.png"
         />
       </div>
       <div>
         <img
           className={Style.imageCSS}
-          src="https://petersfieldsociety.org.uk/wp-content/uploads/2022/05/litter-group-Petersfield-Society-March-2022-1080x675.jpg"
+          src="https://i.imgur.com/yC2aMtf.png"
         />
       </div>
       <div>
         <img
           className={Style.imageCSS}
-          src="https://www.nats.aero/wp-content/uploads/2015/06/NATS-Early-Careers-Scheme-engineers-pick-up-litter-in-Whiteley.jpg"
+          src="https://www.rochdale.gov.uk/images/litter_pick.jpg"
         />
       </div>
     </Carousel>
