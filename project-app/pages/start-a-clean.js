@@ -32,8 +32,9 @@ export default function startClean() {
         <h2 className="pt-32 pb-8 text-5xl text-center text-[#004F54]">
           Start A Clean
         </h2>
-        <h3 className="ml-4 sm:ml-6 mb-0 text-sm sm:text-xl rounded-md text-[#ffffff] bg-[#FF9505] w-11/12 sm:w-[31rem] p-1 text-center">
-          Important: Drag the map marker to your desired cleanup location
+        <h3 className="ml-4 sm:ml-6 mb-0 text-sm sm:text-lg rounded-md text-[#ffffff] bg-[#FF9505] w-11/12 sm:w-[39rem] p-1 text-center">
+          <strong>IMPORTANT:</strong> Drag the marker to your cleanup location &
+          then fill in form
         </h3>
 
         <div className="flex flex-col sm:flex-row ">

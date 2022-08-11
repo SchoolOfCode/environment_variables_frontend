@@ -1,23 +1,42 @@
-import { Carousel } from 'antd';
-import React from 'react';
-import Style from './ImageGallery.module.css'
+import { Carousel } from "antd";
+import React from "react";
+import Style from "./ImageGallery.module.css";
 
 const ImageGallery = () => (
-<div className={Style.imageContainer}>
-  <Carousel className={Style.Carousel} autoplay>
-        <div >
-        <img className={Style.imageCSS} src="https://www.keepscotlandbeautiful.org/media/1565400/dsc09849.jpg?anchor=center&mode=crop&width=1280&format=jpg&quality=80&slimmage=true&rnd=132387724350000000"/>
-        </div>
-        <div >
-            <img className={Style.imageCSS} src="https://www.cpresomerset.org.uk/wp-content/uploads/sites/21/2020/01/litterpicking.jpg"/>
-        </div>
-        <div >
-            <img className={Style.imageCSS} src="https://one.welhat.gov.uk/image/18951/WGC-guides-litter-picking/related.jpg?m=637581541221430000"/>
-        </div>
-        <div >
-            <img className={Style.imageCSS} src="https://www.rochdale.gov.uk/images/litter_pick.jpg"/>
-        </div>
-  </Carousel>
+  <div className={Style.imageContainer}>
+    <Carousel className={Style.Carousel} autoplay>
+      <div>
+        <img
+          className={Style.imageCSS}
+          src="https://www.bansteadscouts.co.uk/wp-content/uploads/1st-Tatts-litter-picking.jpg"
+        />
+      </div>
+      <div>
+        <img
+          className={Style.imageCSS}
+          src="https://yourharrogate.co.uk/wp-content/uploads/2021/04/Open-Country-litter-picking-Apr-21.jpg"
+        />
+      </div>
+
+      <div>
+        <img
+          className={Style.imageCSS}
+          src="https://www.bansteadscouts.co.uk/wp-content/uploads/1st-Tatts-litter-picking4.jpg"
+        />
+      </div>
+      <div>
+        <img
+          className={Style.imageCSS}
+          src="https://petersfieldsociety.org.uk/wp-content/uploads/2022/05/litter-group-Petersfield-Society-March-2022-1080x675.jpg"
+        />
+      </div>
+      <div>
+        <img
+          className={Style.imageCSS}
+          src="https://www.nats.aero/wp-content/uploads/2015/06/NATS-Early-Careers-Scheme-engineers-pick-up-litter-in-Whiteley.jpg"
+        />
+      </div>
+    </Carousel>
   </div>
 );
 

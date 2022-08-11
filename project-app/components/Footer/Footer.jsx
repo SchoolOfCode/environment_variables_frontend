@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/Image";
 import {
   AiFillFacebook,
   AiFillInstagram,
@@ -10,9 +10,14 @@ export default function Footer() {
     <footer className="flex justify-between items-center w-full h-[6rem] px-1 sm:px-4 bg-[#004F54]">
       {/* Logo */}
       <div className="flex flex-row h-auto w-1/4 sm:w-56">
-      <div className="h-12 w-12 sm:h-16 sm:w-16 relative">
-        <Image src="/logo-app.png" alt="Project Clean-up logo" layout="fill" objectFit="cover"/>
-      </div>
+        <div className="h-12 w-12 sm:h-16 sm:w-16 relative">
+          <Image
+            src="/logo-app.png"
+            alt="Project Clean-up logo"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
       </div>
       {/* Built by and copyright */}
       <div className="mt-3 sm:mt-6 text-center">
