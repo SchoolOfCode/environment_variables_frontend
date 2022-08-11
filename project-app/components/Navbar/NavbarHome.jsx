@@ -138,8 +138,7 @@ const NavbarHome = () => {
           />
         </div>
 
-    
-  //Return this if the user is NOT logged in 
+    {/* //Return this if the user is NOT logged in  */}
 
         <>
           <Drawer
