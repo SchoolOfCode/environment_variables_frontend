@@ -41,13 +41,13 @@ const NavbarStartClean = () => {
 
         {
           key: "2",
-          label: <a href="/#map">Join Cleanup</a>,
+          label: <a href="/#map">Join a Clean-up</a>,
         },
         {
           key: "3",
           label: (
             <a rel="noopener noreferrer" href="/log-a-clean">
-              Log Cleanup
+              Log a Clean-up
             </a>
           ),
         },
@@ -61,7 +61,7 @@ const NavbarStartClean = () => {
       <div className="fixed z-[1002]">
         <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[1em] py-[1em]">
           <div className=" rounded-sm p-[5px]  text-[#white] text-center text-[20px]">
-            Loading Project Clean-Up...
+            Loading user profile...
           </div>
         </div>
       </div>
@@ -92,19 +92,19 @@ const NavbarStartClean = () => {
           >
             <a onClick={(e) => e.preventDefault()}>
               <Space>
-                Do Your Part
+                Get Involved
                 <DownOutlined />
               </Space>
             </a>
           </Dropdown>
           <Link href="/#weather">
             <a className="text-[white] hidden md:flex items-center text-xl mr-[3em]">
-              Weather
+              Check Weather
             </a>
           </Link>
           <Link href="/api/auth/logout">
             <a className="text-[white] hidden md:flex items-center text-xl mr-[3em]">
-              Welcome, {user.nickname} | Logout
+              Welcome, {user.name} | Logout
             </a>
           </Link>
           <AiOutlineMenu
@@ -148,7 +148,7 @@ const NavbarStartClean = () => {
                     onClick={() => setVisible(false)}
                     className="text-[#004F54] text-xl"
                   >
-                    Join Cleanup
+                    Join a Clean-up
                   </a>
                 </Link>
               </div>
@@ -158,7 +158,7 @@ const NavbarStartClean = () => {
                     onClick={() => setVisible(false)}
                     className="text-[#004F54] text-xl"
                   >
-                    Log Cleanup
+                    Log a Clean-up
                   </a>
                 </Link>
               </div>
@@ -168,7 +168,7 @@ const NavbarStartClean = () => {
                     onClick={() => setVisible(false)}
                     className="text-[#004F54] text-xl"
                   >
-                    Weather
+                    Check Weather
                   </a>
                 </Link>
               </div>
@@ -210,14 +210,14 @@ const NavbarStartClean = () => {
         >
           <a onClick={(e) => e.preventDefault()}>
             <Space>
-              Do Your Part
+              Get Involved
               <DownOutlined />
             </Space>
           </a>
         </Dropdown>
         <Link href="/#weather">
           <a className="text-[white] hidden md:flex items-center text-xl mr-[3em]">
-            Weather
+            Check Weather
           </a>
         </Link>
 
@@ -262,7 +262,7 @@ const NavbarStartClean = () => {
                   onClick={() => setVisible(false)}
                   className="text-[#004F54] text-xl"
                 >
-                  Join Cleanup
+                  Join a Clean-up
                 </a>
               </Link>
             </div>
@@ -272,7 +272,7 @@ const NavbarStartClean = () => {
                   onClick={() => setVisible(false)}
                   className="text-[#004F54] text-xl"
                 >
-                  Log Cleanup
+                  Log a Clean-up
                 </a>
               </Link>
             </div>
@@ -282,7 +282,7 @@ const NavbarStartClean = () => {
                   onClick={() => setVisible(false)}
                   className="text-[#004F54] text-xl"
                 >
-                  Weather
+                  Check Weather
                 </a>
               </Link>
             </div>

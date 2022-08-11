@@ -12,6 +12,7 @@ const LogCleanForm = () => {
   //Defining constants
   const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
 
+  
   //Defining functions
   const handleSubmit = async function (values) {
     const response = await fetch(`${url}/logclean`, {
@@ -99,7 +100,7 @@ const LogCleanForm = () => {
             placeholder="London Clean"
             className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="cleanname" />
+          <ErrorMessage name="cleanname" component="div" className="text-[#FF9505] italic font-medium" />
 
           <label htmlFor="bags" className="pb-2 text-white text-lg font-medium">
             Total Bags Collected (each bag is estimated at 5kg)
@@ -110,7 +111,7 @@ const LogCleanForm = () => {
             placeholder="50"
             className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="bags" />
+          <ErrorMessage name="bags" component="div" className="text-[#FF9505] italic font-medium"/>
 
           <label
             htmlFor="volunteers"
@@ -124,14 +125,14 @@ const LogCleanForm = () => {
             placeholder="15"
             className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="volunteers" />
+          <ErrorMessage name="volunteers" component="div" className="text-[#FF9505] italic font-medium"/>
         </div>
 
         <div className="flex justify-center w-full pt-4">
           <button
             type="submit"
-            className="flex rounded-lg w-[110px] h-10 bg-[#FF9505] hover:bg-orange-700 place-content-center place-items-center text-white font-medium text-lg uppercase tracking-wide"
-            onClick={() => setShowModal(true)}
+            className="flex rounded-lg w-[110px] h-10 bg-[#FF9505] hover:bg-orange-700 place-content-center place-items-center text-white font-medium text-lg uppercase tracking-wide ease-linear transition-all duration-75"
+          
           >
             Submit
           </button>

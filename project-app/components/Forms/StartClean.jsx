@@ -18,29 +18,34 @@ const StartCleanForm = () => {
 
   //Defining functions
   const handleSubmit = async function (values) {
-    const response = await fetch(`${url}/startclean`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        cleanName: values.cleanName,
-        location: values.location,
-        date: values.date,
-        startTime: values.startTime,
-        endTime: values.endTime,
-        host: values.host,
-        notes: values.notes,
-        notes: values.notes,
-        latitude: coords[0],
-        longitude: coords[1],
-      }),
-    });
-    const data = await response.json();
-    if (coords[0] === 51.51035091584348) {
+    if (coords[0] !== 51.51035091584348) {
+      const response = await fetch(`${url}/startclean`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          cleanName: values.cleanName,
+          location: values.location,
+          date: values.date,
+          startTime: values.startTime,
+          endTime: values.endTime,
+          host: values.host,
+          notes: values.notes,
+          notes: values.notes,
+          latitude: coords[0],
+          longitude: coords[1],
+        }),
+      });
+      const data = await response.json();
+      console.log(data.success);
+      if (data.success) {
+        setShowModal(true);
+      }
+    } else if (coords[0] === 51.51035091584348) {
       alert("You need to move the map marker to the exact cleanup location");
-    } else if (coords[0] !== 51.51035091584348 && data.success) {
-      setShowModal(true);
     }
   };
+  // put the logic in an actual function that send the post request,
+  // and the condition has to determine whether the post request is sent
 
   //Returning the form
   return (
@@ -117,7 +122,7 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="cleanName"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <label
@@ -135,7 +140,7 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="location"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <label htmlFor="date" className="py-2 text-white text-lg font-medium">
@@ -149,7 +154,7 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="date"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <label
@@ -167,7 +172,7 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="startTime"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <label
@@ -185,7 +190,7 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="endTime"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <label htmlFor="host" className="py-2 text-white text-lg font-medium">
@@ -200,7 +205,7 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="host"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <label
@@ -218,13 +223,13 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="notes"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <div className="flex justify-center w-full pt-4">
             <button
               type="submit"
-              className="flex rounded-lg w-[110px] h-10 bg-[#FF9505] hover:bg-orange-700 place-content-center place-items-center text-white font-medium text-lg uppercase tracking-wide"
+              className="flex rounded-lg w-[110px] h-10 bg-[#FF9505] hover:bg-orange-700 place-content-center place-items-center text-white font-medium text-lg uppercase tracking-wide ease-linear transition-all duration-75"
             >
               Submit
             </button>

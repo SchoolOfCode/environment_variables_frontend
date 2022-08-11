@@ -108,33 +108,33 @@ export default function Map() {
             position={[Number(data.latitude), Number(data.longitude)]}
           >
             <Popup>
-              <h3 className="text-xs sm:text-sm font-bold underline">
+              <h3 className="text-xs sm:text-sm font-bold underline text-[#004F54]">
                 {data.cleanname}
               </h3>
 
-              <span className="text-[9px] sm:text-xs font-bold">
+              <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">
                 Location:{" "}
               </span>
-              <span className="text-[9px] sm:text-xs"> {data.location}</span>
+              <span className="text-[9px] sm:text-xs text-[#004F54]"> {data.location}</span>
               <br />
 
-              <span className="text-[9px] sm:text-xs font-bold">Date: </span>
-              <span className="text-[9px] sm:text-xs"> {data.date}</span>
+              <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">Date: </span>
+              <span className="text-[9px] sm:text-xs text-[#004F54]"> {data.date}</span>
               <br />
 
-              <span className="text-[9px] sm:text-xs font-bold">Time: </span>
-              <span className="text-[9px] sm:text-xs">
+              <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">Time: </span>
+              <span className="text-[9px] sm:text-xs text-[#004F54]">
                 {" "}
                 {data.starttime} - {data.endtime}
               </span>
               <br />
 
-              <span className="text-[9px] sm:text-xs font-bold">Host: </span>
-              <span className="text-[9px] sm:text-xs">{data.host}</span>
+              <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">Host: </span>
+              <span className="text-[9px] sm:text-xs text-[#004F54]">{data.host}</span>
 
               <br />
-              <span className="text-[9px] sm:text-xs font-bold">Notes: </span>
-              <span className="text-[9px] sm:text-xs">{data.notes}</span>
+              <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">Notes: </span>
+              <span className="text-[9px] sm:text-xs text-[#004F54]">{data.notes}</span>
               <br />
               <JoinCleanModal />
             </Popup>

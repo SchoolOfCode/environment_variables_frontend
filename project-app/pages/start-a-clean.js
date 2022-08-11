@@ -2,6 +2,7 @@
 
 //Importing packages
 import { useState } from "react";
+import Head from "next/head";
 import dynamic from "next/dynamic";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
@@ -26,30 +27,36 @@ export default function startClean() {
   ]);
 
   return (
-    <MapContext.Provider value={{ setCoords, coords }}>
-      <div className="h-full bg-[#E6E5E4] ">
-        <NavbarStartClean />
-        <h2 className="pt-32 pb-8 text-5xl text-center text-[#004F54]">
-          Start A Clean
-        </h2>
-        <h3 className="ml-4 sm:ml-6 mb-0 text-sm sm:text-lg rounded-md text-[#ffffff] bg-[#FF9505] w-11/12 sm:w-[39rem] p-1 text-center">
-          <strong>IMPORTANT:</strong> Drag the marker to your cleanup location &
-          then fill in form
-        </h3>
+    <>
+      <Head>
+        <title>Project Clean-Up | Start a Clean</title>
+      </Head>
 
-        <div className="flex flex-col sm:flex-row ">
-          <div className="w-full m:w-2/5 pt-4 mb-2">
-            <MapWithNoSSR />
+      <MapContext.Provider value={{ setCoords, coords }}>
+        <div className="h-full bg-[#E6E5E4] ">
+          <NavbarStartClean />
+          <h2 className="pt-32 pb-8 text-5xl text-center text-[#004F54]">
+            Start A Clean
+          </h2>
+          <h3 className="ml-4 sm:ml-6 mb-0 text-sm sm:text-lg rounded-md text-[#ffffff] bg-[#FF9505] w-11/12 sm:w-[39rem] p-1 text-center">
+            <strong>IMPORTANT:</strong> Drag the marker to your cleanup location &
+            then fill in form
+          </h3>
+
+          <div className="flex flex-col sm:flex-row ">
+            <div className="w-full m:w-2/5 pt-4 mb-2">
+              <MapWithNoSSR />
+            </div>
+
+            <div className="flex justify-center w-full mb-14 pt-4 ">
+              <StartCleanForm coords={coords} />
+            </div>
           </div>
 
-          <div className="flex justify-center w-full mb-14 pt-4 ">
-            <StartCleanForm coords={coords} />
-          </div>
+          <Footer />
         </div>
-
-        <Footer />
-      </div>
-    </MapContext.Provider>
+      </MapContext.Provider>
+    </>
   );
 }
 
