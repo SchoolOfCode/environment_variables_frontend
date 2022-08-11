@@ -1,7 +1,7 @@
 //Importing packages
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/Image";
+import Image from "next/image";
 import { useUser } from "@auth0/nextjs-auth0";
 
 //Importing AntDesign Components
