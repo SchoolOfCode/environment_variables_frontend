@@ -36,7 +36,7 @@ export default function Home() {
         <div className=" ml-1 mr-1 mt-4 mb-16">
           <a id="map" className="flex invisible pb-[50px]"></a>
           <h2 className="text-lg sm:text-xl md:text-4xl text-[#004F54] font-bold ml-6">
-            Join a Clean-up
+            Join a Clean-Up
           </h2>
           <h3 className="ml-4 sm:ml-6 mb-2 text-sm sm:text-lg rounded-md text-[#ffffff] bg-[#FF9505] w-11/12 sm:w-[30rem] p-1 text-center">
           Find a marker and click to reveal clean-up details
