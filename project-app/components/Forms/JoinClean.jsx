@@ -18,7 +18,7 @@ export const JoinCleanForm = ({ showModal, setShowModal }) => {
     });
     const data = await response.json();
     alert(
-      "Thanks for joining a cleanup! Be there 15 mins prior on the day for the briefing."
+      "Thanks for joining a cleanup! Be there 15 mins prior on the day so your host can brief you."
     );
     setShowModal(false);
   };
