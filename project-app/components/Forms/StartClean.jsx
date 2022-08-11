@@ -18,29 +18,34 @@ const StartCleanForm = () => {
 
   //Defining functions
   const handleSubmit = async function (values) {
-    const response = await fetch(`${url}/startclean`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        cleanName: values.cleanName,
-        location: values.location,
-        date: values.date,
-        startTime: values.startTime,
-        endTime: values.endTime,
-        host: values.host,
-        notes: values.notes,
-        notes: values.notes,
-        latitude: coords[0],
-        longitude: coords[1],
-      }),
-    });
-    const data = await response.json();
-    if (coords[0] === 51.51035091584348) {
+    if (coords[0] !== 51.51035091584348) {
+      const response = await fetch(`${url}/startclean`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          cleanName: values.cleanName,
+          location: values.location,
+          date: values.date,
+          startTime: values.startTime,
+          endTime: values.endTime,
+          host: values.host,
+          notes: values.notes,
+          notes: values.notes,
+          latitude: coords[0],
+          longitude: coords[1],
+        }),
+      });
+      const data = await response.json();
+      console.log(data.success);
+      if (data.success) {
+        setShowModal(true);
+      }
+    } else if (coords[0] === 51.51035091584348) {
       alert("You need to move the map marker to the exact cleanup location");
-    } else if (coords[0] !== 51.51035091584348 && data.success) {
-      setShowModal(true);
     }
   };
+  // put the logic in an actual function that send the post request,
+  // and the condition has to determine whether the post request is sent
 
   //Returning the form
   return (
