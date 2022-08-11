@@ -5,7 +5,7 @@ const OurMission = () => {
   return (
     <div id="mission" className={Style.missionContainer}>
       <div className={Style.textContainer}>
-        <h2 className="text-lg sm:text-xl md:text-2xl text-[#004F54] font-bold">What is Project Cleanup?</h2>
+        <h2 className="text-lg sm:text-xl md:text-4xl text-[#004F54] font-bold">What is Project Cleanup?</h2>
 
         <p className={Style.missionParagraph}>
           Project Clean-Up allows you to start your own clean-up or join an

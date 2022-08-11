@@ -117,7 +117,7 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="cleanName"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <label
@@ -135,7 +135,7 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="location"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <label htmlFor="date" className="py-2 text-white text-lg font-medium">
@@ -149,7 +149,7 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="date"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <label
@@ -167,7 +167,7 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="startTime"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <label
@@ -185,7 +185,7 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="endTime"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <label htmlFor="host" className="py-2 text-white text-lg font-medium">
@@ -200,7 +200,7 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="host"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <label
@@ -218,7 +218,7 @@ const StartCleanForm = () => {
           <ErrorMessage
             name="notes"
             component="div"
-            className="text-white italic"
+            className="text-[#FF9505] italic font-medium"
           />
 
           <div className="flex justify-center w-full pt-4">

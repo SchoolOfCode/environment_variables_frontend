@@ -12,7 +12,7 @@ const WeatherForecast = ({ weatherObject }) => {
 
   return (
     //main weather container
-    <div className=" flex flex-col xl:flex-row rounded justify-between md:justify-evenly mb-4 mt-4 ml-4 mr-4 bg-[url('/weather-background.jpg')] bg-cover">
+    <div id="weather" className=" flex flex-col xl:flex-row rounded justify-between md:justify-evenly mb-4 mt-4 ml-4 mr-4 bg-[url('/weather-background.jpg')] bg-cover">
       {/* TODAY*/}
       <div className="flex justify-between shaddow-lg md:justify-evenly rounded bg-[#004F54]/90 p-2 md:pt-10 w-full xl:w-2/6 xl:mt-4 xl:mb-4">
         <div>

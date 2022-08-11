@@ -42,11 +42,15 @@ export const JoinCleanForm = () => {
           Name
         </label>
         <Field
-          className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#FF9505]  focus:border-[#FF9505] block w-full p-2.5 "
+           className="mb-[5px] shadow-sm bg-gray-50   text-gray-900 text-sm rounded-lg  border border-[#004F54] focus:ring-[#FF9505] focus:border-[#FF9505] block w-full p-2.5  "
           name="name"
           type="text"
         />
-        <ErrorMessage name="name" />
+        <ErrorMessage name="name"
+        component="div"
+        className="text-[#FF9505] italic font-medium"
+
+        />
 
         <label
           htmlFor="comments"
@@ -57,9 +61,12 @@ export const JoinCleanForm = () => {
         <Field
           name="comments"
           type="text"
-          className="mb-[5px] shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#FF9505]  focus:border-[#FF9505] block w-full p-2.5 "
+          className="mb-[5px] shadow-sm bg-gray-50   text-gray-900 text-sm rounded-lg  border border-[#004F54] focus:ring-[#FF9505] focus:border-[#FF9505] block w-full p-2.5  "
         />
-        <ErrorMessage name="comments" />
+        <ErrorMessage name="comments"
+         component="div"
+         className="text-[#FF9505] italic font-medium"
+          />
 
         <button
           type="submit"
