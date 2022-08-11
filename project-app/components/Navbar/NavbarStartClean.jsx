@@ -29,11 +29,15 @@ const NavbarStartClean = () => {
 
   const menu = (
     <Menu
+      className="!bg-[#004F54] !rounded-md"
       items={[
         {
           key: "1",
           label: (
-            <a rel="noopener noreferrer" href="/#about">
+            <a 
+            className="text-lg font-medium !text-[white] hover:!text-[#004F54]"
+            rel="noopener noreferrer" 
+            href="/#about">
               About
             </a>
           ),
@@ -41,12 +45,17 @@ const NavbarStartClean = () => {
 
         {
           key: "2",
-          label: <a href="/#map">Join a Clean-up</a>,
+          label: <a 
+          className="text-lg font-medium !text-[white] hover:!text-[#004F54]"
+          href="/#map">Join a Clean-up</a>,
         },
         {
           key: "3",
           label: (
-            <a rel="noopener noreferrer" href="/log-a-clean">
+            <a 
+            className="text-lg font-medium !text-[white] hover:!text-[#004F54]"
+            rel="noopener noreferrer" 
+            href="/log-a-clean">
               Log a Clean-up
             </a>
           ),
