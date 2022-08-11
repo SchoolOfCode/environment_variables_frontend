@@ -2,7 +2,7 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import Image from "next/image";
+import Image from "next/Image";
 
 //Component
 const LogCleanForm = () => {
@@ -24,7 +24,9 @@ const LogCleanForm = () => {
       }),
     });
     const data = await response.json();
-    if (data.success) {setShowModal(true)};
+    if (data.success) {
+      setShowModal(true);
+    }
     console.log(data);
   };
 
@@ -54,11 +56,10 @@ const LogCleanForm = () => {
           .required("Required"),
       })}
       onSubmit={handleSubmit}
-    >    
-
-        <Form className="flex flex-col bg-[#004F54]/90 w-11/12 md:w-5/12 rounded-xl pb-6">
-          <div className="flex flex-col py-4 sm:px-8 px-4 ">
-            {/* <label
+    >
+      <Form className="flex flex-col bg-[#004F54]/90 w-11/12 md:w-5/12 rounded-xl pb-6">
+        <div className="flex flex-col py-4 sm:px-8 px-4 ">
+          {/* <label
               htmlFor="cleanID"
               className="pb-2 text-white text-lg font-medium"
             >
@@ -86,62 +87,59 @@ const LogCleanForm = () => {
             />
             <ErrorMessage name="userID" /> */}
 
-            <label
-              htmlFor="cleanname"
-              className="pb-2 text-white text-lg font-medium"
-            >
-              Your Clean's Name
-            </label>
-            <Field
-              name="cleanname"
-              type="text"
-              placeholder="London Clean"
-              className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
-            />
-            <ErrorMessage name="cleanname" />
+          <label
+            htmlFor="cleanname"
+            className="pb-2 text-white text-lg font-medium"
+          >
+            Your Clean's Name
+          </label>
+          <Field
+            name="cleanname"
+            type="text"
+            placeholder="London Clean"
+            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
+          />
+          <ErrorMessage name="cleanname" />
 
-            <label
-              htmlFor="bags"
-              className="pb-2 text-white text-lg font-medium"
-            >
-              Total Bags Collected (each bag is estimated at 5kg)
-            </label>
-            <Field
-              name="bags"
-              type="text"
-              placeholder="50"
-              className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
-            />
-            <ErrorMessage name="bags" />
+          <label htmlFor="bags" className="pb-2 text-white text-lg font-medium">
+            Total Bags Collected (each bag is estimated at 5kg)
+          </label>
+          <Field
+            name="bags"
+            type="text"
+            placeholder="50"
+            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
+          />
+          <ErrorMessage name="bags" />
 
-            <label
-              htmlFor="volunteers"
-              className="pb-2 text-white text-lg font-medium"
-            >
-              Total Volunteers Attended
-            </label>
-            <Field
-              name="volunteers"
-              type="text"
-              placeholder="15"
-              className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
-            />
-            <ErrorMessage name="volunteers" />
-          </div>
+          <label
+            htmlFor="volunteers"
+            className="pb-2 text-white text-lg font-medium"
+          >
+            Total Volunteers Attended
+          </label>
+          <Field
+            name="volunteers"
+            type="text"
+            placeholder="15"
+            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
+          />
+          <ErrorMessage name="volunteers" />
+        </div>
 
-          <div className="flex justify-center w-full pt-4">
-            <button
-              type="submit"
-              className="flex rounded-lg w-[110px] h-10 bg-[#FF9505] hover:bg-orange-700 place-content-center place-items-center text-white font-medium text-lg uppercase tracking-wide"
-              onClick={() => setShowModal(true)}
-            >
-              Submit
-            </button>
-          </div>
-          
-          {/* Form ends here, modal below */}
+        <div className="flex justify-center w-full pt-4">
+          <button
+            type="submit"
+            className="flex rounded-lg w-[110px] h-10 bg-[#FF9505] hover:bg-orange-700 place-content-center place-items-center text-white font-medium text-lg uppercase tracking-wide"
+            onClick={() => setShowModal(true)}
+          >
+            Submit
+          </button>
+        </div>
 
-          {showModal ? (
+        {/* Form ends here, modal below */}
+
+        {showModal ? (
           <>
             <div className="z-[1005] fixed inset-0 flex justify-center items-center overflow-x-hidden overflow-y-auto">
               <div className="w-5/6 sm:w-auto sm:my-6 sm:mx-auto sm:max-w-6xl">
@@ -182,9 +180,9 @@ const LogCleanForm = () => {
             </div>
             {/* Applies a fade effect to the underlying page */}
             <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-            </>
-          ) : null}
-        </Form>
+          </>
+        ) : null}
+      </Form>
     </Formik>
   );
 };

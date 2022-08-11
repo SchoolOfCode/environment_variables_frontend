@@ -2,8 +2,6 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-import data from "../../libs";
-
 export const JoinCleanForm = () => {
   const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
 

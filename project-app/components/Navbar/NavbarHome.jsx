@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0";
-import Image from "next/image";
+import Image from "next/Image";
 
 //Importing AntDesign Components
 import "antd/dist/antd.css";
@@ -38,7 +38,7 @@ const NavbarHome = () => {
               rel="noopener noreferrer"
               href="/#about"
             >
-              About Us
+              About
             </a>
           ),
         },
@@ -99,9 +99,14 @@ const NavbarHome = () => {
       <div className="fixed z-[1002]">
         <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[1em] py-[1em]">
           <div className="h-10 w-10 sm:h-14 sm:w-14 relative">
-        <Image src="/logo-app.png" alt="Project Clean-up logo" layout="fill" objectFit="cover"/>
-      </div>
-      
+            <Image
+              src="/logo-app.png"
+              alt="Project Clean-up logo"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+
           <Link href="#home">
             <a className="text-[white] hidden md:flex items-center text-xl">
               Home
@@ -217,10 +222,15 @@ const NavbarHome = () => {
   //Return this if the user is NOT logged in
   return (
     <div className="fixed z-[1002]">
-        <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[1em] py-[1em]">
-          <div className="h-10 w-10 sm:h-14 sm:w-14 relative">
-        <Image src="/logo-app.png" alt="Project Clean-up logo" layout="fill" objectFit="cover"/>
-      </div>
+      <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[1em] py-[1em]">
+        <div className="h-10 w-10 sm:h-14 sm:w-14 relative">
+          <Image
+            src="/logo-app.png"
+            alt="Project Clean-up logo"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
         <Link href="#home">
           <a className="text-[white] hidden md:flex items-center text-xl">
             Home
