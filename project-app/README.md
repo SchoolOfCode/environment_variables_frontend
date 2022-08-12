@@ -46,8 +46,9 @@ The app offers a number of features to achieve its goal of helping users join an
 ## Screenshots
 |Landing Page| Forms |
 |--|--|
-| ![enter image description here](https://i.im.ge/2022/08/11/FG0oSC.image.png) | ![enter image description here](https://i.im.ge/2022/08/11/FGjF59.image.png) |
-| ![enter image description here](https://i.im.ge/2022/08/11/FGjqJY.image.png) | ![enter image description here](https://i.im.ge/2022/08/11/FGjMEy.image.png) |
+| ![Landing page screenshot](https://user-images.githubusercontent.com/64714474/184341409-0a635d8c-ba79-4a27-8ddb-d54dde55dcdb.png) | ![Log a Clean screenshot](https://user-images.githubusercontent.com/64714474/184341488-e399b883-98eb-48e6-9f53-fffadf3fa6c4.png) |
+| ![Map screenshot](https://user-images.githubusercontent.com/64714474/184341540-24922844-2518-420f-a5fc-4443f44924c5.png) | ![Start a Clean screenshot](https://user-images.githubusercontent.com/64714474/184341654-116dba21-7ba4-4cf1-9958-c5e324e6c390.png) |
+
 
 
 ## APIs
