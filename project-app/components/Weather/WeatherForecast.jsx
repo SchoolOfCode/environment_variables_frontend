@@ -12,9 +12,9 @@ const WeatherForecast = ({ weatherObject }) => {
 
   return (
     //main weather container
-    <div className=" flex flex-col xl:flex-row justify-between md:justify-evenly mb-4 mt-4 ml-4 mr-4 bg-[url('/weather-background.jpg')] bg-cover">
+    <div id="weather" className=" flex flex-col xl:flex-row rounded justify-between md:justify-evenly mb-4 mt-4 ml-4 mr-4 bg-[url('/weather-background.jpg')] bg-cover">
       {/* TODAY*/}
-      <div className="flex justify-between md:justify-evenly rounded bg-[#004F54]/50 p-2 md:pt-10 w-full xl:w-2/6 xl:mt-4 xl:mb-4">
+      <div className="flex justify-between shaddow-lg md:justify-evenly rounded bg-[#004F54]/90 p-2 md:pt-10 w-full xl:w-2/6 xl:mt-4 xl:mb-4">
         <div>
           <h2 className="text-3xl text-white lg:text-5xl font-bold mb-6 mt-5">
             Today
@@ -62,9 +62,9 @@ const WeatherForecast = ({ weatherObject }) => {
       </div>
       {/* NEXT 4 DAY FORECAST CARDS */}
       {/*Main Div  */}
-      <div className="flex flex-col sm:flex-row justify-evenly rounded bg-[#004F54]/50 w-full xl:w-7/12 mt-4 mb-4">
+      <div className="flex flex-col sm:flex-row justify-evenly rounded bg-[#004F54]/90 w-full xl:w-7/12 mt-4 mb-4">
         {/* CARD 1 */}
-        <div className="flex flex-row sm:flex-col rounded border shadow-lg mt-4 mb-4 w-54 p-1 sm:p-4 ml-2 mr-2 sm:ml-4 justify-evenly items-center text-xl font-bold mb-0 sm:mb-4">
+        <div className="flex flex-row sm:flex-col rounded border-[#579094] border-4 shadow-lg mt-4 mb-4 w-54 p-1 sm:p-4 ml-2 mr-2 sm:ml-4 justify-evenly items-center text-xl font-bold">
           <div className="flex flex-col">
             <p className="text-white">
               {datConvertor(weatherObject?.list[8].dt)}
@@ -83,7 +83,7 @@ const WeatherForecast = ({ weatherObject }) => {
           </p>
         </div>
         {/* CARD 2 */}
-        <div className="flex flex-row sm:flex-col rounded border shadow-lg mt-4 mb-4 w-54 p-1 sm:p-4 ml-2 mr-2 sm:ml-4 justify-evenly items-center text-xl font-bold mb-0 sm:mb-4">
+        <div className="flex flex-row sm:flex-col rounded border-4 drop-shadow-lg border-[#579094] shadow-lg mt-4 mb-4 w-54 p-1 sm:p-4 ml-2 mr-2 sm:ml-4 justify-evenly items-center text-xl font-bold">
           <div className="flex flex-col">
             <p className="text-white">
               {datConvertor(weatherObject?.list[16].dt)}
@@ -102,7 +102,7 @@ const WeatherForecast = ({ weatherObject }) => {
           </p>
         </div>
         {/* CARD 3 */}
-        <div className="flex flex-row sm:flex-col rounded border shadow-lg mt-4 mb-4 w-54 p-1 sm:p-4 ml-2 mr-2 sm:ml-4 justify-evenly items-center text-xl font-bold mb-0 sm:mb-4">
+        <div className="flex flex-row sm:flex-col rounded border-4	 border-[#579094] shadow-lg mt-4 mb-4 w-54 p-1 sm:p-4 ml-2 mr-2 sm:ml-4 justify-evenly items-center text-xl font-bold">
           <div className="flex flex-col">
             <p className="text-white">
               {datConvertor(weatherObject?.list[24].dt)}
@@ -121,7 +121,7 @@ const WeatherForecast = ({ weatherObject }) => {
           </p>
         </div>
         {/* CARD 4 */}
-        <div className="flex flex-row sm:flex-col rounded border shadow-lg mt-4 mb-4 w-54 p-1 sm:p-4 ml-2 mr-2 sm:ml-4 justify-evenly items-center text-xl font-bold mb-0 sm:mb-4">
+        <div className="flex flex-row sm:flex-col rounded  border-[#579094] border-4	 shadow-lg mt-4 mb-4 w-54 p-1 sm:p-4 ml-2 mr-2 sm:ml-4 justify-evenly items-center text-xl font-bold">
           <div className="flex flex-col">
             <p className="text-white">
               {datConvertor(weatherObject?.list[32].dt)}

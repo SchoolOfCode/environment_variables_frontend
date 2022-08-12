@@ -11,14 +11,22 @@ import Footer from "../components/Footer/Footer";
 
 export default function LogClean() {
   return (
-    <div className="h-full bg-[#E6E5E4] ">
+    <div className="flex flex-col h-screen">
+      
       <Head>
-        <title>Project Clean-Up | Log A Clean</title>
+        <title>Project Clean-Up | Log a Clean</title>
       </Head>
       <NavbarLogClean />
-      <h3 className="pt-32 pb-8 text-5xl text-center text-[#004F54]">Log A Clean</h3>
-      <div className="flex flex-col">
-        <div className="flex justify-center mb-[15%] pt-4">
+     
+      <h3 className="pt-32  text-5xl text-center text-[#004F54]">Log A Clean</h3>
+      <div className="flex flex-col h-full justify-center">
+      <div className="flex justify-center  ">
+      <h3 className="  mb-0 text-sm sm:text-lg rounded-md text-[#ffffff] bg-[#FF9505] w-11/12 sm:w-[32rem] p-1 text-center">
+          Log your clean and check our stats to see your contribution!
+        </h3>
+        </div>
+
+        <div className="flex justify-center mb-14 pt-4">
           <LogCleanForm />
         </div>
       </div>

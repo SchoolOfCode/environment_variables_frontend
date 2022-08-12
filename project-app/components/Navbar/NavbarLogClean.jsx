@@ -1,6 +1,8 @@
 //Importing packages
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 import { useUser } from "@auth0/nextjs-auth0";
 
 //Importing AntDesign Components
@@ -33,20 +35,20 @@ const NavbarLogClean = () => {
           key: "1",
           label: (
             <a rel="noopener noreferrer" href="/#about">
-              About Us
+              About
             </a>
           ),
         },
 
         {
           key: "2",
-          label: <a href="/#map">Join Cleanup</a>,
+          label: <a href="/#map">Join a Clean-up</a>,
         },
         {
           key: "3",
           label: (
             <a rel="noopener noreferrer" href="/start-a-clean">
-              Start Cleanup
+              Start a Clean-up
             </a>
           ),
         },
@@ -54,23 +56,31 @@ const NavbarLogClean = () => {
     />
   );
   const { user, error, isLoading } = useUser();
+
   if (isLoading)
     return (
       <div className="fixed z-[1002]">
-        <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
+        <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[1em] py-[1em]">
           <div className=" rounded-sm p-[5px]  text-[#white] text-center text-[20px]">
-            Loading Project Clean-Up...
+            Loading user profile...
           </div>
         </div>
       </div>
     );
+
   if (error) return <div>{error.message}</div>;
+
   if (user) {
     return (
       <div className="fixed z-[1002]">
-        <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
-          <div className="underline rounded-sm p-[5px] bg-[#006C72] text-[#white] text-[20px]">
-            Project Clean-Up
+        <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[1em] py-[1em]">
+          <div className="h-10 w-10 sm:h-14 sm:w-14 relative">
+            <Image
+              src="/logo-app.png"
+              alt="Project Clean-up logo"
+              layout="fill"
+              objectFit="cover"
+            />
           </div>
           <Link href="/#home" as={"/"}>
             <a className="text-[white] hidden md:flex items-center text-xl">
@@ -83,14 +93,14 @@ const NavbarLogClean = () => {
           >
             <a onClick={(e) => e.preventDefault()}>
               <Space>
-                Do Your Part
+                Get Involved
                 <DownOutlined />
               </Space>
             </a>
           </Dropdown>
           <Link href="/#weather">
             <a className="text-[white] hidden md:flex items-center text-xl mr-[3em]">
-              Weather
+              Check Weather
             </a>
           </Link>
           <Link href="/api/auth/logout">
@@ -139,7 +149,7 @@ const NavbarLogClean = () => {
                     onClick={() => setVisible(false)}
                     className="text-[#004F54] text-xl"
                   >
-                    Join Cleanup
+                    Join a Clean-up
                   </a>
                 </Link>
               </div>
@@ -149,7 +159,7 @@ const NavbarLogClean = () => {
                     onClick={() => setVisible(false)}
                     className="text-[#004F54] text-xl"
                   >
-                    Start Cleanup
+                    Start a Clean-up
                   </a>
                 </Link>
               </div>
@@ -159,7 +169,7 @@ const NavbarLogClean = () => {
                     onClick={() => setVisible(false)}
                     className="text-[#004F54] text-xl"
                   >
-                    Weather
+                    Check Weather
                   </a>
                 </Link>
               </div>
@@ -181,9 +191,14 @@ const NavbarLogClean = () => {
 
   return (
     <div className="fixed z-[1002]">
-      <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[2em] py-[2em]">
-        <div className="underline rounded-sm p-[5px] bg-[#006C72] text-[#white] text-[20px]">
-          Project Clean-Up
+      <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[1em] py-[1em]">
+        <div className="h-10 w-10 sm:h-14 sm:w-14 relative">
+          <Image
+            src="/logo-app.png"
+            alt="Project Clean-up logo"
+            layout="fill"
+            objectFit="cover"
+          />
         </div>
         <Link href="/#home" as={"/"}>
           <a className="text-[white] hidden md:flex items-center text-xl">
@@ -196,14 +211,14 @@ const NavbarLogClean = () => {
         >
           <a onClick={(e) => e.preventDefault()}>
             <Space>
-              Do Your Part
+              Get Involved
               <DownOutlined />
             </Space>
           </a>
         </Dropdown>
         <Link href="/#weather">
           <a className="text-[white] hidden md:flex items-center text-xl mr-[3em]">
-            Weather
+            Check Weather
           </a>
         </Link>
         {/* <Link href="/api/auth/logout">
@@ -252,7 +267,7 @@ const NavbarLogClean = () => {
                   onClick={() => setVisible(false)}
                   className="text-[#004F54] text-xl"
                 >
-                  Join Cleanup
+                  Join a Clean-up
                 </a>
               </Link>
             </div>
@@ -262,7 +277,7 @@ const NavbarLogClean = () => {
                   onClick={() => setVisible(false)}
                   className="text-[#004F54] text-xl"
                 >
-                  Start Cleanup
+                  Start a Clean-up
                 </a>
               </Link>
             </div>
@@ -272,7 +287,7 @@ const NavbarLogClean = () => {
                   onClick={() => setVisible(false)}
                   className="text-[#004F54] text-xl"
                 >
-                  Weather
+                  Check Weather
                 </a>
               </Link>
             </div>
