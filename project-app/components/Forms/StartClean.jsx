@@ -3,6 +3,8 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 //Import context
 import { MapContext } from "../../context/MapContext";
@@ -41,7 +43,16 @@ const StartCleanForm = () => {
         setShowModal(true);
       }
     } else if (coords[0] === 51.51035091584348) {
-      alert("You need to move the map marker to the exact cleanup location");
+      toast.error("Move the map marker to your cleanup location!", {
+        position: toast.POSITION.TOP_CENTER,
+        style: {
+          background: "#e13333",
+          color: "white",
+          width: "380px",
+          fontSize: "16px",
+          fontWeight: "bold",
+        },
+      });
     }
   };
   // put the logic in an actual function that send the post request,
@@ -235,6 +246,7 @@ const StartCleanForm = () => {
               Submit
             </button>
           </div>
+          <ToastContainer />
         </div>
 
         {/* End of form. Modal begins. */}

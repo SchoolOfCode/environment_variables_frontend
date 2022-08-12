@@ -12,7 +12,6 @@ const LogCleanForm = () => {
   //Defining constants
   const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
 
-  
   //Defining functions
   const handleSubmit = async function (values) {
     const response = await fetch(`${url}/logclean`, {
@@ -36,23 +35,17 @@ const LogCleanForm = () => {
     <Formik
       initialValues={{
         cleanname: "",
-        bags: "",
         volunteers: "",
+        bags: "",
       }}
       validationSchema={Yup.object({
-        /* NOT USING USER ID AT PRESENT
-        max(5, "Must be 5 characters or less")
-           .required("Required"),
-        userID: Yup.string()
-          max(5, "Must be 5 characters or less")
-          required("Required"), */
         cleanname: Yup.string()
           .max(50, "Must be 50 characters or less")
           .required("Required"),
-        bags: Yup.number()
+        volunteers: Yup.number()
           .max(99999, "Must be less than 99999")
           .required("Required"),
-        volunteers: Yup.number()
+        bags: Yup.number()
           .max(99999, "Must be less than 99999")
           .required("Required"),
       })}
@@ -60,34 +53,6 @@ const LogCleanForm = () => {
     >
       <Form className="flex flex-col bg-[#004F54]/90 w-11/12 md:w-5/12 rounded-xl pb-6">
         <div className="flex flex-col py-4 sm:px-8 px-4 ">
-          {/* <label
-              htmlFor="cleanID"
-              className="pb-2 text-white text-lg font-medium"
-            >
-              Clean ID
-            </label>
-            <Field
-              name="cleanID"
-              type="text"
-              placeholder="324-123"
-              className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
-            />
-            <ErrorMessage name="cleanID" />
-
-            <label
-              htmlFor="userID"
-              className="pb-2 text-white text-lg font-medium"
-            >
-              User ID
-            </label>
-            <Field
-              name="userID"
-              type="text"
-              placeholder="324-123"
-              className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
-            />
-            <ErrorMessage name="userID" /> */}
-
           <label
             htmlFor="cleanname"
             className="pb-2 text-white text-lg font-medium"
@@ -100,19 +65,11 @@ const LogCleanForm = () => {
             placeholder="London Clean"
             className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="cleanname" component="div" className="text-[#FF9505] italic font-medium" />
-
-          <label htmlFor="bags" className="pb-2 text-white text-lg font-medium">
-            Total Bags Collected (each bag is estimated at 5kg)
-          </label>
-          <Field
-            name="bags"
-            type="text"
-            placeholder="50"
-            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
+          <ErrorMessage
+            name="cleanname"
+            component="div"
+            className="text-[#FF9505] italic font-medium"
           />
-          <ErrorMessage name="bags" component="div" className="text-[#FF9505] italic font-medium"/>
-
           <label
             htmlFor="volunteers"
             className="pb-2 text-white text-lg font-medium"
@@ -125,14 +82,35 @@ const LogCleanForm = () => {
             placeholder="15"
             className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
           />
-          <ErrorMessage name="volunteers" component="div" className="text-[#FF9505] italic font-medium"/>
+          <ErrorMessage
+            name="volunteers"
+            component="div"
+            className="text-[#FF9505] italic font-medium"
+          />
+
+          <label htmlFor="bags" className="pb-2 text-white text-lg font-medium">
+            Total Bags Collected{" "}
+            <span className="text-sm">
+              (we estimate each bag at 5kg for our figures)
+            </span>
+          </label>
+          <Field
+            name="bags"
+            type="text"
+            placeholder="50"
+            className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
+          />
+          <ErrorMessage
+            name="bags"
+            component="div"
+            className="text-[#FF9505] italic font-medium"
+          />
         </div>
 
         <div className="flex justify-center w-full pt-4">
           <button
             type="submit"
             className="flex rounded-lg w-[110px] h-10 bg-[#FF9505] hover:bg-orange-700 place-content-center place-items-center text-white font-medium text-lg uppercase tracking-wide ease-linear transition-all duration-75"
-          
           >
             Submit
           </button>
