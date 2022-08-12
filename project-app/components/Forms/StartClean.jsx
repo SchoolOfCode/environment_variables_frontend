@@ -79,7 +79,7 @@ const StartCleanForm = () => {
           .max(10, "Must be 10 characters or less")
            .required("Required"),*/
         cleanName: Yup.string()
-          .max(20, "Must be 20 characters or less")
+          .max(50, "Must be 50 characters or less")
           .required("Required"),
         location: Yup.string()
           .max(50, "Must be 50 characters or less")
@@ -92,9 +92,9 @@ const StartCleanForm = () => {
           .max(8, "Must be 8 characters or less")
           .required("Required"),
         host: Yup.string()
-          .max(15, "Must be 15 characters or less")
+          .max(25, "Must be 25 characters or less")
           .required("Required"),
-        notes: Yup.string().max(50, "Must be 50 characters or less"),
+        notes: Yup.string().max(75, "Must be 75 characters or less"),
 
         latitude: Yup.number(),
         longitude: Yup.number(),
@@ -122,7 +122,7 @@ const StartCleanForm = () => {
             htmlFor="cleanName"
             className="pb-2 text-white text-lg font-medium"
           >
-            Your Clean-up Name
+            Your clean-up name
           </label>
           <Field
             placeholder="e.g. Brighton Pier clean-up"
@@ -227,6 +227,7 @@ const StartCleanForm = () => {
           </label>
           <Field
             as="textarea"
+            placeholder="e.g. muddy terrain, wear wellies!"
             name="notes"
             type="text"
             className="w-full h-20 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
