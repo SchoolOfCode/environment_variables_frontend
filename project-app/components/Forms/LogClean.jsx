@@ -123,7 +123,10 @@ const LogCleanForm = () => {
           />
 
           <label htmlFor="bags" className="pb-2 text-white text-lg font-medium">
-            Total Bags Collected (each bag is estimated at 5kg)
+            Total Bags Collected{" "}
+            <span className="text-sm">
+              (we estimate each bag at 5kg for our figures)
+            </span>
           </label>
           <Field
             name="bags"
