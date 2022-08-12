@@ -30,6 +30,7 @@ const Weather = () => {
       // console.log(data);
 
       if (response.status === 404) {
+
         {
           toast.error("ERROR: Please enter a valid city name", {
             position: toast.POSITION.TOP_CENTER,
@@ -47,7 +48,7 @@ const Weather = () => {
       } else if (response.status === 200) {
         setWeatherObject(data);
         //uncomment the below city State after development stage - means each time you make a change, props cant be found
-        //setCity("");
+        setCity("");
       }
     } catch (error) {
       console.log(error);
@@ -58,6 +59,7 @@ const Weather = () => {
           position: toast.POSITION.TOP_CENTER,
         });
       }
+
     }
   }
 
