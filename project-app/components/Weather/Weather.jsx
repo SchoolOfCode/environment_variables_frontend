@@ -21,18 +21,15 @@ const Weather = () => {
       const data = await response.json();
       console.log(data);
 
-    if (response.status === 404) {
-
-        alert("Please enter a valid city name")
-      
-      } else if (response.status === 200){
-
-          setWeatherObject(data);
+      if (response.status === 404) {
+        alert("Please enter a valid city name");
+      } else if (response.status === 200) {
+        setWeatherObject(data);
         //uncomment the below city State after development stage - means each time you make a change, props cant be found
-          //setCity("");
+        setCity("");
       }
     } catch (error) {
-        console.log(error)
+      console.log(error);
     }
   }
 
