@@ -32,9 +32,16 @@ const NavGetInvolved = () => {
           </Link>
         </div>
 
-            <div className="flex items-center justify-center text-[#FF9505] text-[18px] text-center font-medium">
-              <p>If you would like to join a clean-up in your area, click <strong>"Join a Clean"</strong>, and sign up with an existing clean on the map. Start a clean-up in your area by clicking the <strong>"Start a Clean"</strong> button. If you have hosted an event, make sure to log the results of your hard work via the <strong>"Log a Clean"</strong> button to update the project with how many bags were collected and how many people took part.</p>
-            </div>
+        <div className="flex items-center justify-center text-[#FF9505] text-[18px] text-center font-medium">
+          <p>
+            If you would like to join a clean-up in your area, click{" "}
+            <strong>"Join a Clean"</strong>, and sign up with an existing clean
+            on the map. Start a clean-up in your area by clicking the{" "}
+            <strong>"Start a Clean"</strong> button. If you have hosted an
+            event, make sure to log the results of your hard work via the{" "}
+            <strong>"Log a Clean"</strong> button to update the project with how
+            many bags were collected and how many people took part.
+          </p>
         </div>
       </div>
     </div>
