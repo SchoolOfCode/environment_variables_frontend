@@ -1,7 +1,8 @@
-![Project Clean-up Banner](https://i.im.ge/2022/08/12/FeSg1M.Project-Clean-Up-1.png)
+![Project Clean-Up](https://user-images.githubusercontent.com/98705391/184337846-b06b80b3-98d3-40b4-912b-dc429ad54f72.png)
 # Welcome To Project Clean-up
-This is the repository for the front end of Project Clean-up, an app created as a final project in the [School of Code's](https://www.schoolofcode.co.uk/) Bootcamp 12 (25 April - 16 August 2022). If you'd like to see the back-end, please check out the [git repository](https://github.com/SchoolOfCode/environment_variables_backend).<br><br>
-  ![Earth, map, and map marker emojis](https://i.im.ge/2022/08/12/OMqv0S.Group-23.png)
+This is the repository for the front end of Project Clean-up, an app created as a final project in the [School of Code's](https://www.schoolofcode.co.uk/) Bootcamp 12 (25 April - 16 August 2022). If you'd like to see the back-end, please check out the [git repository](https://github.com/SchoolOfCode/environment_variables_backend).
+
+![Earth, map, and map marker emojis](https://i.im.ge/2022/08/12/OMqv0S.Group-23.png)
 
 ### 🤔 **The Problem** 
 Pollution and litter is a growing environmental crisis. Animals can choke on or ingest litter, suffocate in plastic bags, get entangled in elastics and plastics, or suffer injuries from discarded glass, metals and hooks. It can also present a danger to plant life, with flammable materials presenting a fire hazard, leak contaminants which can damage plants and inhibit their growth, or reduce light availability and moisture. 
@@ -71,6 +72,7 @@ npm install
 To run this project, you will need to add the following environment variables to your front-end .env file:
 
 `NEXT_PUBLIC_WEATHER_KEY= <place your api key from open weather map here>`
+
 `NEXT_PUBLIC_DATABASE_URL= <place your api key from Heroku here>`
 
 You will also need to add your Auth0 applications keys to your development and/or deployment environments. Please refer to the [Auth0](https://auth0.com/docs) docs for further details on how to do this.
@@ -103,7 +105,7 @@ You will also need to add your Auth0 applications keys to your development and/o
 <br>
   
 ## Challenges and how we overcame them
-There were numerous challenges on this project, mostly because we were junior developers grappling with new technologies. In general, we used our skills at navigating documentation and parsing error messages
+There were numerous challenges on this project, mostly because we are a team of junior developers grappling with new technologies. In general, we used our skills at navigating documentation and parsing error messages
 
 **Next.js and Leaflet**
 - Using Next.js and Leaflet together was a challenge because 
