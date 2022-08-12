@@ -2,7 +2,7 @@
 # Welcome To Project Clean-up
 This is the repository for the front end of Project Clean-up, an app created as a final project in the [School of Code's](https://www.schoolofcode.co.uk/) Bootcamp 12 (25 April - 16 August 2022). If you'd like to see the back-end, please check out the [git repository](https://github.com/SchoolOfCode/environment_variables_backend).
 
-![Earth, map, and map marker emojis](https://i.im.ge/2022/08/12/OMqv0S.Group-23.png)
+![Earth, map, and map marker emojis](https://user-images.githubusercontent.com/98705391/184339535-2eb89ee6-2c6b-4376-baf3-2f5c4720e582.png)
 
 ### 🤔 **The Problem** 
 Pollution and litter is a growing environmental crisis. Animals can choke on or ingest litter, suffocate in plastic bags, get entangled in elastics and plastics, or suffer injuries from discarded glass, metals and hooks. It can also present a danger to plant life, with flammable materials presenting a fire hazard, leak contaminants which can damage plants and inhibit their growth, or reduce light availability and moisture. 
@@ -96,7 +96,7 @@ You will also need to add your Auth0 applications keys to your development and/o
 
 
 ## Colour Reference 
-![Colour reference banner](https://i.im.ge/2022/08/11/FGY0w1.Group-19-1.png)
+![Colour reference banner](https://i.im.ge/2022/08/11/FGY0w1.Group-19-1.png) We chose colours which would reflect the goals and theme of our app, using [coolers](https://coolors.co/) to help generate colour palettes. Blues and greens are strongly associated with the environment, and we chose a dark green so we would have a high contrast against a light background for accessibility and ease of use. 
 
 |Background Colour |Primary Colour|Accent Colour|
 |--|--|--|
