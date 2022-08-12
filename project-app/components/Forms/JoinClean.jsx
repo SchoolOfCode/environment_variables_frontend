@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import Link from "next/link";
 
 export const JoinCleanForm = ({ showModal, setShowModal }) => {
   const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
@@ -18,7 +17,7 @@ export const JoinCleanForm = ({ showModal, setShowModal }) => {
     });
     const data = await response.json();
     alert(
-      "Thanks for joining a cleanup! Be there 15 mins prior on the day so your host can brief you."
+      "Thanks for joining a cleanup! Be there 15 mins prior on the day for the host's briefing."
     );
     setShowModal(false);
   };
@@ -47,14 +46,14 @@ export const JoinCleanForm = ({ showModal, setShowModal }) => {
           Name
         </label>
         <Field
-           className="mb-[5px] shadow-sm bg-gray-50   text-gray-900 text-sm rounded-lg  border border-[#004F54] focus:ring-[#FF9505] focus:border-[#FF9505] block w-full p-2.5  "
+          className="mb-[5px] shadow-sm bg-gray-50   text-gray-900 text-sm rounded-lg  border border-[#004F54] focus:ring-[#FF9505] focus:border-[#FF9505] block w-full p-2.5  "
           name="name"
           type="text"
         />
-        <ErrorMessage name="name"
-        component="div"
-        className="text-[#FF9505] italic font-medium"
-
+        <ErrorMessage
+          name="name"
+          component="div"
+          className="text-[#FF9505] italic font-medium"
         />
 
         <label
@@ -68,10 +67,11 @@ export const JoinCleanForm = ({ showModal, setShowModal }) => {
           type="text"
           className="mb-[5px] shadow-sm bg-gray-50   text-gray-900 text-sm rounded-lg  border border-[#004F54] focus:ring-[#FF9505] focus:border-[#FF9505] block w-full p-2.5  "
         />
-        <ErrorMessage name="comments"
-         component="div"
-         className="text-[#FF9505] italic font-medium"
-          />
+        <ErrorMessage
+          name="comments"
+          component="div"
+          className="text-[#FF9505] italic font-medium"
+        />
 
         <button
           type="submit"

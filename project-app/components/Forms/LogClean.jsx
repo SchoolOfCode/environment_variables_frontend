@@ -39,12 +39,6 @@ const LogCleanForm = () => {
         bags: "",
       }}
       validationSchema={Yup.object({
-        /* NOT USING USER ID AT PRESENT
-        max(5, "Must be 5 characters or less")
-           .required("Required"),
-        userID: Yup.string()
-          max(5, "Must be 5 characters or less")
-          required("Required"), */
         cleanname: Yup.string()
           .max(50, "Must be 50 characters or less")
           .required("Required"),
@@ -59,34 +53,6 @@ const LogCleanForm = () => {
     >
       <Form className="flex flex-col bg-[#004F54]/90 w-11/12 md:w-5/12 rounded-xl pb-6">
         <div className="flex flex-col py-4 sm:px-8 px-4 ">
-          {/* <label
-              htmlFor="cleanID"
-              className="pb-2 text-white text-lg font-medium"
-            >
-              Clean ID
-            </label>
-            <Field
-              name="cleanID"
-              type="text"
-              placeholder="324-123"
-              className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
-            />
-            <ErrorMessage name="cleanID" />
-
-            <label
-              htmlFor="userID"
-              className="pb-2 text-white text-lg font-medium"
-            >
-              User ID
-            </label>
-            <Field
-              name="userID"
-              type="text"
-              placeholder="324-123"
-              className="w-full h-10 p-2.5 mb-1 bg-gray-50 border-2 rounded-lg shadow-inner text-black text-base  focus:ring-[#FF9505]"
-            />
-            <ErrorMessage name="userID" /> */}
-
           <label
             htmlFor="cleanname"
             className="pb-2 text-white text-lg font-medium"
