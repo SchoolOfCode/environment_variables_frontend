@@ -23,7 +23,14 @@ const Weather = () => {
   }
 
   async function fetchWeather() {
-    toast.warn("enter a valid city name");
+    const errorToast = () => {
+      toast("Enter a valid city name", {
+        className: "custom-toast",
+        draggable: true,
+        position: toast.POSITION.TOP_CENTER,
+      });
+    };
+
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -31,9 +38,18 @@ const Weather = () => {
       // console.log(data);
 
       if (response.status === 404) {
-        <>
-          <ToastContainer />;
-        </>;
+        {
+          toast.error("ERROR: Please enter a valid city name", {
+            position: toast.POSITION.TOP_CENTER,
+            style: {
+              background: "#e13333",
+              color: "white",
+              width: "400px",
+              fontSize: "16px",
+              fontWeight: "bold",
+            },
+          });
+        }
 
         // alert("Please enter a valid city name!");
       } else if (response.status === 200) {
@@ -43,6 +59,13 @@ const Weather = () => {
       }
     } catch (error) {
       console.log(error);
+      if (error) {
+        toast("ERROR", {
+          className: "error-toast",
+          draggable: true,
+          position: toast.POSITION.TOP_CENTER,
+        });
+      }
     }
   }
 
@@ -81,6 +104,7 @@ const Weather = () => {
           fetchWeather={fetchWeather}
           city={city}
         />
+        <ToastContainer autoClose={3000} />
       </div>
     </div>
   );
