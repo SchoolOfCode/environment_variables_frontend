@@ -1,7 +1,8 @@
 import React from "react";
-import { useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const JoinCleanForm = ({ showModal, setShowModal }) => {
   const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
@@ -16,9 +17,25 @@ export const JoinCleanForm = ({ showModal, setShowModal }) => {
       }),
     });
     const data = await response.json();
-    alert(
-      "Thanks for joining a cleanup! Be there 15 mins prior on the day for the host's briefing."
-    );
+    function successToast() {
+      toast(
+        `Thanks for joining a cleanup! \n 
+        Be there 15 mins prior on the day for the host's briefing`,
+        {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: false,
+          style: {
+            background: "#239c13",
+            color: "white",
+            width: "370px",
+            fontSize: "16px",
+            fontWeight: "bold",
+            paddingRight: "0.5em",
+          },
+        }
+      );
+    }
+    successToast();
     setShowModal(false);
   };
 

@@ -23,14 +23,6 @@ const Weather = () => {
   }
 
   async function fetchWeather() {
-    const errorToast = () => {
-      toast("Enter a valid city name", {
-        className: "custom-toast",
-        draggable: true,
-        position: toast.POSITION.TOP_CENTER,
-      });
-    };
-
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -44,7 +36,7 @@ const Weather = () => {
             style: {
               background: "#e13333",
               color: "white",
-              width: "400px",
+              width: "380px",
               fontSize: "16px",
               fontWeight: "bold",
             },
