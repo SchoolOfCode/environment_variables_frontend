@@ -29,12 +29,13 @@ const NavbarHome = () => {
 
   const menu = (
     <Menu
+      className="!bg-[#004F54] !rounded-md"
       items={[
         {
           key: "1",
           label: (
             <a
-              className="text-md text-[#004F54]"
+              className="text-lg font-medium !text-[white] hover:!text-[#004F54]"
               rel="noopener noreferrer"
               href="/#about"
             >
@@ -46,7 +47,7 @@ const NavbarHome = () => {
           key: "2",
           label: (
             <a
-              className="text-md text-[#004F54]"
+              className="text-lg font-medium !text-white hover:!text-[#004F54]"
               rel="noopener noreferrer"
               href="/start-a-clean"
             >
@@ -57,7 +58,8 @@ const NavbarHome = () => {
         {
           key: "3",
           label: (
-            <a className="text-md text-[#004F54]" href="#map">
+            <a className="text-lg font-medium !text-white hover:!text-[#004F54]" 
+              href="#map">
               Join a Clean-up
             </a>
           ),
@@ -66,7 +68,7 @@ const NavbarHome = () => {
           key: "4",
           label: (
             <a
-              className="text-md text-[#004F54]"
+              className="text-lg font-medium !text-white hover:!text-[#004F54]"
               rel="noopener noreferrer"
               href="/log-a-clean"
             >
@@ -85,7 +87,7 @@ const NavbarHome = () => {
     return (
       <div className="fixed z-[1002]">
         <div className=" flex justify-between w-[100vw] bg-[#004F54] text-[white] ml-[0px] px-[1em] py-[1em]">
-          <div className=" rounded-sm p-[5px]  text-[#white] text-center text-[20px]">
+          <div className="rounded-sm p-[5px] text-[#white] text-center text-[20px]">
             Loading user profile...
           </div>
         </div>

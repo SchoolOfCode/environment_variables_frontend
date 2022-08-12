@@ -18,11 +18,11 @@ export default function LogClean() {
       </Head>
       <NavbarLogClean />
      
-      <h3 className="pt-32  text-5xl text-center text-[#004F54]">Log A Clean</h3>
+      <h3 className="pt-32  text-5xl text-center text-[#004F54]">Log a Clean</h3>
       <div className="flex flex-col h-full justify-center">
       <div className="flex justify-center  ">
-      <h3 className="  mb-0 text-sm sm:text-lg rounded-md text-[#ffffff] bg-[#FF9505] w-11/12 sm:w-[32rem] p-1 text-center">
-          Log your clean and check our stats to see your contribution!
+      <h3 className="  mb-0 text-sm sm:text-lg rounded-md text-[#ffffff] bg-[#FF9505] w-11/12 sm:w-[34rem] p-1 text-center">
+          Log your clean, then our stats will update with your contribution!
         </h3>
         </div>
 
