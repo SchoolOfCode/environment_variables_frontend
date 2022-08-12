@@ -11,8 +11,6 @@ Our aim is to help protect the wildlife and beauty of our green spaces by reduci
 
 ### 🛠️ **How It Works** 
 All of the clean-up events are stored in a database. The front-end makes requests to the database to display clean-up statistics, and populate the front page map with all events. Users can choose to join an event without registering, or register using Auth0 to start their own event⁠—which is then posted to the database and so visible on the front page map. After an event, the host can log their clean and submit the number of volunteers in attendance, and the amount of litter collected, which is then reflected in the statistics displayed on the page. A weather widget is included, along with advice for various weather conditions, so that users can ensure they are adequately prepared for the Great British weather on the day of their clean-up!
-<br>
-<br>
 
 
 ## Authors (aka, the Environment Variables)
@@ -29,8 +27,7 @@ All of the clean-up events are stored in a database. The front-end makes request
 - [Simran Rai](https://github.com/srai98i)
 
 - [Jena Zubaydi](https://github.com/jena-84)
-<br>
-<br>
+
 
 ## App Features
 The app offers a number of features to achieve its goal of helping users join and create litter clean-up events:
@@ -43,16 +40,14 @@ The app offers a number of features to achieve its goal of helping users join an
 - 💽 **A custom database**, which stores all clean-up events, and responds to HTTP requests via our [back-end](https://github.com/SchoolOfCode/environment_variables_backend); 
 
 - 🔒 **User authentication**, to minimise spam, irrelevant or malicious postings, and to facilitate future features.
-<br>
-<br>
+
 
 ## Screenshots
 |Landing Page| Forms |
 |--|--|
 | ![enter image description here](https://i.im.ge/2022/08/11/FG0oSC.image.png) | ![enter image description here](https://i.im.ge/2022/08/11/FGjF59.image.png) |
 | ![enter image description here](https://i.im.ge/2022/08/11/FGjqJY.image.png) | ![enter image description here](https://i.im.ge/2022/08/11/FGjMEy.image.png) |
-<br>
-<br>
+
 
 ## APIs
 - [Leaflet](https://react-leaflet.js.org/) for the interative maps
