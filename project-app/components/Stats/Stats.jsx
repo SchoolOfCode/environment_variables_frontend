@@ -40,7 +40,7 @@ export default function Stats() {
         <StatCard
           key={Math.random() * 500}
           number={totalCleans}
-          text="Clean-Ups Started"
+          text="CleanUps Started"
           image="/icon-abacus.svg"
         />
         <StatCard

@@ -273,7 +273,8 @@ const StartCleanForm = () => {
                       </div>
                       {/* text */}
                       <h3 className="text-[#004F54] text-lg sm:text-xl text-center">
-                        Your clean-up has been added to the map
+                        Your clean-up has been added to the map. After the
+                        event, please log the stats of your clean on our page.
                       </h3>
                     </div>
                   </div>
