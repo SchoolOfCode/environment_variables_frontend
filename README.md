@@ -105,7 +105,7 @@ You will also need to add your Auth0 applications keys to your development and/o
 
 
 ## Challenges and how we overcame them
-There were numerous challenges on this project, mostly because we are a team of junior developers grappling with new technologies. In general, we used our skills at navigating documentation and parsing error messages
+There were numerous challenges on this project, often rooted in the circumstance of a team of junior developers grappling with new technologies. In general, we used our skills at working together, navigating documentation, parsing error messages, and researching solutions to find the solutions we needed.
 
 **Next.js and Leaflet**: Using Next.js and Leaflet together was a challenge because Leaflet doesn’t support server side rendering. After some research, we got around this by taking advantage of Next’s [dynamic importing](https://nextjs.org/docs/advanced-features/dynamic-import).
 
