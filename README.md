@@ -102,9 +102,8 @@ You will also need to add your Auth0 applications keys to your development and/o
 |Background Colour |Primary Colour|Accent Colour|
 |--|--|--|
 | #E6E5E4 ![Background colour example](https://i.im.ge/2022/08/11/FGxQ6a.Rectangle-196.png) | #004F54 ![Primary colour example](https://i.im.ge/2022/08/11/FG3lk1.Rectangle-195.png) | #FF9505 ![Accent colour example](https://i.im.ge/2022/08/11/FG3F9m.Rectangle-194.png)
-<br>
-<br>
-  
+
+
 ## Challenges and how we overcame them
 There were numerous challenges on this project, mostly because we are a team of junior developers grappling with new technologies. In general, we used our skills at navigating documentation and parsing error messages
 
