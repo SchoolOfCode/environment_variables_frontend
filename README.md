@@ -106,10 +106,11 @@ You will also need to add your Auth0 applications keys to your development and/o
 <br>
   
 ## Challenges and how we overcame them
-There were numerous challenges on this project, mostly because we are a team of junior developers grappling with new technologies. In general, we used our skills at navigating documentation and parsing error messages
+There were numerous challenges on this project, mostly because we are a team of junior developers grappling with new technologies. In general, we used our skills at navigating documentation and parsing error messages. 
 
 **Next.js and Leaflet**
-- Using Next.js and Leaflet together was a challenge because 
+- Using Next.js and Leaflet together was a challenge. The advantage of Next.js is the server-side rendering (SSR) it offers. We wanted our app to take advantage of SSR as it would improve our Search Engine Optimisation (SEO) and make navigating through pages a seamless experience. We chose Leaflet due to its simplicity compared to the Google Maps API and felt that we could incorporate it into our app better. However, we soon learnt that Leaflet does not support SSR. In the interest of time, since we had made a lot of progress learning about Leaflet and implementing it into our app, we decided against switching to the Google Maps API. Instead, we found a solution online which allowed the Leaflet map to be rendered in a Next.js app. We set the map's SSR value to be 'false' which removed the incompatibility errors. 
+
 
 
 
