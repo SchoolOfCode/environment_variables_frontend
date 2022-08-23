@@ -102,24 +102,28 @@ You will also need to add your Auth0 applications keys to your development and/o
 |Background Colour |Primary Colour|Accent Colour|
 |--|--|--|
 | #E6E5E4 ![Background colour example](https://i.im.ge/2022/08/11/FGxQ6a.Rectangle-196.png) | #004F54 ![Primary colour example](https://i.im.ge/2022/08/11/FG3lk1.Rectangle-195.png) | #FF9505 ![Accent colour example](https://i.im.ge/2022/08/11/FG3F9m.Rectangle-194.png)
-<br>
-<br>
-  
+
+
 ## Challenges and how we overcame them
-There were numerous challenges on this project, mostly because we are a team of junior developers grappling with new technologies. In general, we used our skills at navigating documentation and parsing error messages
+There were numerous challenges on this project, often rooted in the circumstance of a team of junior developers grappling with new technologies. In general, we used our skills at working together, navigating documentation, parsing error messages, and researching solutions to find the solutions we needed.
 
-**Next.js and Leaflet**
-- Using Next.js and Leaflet together was a challenge because 
+**Next.js and Leaflet**: Using Next.js and Leaflet together was a challenge because Leaflet doesn’t support server side rendering. After some research, we got around this by taking advantage of Next’s [dynamic importing](https://nextjs.org/docs/advanced-features/dynamic-import).
 
+**Auth0**: Implementing Auth0 presented challenges at various stages of development. We had little trouble getting it to work locally, but encountered server errors in deployment. This turned out to be an issue with the URLs we had entered in Auth0’s settings, and easily remedied. 
+
+We also found it a challenge to implement Cypress end-to-end testing with Auth0. Auth0 uses its own link for the login process, which causes a cross origin error. The solution was to use a Cypress handle—cy.origin()—to enter the domain of the Auth0 login, so that Cypress recognised the link while running its tests.
+
+**Tailwind**: Using Tailwind in our project involved a steep learning curve for all of us. We relied heavily on the docs, and a [Tailwind cheat sheet](https://nerdcave.com/tailwind-cheat-sheet) and found that practice was the best way to overcome this particular challenge.
+
+**Formik**: Formik and Yup were both new to everyone in the team, and we had to spend some time working our way through the docs and some examples in order to effectively use it. We found that mobbing this aspect of development was key to understanding and implementing our forms, offering learning opportunities and the ability to contribute to all team members.
 
 
 
 ## What we took from this experience
-Our goal for this project was to work together well as a team, learn as much as we could, and at the end of it, present a functional and attractive app. We enabled this by deciding on a team manifesto at the very start, which included important topics like how we wanted to approach discussions, make decisions, and resolve conflicts. This 
+Our goal for this project was to work together well as a team, learn as much as we could, and at the end of it, present a functional and attractive app. We facilitated this by deciding on a team manifesto at the very start, which included important topics like how we wanted to approach discussions, make decisions, and resolve conflicts. We held true to our manifesto throughout the process, and as a result, any differences of opinion were smoothly resolved and the final decision embraced by all.
 
+Working in an Agile way was an invaluable experience. We approached the project in an iterative way, and with each sprint updated or added features so we always had a functioning app. The ability to quickly pivot also helped us when we had to make changes due to our user’s feedback, adding clarity and functionality to our app to make it more usable. 
 
+We had a number of stretch goals, and with more time we would have added user profiles, notifications of upcoming and new events, and would have liked to spend some time refactoring duplicate code. 
 
-
-Furthermore, working in an Agile environment and taking on an iterative approach to our project through user feedback and revision was an invaluable experience for us and will surely put us all in good stead for when we take on our first positions as developers.
-
-Given more time, there are alot more features and functionality we would implement, but we worked hard at all times and we are very pleased with the end-result.
+All in all, we had a fun and fantastic time together, worked hard, and are all very proud of our final product! 
