@@ -15,11 +15,13 @@ const LandingBanner = () => {
             </h1>
             <hr className="flex items-center sm:w-[55rem] h-0.5 bg-[#004e5491] mb-[2rem]"></hr>
             <div className="flex items-center w-[20rem] sm:w-[35rem] text-[15px] sm:text-[20px] text-[#004F54]">
-            <p>Project Clean-Up is a place where you can join others to improve the 
-            environment by creating or joining litter clean-ups. They can
-          be done anywhere—from beaches, rivers, and even national parks, to your
-          very own neighbourhood!</p>
-          </div>
+              <p>
+                Project Clean-Up is a place where you can join others to improve
+                the environment by creating or joining litter clean-ups. They
+                can be done anywhere—from beaches, rivers, and even national
+                parks, to your very own neighbourhood!
+              </p>
+            </div>
             <div className="flex flex-col md:flex-row items-center justify-center md:space-x-[3em] space-y-[2rem] mt-[2rem] md:space-y-[0]">
               <Link href="#about">
                 <a>
