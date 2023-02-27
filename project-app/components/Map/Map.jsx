@@ -115,26 +115,44 @@ export default function Map() {
               <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">
                 Location:{" "}
               </span>
-              <span className="text-[9px] sm:text-xs text-[#004F54]"> {data.location}</span>
+              <span className="text-[9px] sm:text-xs text-[#004F54]">
+                {" "}
+                {data.location}
+              </span>
               <br />
 
-              <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">Date: </span>
-              <span className="text-[9px] sm:text-xs text-[#004F54]"> {data.date}</span>
+              <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">
+                Date:{" "}
+              </span>
+              <span className="text-[9px] sm:text-xs text-[#004F54]">
+                {" "}
+                {data.date}
+              </span>
               <br />
 
-              <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">Time: </span>
+              <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">
+                Time:{" "}
+              </span>
               <span className="text-[9px] sm:text-xs text-[#004F54]">
                 {" "}
                 {data.starttime} - {data.endtime}
               </span>
               <br />
 
-              <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">Host: </span>
-              <span className="text-[9px] sm:text-xs text-[#004F54]">{data.host}</span>
+              <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">
+                Host:{" "}
+              </span>
+              <span className="text-[9px] sm:text-xs text-[#004F54]">
+                {data.host}
+              </span>
 
               <br />
-              <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">Notes: </span>
-              <span className="text-[9px] sm:text-xs text-[#004F54]">{data.notes}</span>
+              <span className="text-[9px] sm:text-xs font-bold text-[#004F54]">
+                Notes:{" "}
+              </span>
+              <span className="text-[9px] sm:text-xs text-[#004F54]">
+                {data.notes}
+              </span>
               <br />
               <JoinCleanModal />
             </Popup>

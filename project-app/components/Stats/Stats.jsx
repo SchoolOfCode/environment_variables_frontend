@@ -29,11 +29,6 @@ export default function Stats() {
     fetchCleans();
   }, []);
 
-  /* STATS CONSOLE - DELETE AFTER BUILD */
-  // console.log("Total Volunteers data:", volunteers);
-  // console.log("Total bags data:", bags);
-  // console.log("Total Cleans data:", totalCleans);
-
   return (
     <div className="p-11 bg-[#F1F3F3] w-screen shadow-lg	">
       <div className="flex justify-around items-center space-x-5">
