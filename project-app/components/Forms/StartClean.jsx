@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { MapContext } from "../../context/MapContext";
 
 //Define constants
-const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
+const url = process.env.NEXT_PUBLIC_DATABASE_URL;
 
 //Component
 const StartCleanForm = () => {

@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const JoinCleanForm = ({ showModal, setShowModal }) => {
-  const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
+  const url = process.env.NEXT_PUBLIC_DATABASE_URL;
 
   const handleSubmit = async function (values) {
     const response = await fetch(`${url}/joinclean`, {

@@ -30,7 +30,6 @@ const Weather = () => {
       // console.log(data);
 
       if (response.status === 404) {
-
         {
           toast.error("ERROR: Please enter a valid city name", {
             position: toast.POSITION.TOP_CENTER,
@@ -59,7 +58,6 @@ const Weather = () => {
           position: toast.POSITION.TOP_CENTER,
         });
       }
-
     }
   }
 

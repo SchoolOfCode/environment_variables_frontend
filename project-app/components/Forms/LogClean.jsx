@@ -10,7 +10,7 @@ const LogCleanForm = () => {
   const [showModal, setShowModal] = React.useState(false);
 
   //Defining constants
-  const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
+  const url = process.env.NEXT_PUBLIC_DATABASE_URL;
 
   //Defining functions
   const handleSubmit = async function (values) {

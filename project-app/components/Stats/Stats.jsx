@@ -6,7 +6,7 @@ export default function Stats() {
   const [bags, setBags] = useState("");
   const [totalCleans, setTotalCleans] = useState("");
   //Fetch request for stats info
-  const url = process.env.NEXT_PUBLIC_DATABASE_URL || "http://localhost:5000";
+  const url = process.env.NEXT_PUBLIC_DATABASE_URL;
 
   useEffect(() => {
     async function fetchVolunteers() {
