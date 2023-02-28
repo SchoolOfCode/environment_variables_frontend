@@ -1,0 +1,29 @@
+/* @media (max-width: 500px){
+    .Carousel{
+        height: 100px;
+        width: 200px;
+    }
+} */
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.Carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 900px;
+  margin: 50px 0px 0px 0px;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
+}
+
+.imageCSS {
+  height: 400px;
+  width: 950px;
+  filter: drop-shadow(25px 25px 25px rgba(0, 0, 0, 0.25));
+}
